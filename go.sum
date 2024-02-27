@@ -70,7 +70,7 @@ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZN
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/seracoin/go-muhash v1.0.1 h1:ZB7N3KX6kFYxiU9an79LE2hRX7H7dm5tgJXxxj/aoiY=
 github.com/seracoin/go-muhash v1.0.1/go.mod h1:RRYbsjGER/hbzJcnvxJIHGcrpv7YFe5Ahj5wRkphvwY=
-github.com/seracoin/go-secp256k1 v1.0.2 h1:qzmG5v/vwg42lo9/3fzns+8P/lgy26L65AMqmBk7ISU=
+github.com/seracoin/go-secp256k1 v1.0.2 h1:Smih9vDwv1081B0QAD+aslR1MT4M6GcpaO7zD6A9lkA=
 github.com/seracoin/go-secp256k1 v1.0.2/go.mod h1:WAuFP2eSnGvH0ZxaxBhjIpRuR5lNytMnM6vmTm84Njo=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5cxcmMvtA=
