@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgDoneBlocksWithTrustedData implements the Message interface and represents a sedra
+// MsgDoneBlocksWithTrustedData implements the Message interface and represents a sera
 // DoneBlocksWithTrustedData message
 //
 // This message has no payload.
@@ -14,7 +14,7 @@ func (msg *MsgDoneBlocksWithTrustedData) Command() MessageCommand {
 	return CmdDoneBlocksWithTrustedData
 }
 
-// NewMsgDoneBlocksWithTrustedData returns a new sedra DoneBlocksWithTrustedData message that conforms to the
+// NewMsgDoneBlocksWithTrustedData returns a new sera DoneBlocksWithTrustedData message that conforms to the
 // Message interface.
 func NewMsgDoneBlocksWithTrustedData() *MsgDoneBlocksWithTrustedData {
 	return &MsgDoneBlocksWithTrustedData{}

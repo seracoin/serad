@@ -1,20 +1,20 @@
 package blocktemplatebuilder
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/processes/coinbasemanager"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/merkle"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensusreference"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/domain/consensus/processes/coinbasemanager"
+	"github.com/seracoin/serad/domain/consensus/utils/merkle"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/domain/consensusreference"
+	"github.com/seracoin/serad/util/mstime"
 	"math"
 	"sort"
 
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/seracoin/serad/util/difficulty"
 
-	consensusexternalapi "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	miningmanagerapi "github.com/sedracoin/sedrad/domain/miningmanager/model"
+	consensusexternalapi "github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
+	miningmanagerapi "github.com/seracoin/serad/domain/miningmanager/model"
 	"github.com/pkg/errors"
 )
 
@@ -151,7 +151,7 @@ func (btb *blockTemplateBuilder) BuildBlockTemplate(
 		if err != nil {
 			// mempool.RemoveInvalidTransactions might return errors in situations that are perfectly fine in this context.
 			// TODO: Once the mempool invariants are clear, this should be converted back `return nil, err`:
-			// https://github.com/sedracoin/sedrad/issues/1553
+			// https://github.com/seracoin/serad/issues/1553
 			log.Criticalf("Error from mempool.RemoveInvalidTransactions: %+v", err)
 		}
 		// We can call this recursively without worry because this should almost never happen

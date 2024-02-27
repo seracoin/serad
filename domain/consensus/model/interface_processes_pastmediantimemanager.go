@@ -1,6 +1,6 @@
 package model
 
-import "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+import "github.com/seracoin/serad/domain/consensus/model/externalapi"
 
 // PastMedianTimeManager provides a method to resolve the
 // past median time of a block

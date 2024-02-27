@@ -5,11 +5,11 @@
 package util_test
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 	"math"
 	"testing"
 
-	. "github.com/sedracoin/sedrad/util"
+	. "github.com/seracoin/serad/util"
 )
 
 func TestAmountCreation(t *testing.T) {
@@ -36,7 +36,7 @@ func TestAmountCreation(t *testing.T) {
 			name:     "one hundred",
 			amount:   100,
 			valid:    true,
-			expected: 100 * constants.SeepPerSedra,
+			expected: 100 * constants.SeepPerSera,
 		},
 		{
 			name:     "fraction",
@@ -48,13 +48,13 @@ func TestAmountCreation(t *testing.T) {
 			name:     "rounding up",
 			amount:   54.999999999999943157,
 			valid:    true,
-			expected: 55 * constants.SeepPerSedra,
+			expected: 55 * constants.SeepPerSera,
 		},
 		{
 			name:     "rounding down",
 			amount:   55.000000000000056843,
 			valid:    true,
-			expected: 55 * constants.SeepPerSedra,
+			expected: 55 * constants.SeepPerSera,
 		},
 
 		// Negative tests.
@@ -102,40 +102,40 @@ func TestAmountUnitConversions(t *testing.T) {
 		s         string
 	}{
 		{
-			name:      "MSDR",
+			name:      "MSRA",
 			amount:    Amount(constants.MaxSeep),
-			unit:      AmountMegaSDR,
+			unit:      AmountMegaSRA,
 			converted: 29000,
-			s:         "29000 MSDR",
+			s:         "29000 MSRA",
 		},
 		{
-			name:      "kSDR",
+			name:      "kSRA",
 			amount:    44433322211100,
-			unit:      AmountKiloSDR,
+			unit:      AmountKiloSRA,
 			converted: 444.33322211100,
-			s:         "444.333222111 kSDR",
+			s:         "444.333222111 kSRA",
 		},
 		{
-			name:      "SDR",
+			name:      "SRA",
 			amount:    44433322211100,
-			unit:      AmountSDR,
+			unit:      AmountSRA,
 			converted: 444333.22211100,
-			s:         "444333.222111 SDR",
+			s:         "444333.222111 SRA",
 		},
 		{
-			name:      "mSDR",
+			name:      "mSRA",
 			amount:    44433322211100,
-			unit:      AmountMilliSDR,
+			unit:      AmountMilliSRA,
 			converted: 444333222.11100,
-			s:         "444333222.111 mSDR",
+			s:         "444333222.111 mSRA",
 		},
 		{
 
-			name:      "μSDR",
+			name:      "μSRA",
 			amount:    44433322211100,
-			unit:      AmountMicroSDR,
+			unit:      AmountMicroSRA,
 			converted: 444333222111.00,
-			s:         "444333222111 μSDR",
+			s:         "444333222111 μSRA",
 		},
 		{
 
@@ -151,7 +151,7 @@ func TestAmountUnitConversions(t *testing.T) {
 			amount:    44433322211100,
 			unit:      AmountUnit(-1),
 			converted: 4443332.2211100,
-			s:         "4443332.22111 1e-1 SDR",
+			s:         "4443332.22111 1e-1 SRA",
 		},
 	}
 
@@ -168,18 +168,18 @@ func TestAmountUnitConversions(t *testing.T) {
 			continue
 		}
 
-		// Verify that Amount.ToSDR works as advertised.
-		f1 := test.amount.ToUnit(AmountSDR)
-		f2 := test.amount.ToSDR()
+		// Verify that Amount.ToSRA works as advertised.
+		f1 := test.amount.ToUnit(AmountSRA)
+		f2 := test.amount.ToSRA()
 		if f1 != f2 {
-			t.Errorf("%v: ToSDR does not match ToUnit(AmountSDR): %v != %v", test.name, f1, f2)
+			t.Errorf("%v: ToSRA does not match ToUnit(AmountSRA): %v != %v", test.name, f1, f2)
 		}
 
 		// Verify that Amount.String works as advertised.
-		s1 := test.amount.Format(AmountSDR)
+		s1 := test.amount.Format(AmountSRA)
 		s2 := test.amount.String()
 		if s1 != s2 {
-			t.Errorf("%v: String does not match Format(AmountSDR): %v != %v", test.name, s1, s2)
+			t.Errorf("%v: String does not match Format(AmountSRA): %v != %v", test.name, s1, s2)
 		}
 	}
 }
@@ -192,16 +192,16 @@ func TestAmountMulF64(t *testing.T) {
 		res  Amount
 	}{
 		{
-			name: "Multiply 0.1 SDR by 2",
-			amt:  100e5, // 0.1 SDR
+			name: "Multiply 0.1 SRA by 2",
+			amt:  100e5, // 0.1 SRA
 			mul:  2,
-			res:  200e5, // 0.2 SDR
+			res:  200e5, // 0.2 SRA
 		},
 		{
-			name: "Multiply 0.2 SDR by 0.02",
-			amt:  200e5, // 0.2 SDR
+			name: "Multiply 0.2 SRA by 0.02",
+			amt:  200e5, // 0.2 SRA
 			mul:  1.02,
-			res:  204e5, // 0.204 SDR
+			res:  204e5, // 0.204 SRA
 		},
 		{
 			name: "Round down",
@@ -217,9 +217,9 @@ func TestAmountMulF64(t *testing.T) {
 		},
 		{
 			name: "Multiply by 0.",
-			amt:  1e8, // 1 SDR
+			amt:  1e8, // 1 SRA
 			mul:  0,
-			res:  0, // 0 SDR
+			res:  0, // 0 SRA
 		},
 		{
 			name: "Multiply 1 by 0.5.",

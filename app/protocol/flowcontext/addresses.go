@@ -1,7 +1,7 @@
 package flowcontext
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
+	"github.com/seracoin/serad/infrastructure/network/addressmanager"
 )
 
 // AddressManager returns the address manager associated to the flow context.

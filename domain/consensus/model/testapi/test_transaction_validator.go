@@ -1,8 +1,8 @@
 package testapi
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
 )
 
 // TestTransactionValidator adds to the main TransactionValidator methods required by tests

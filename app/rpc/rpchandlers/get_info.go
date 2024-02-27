@@ -1,10 +1,10 @@
 package rpchandlers
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/rpc/rpccontext"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/rpc/rpccontext"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/version"
 )
 
 // HandleGetInfo handles the respectively named RPC command

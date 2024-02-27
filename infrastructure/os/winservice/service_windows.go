@@ -9,9 +9,9 @@ import (
 
 	"github.com/btcsuite/winsvc/eventlog"
 	"github.com/btcsuite/winsvc/svc"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/os/signal"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/os/signal"
+	"github.com/seracoin/serad/version"
 )
 
 // Service houses the main service handler which handles all service
@@ -51,20 +51,20 @@ func (s *Service) Start() error {
 
 // Execute is the main entry point the winsvc package calls when receiving
 // information from the Windows service control manager. It launches the
-// long-running sedradMain (which is the real meat of sedrad), handles service
+// long-running seradMain (which is the real meat of serad), handles service
 // change requests, and notifies the service control manager of changes.
 func (s *Service) Execute(args []string, r <-chan svc.ChangeRequest, changes chan<- svc.Status) (bool, uint32) {
 	// Service start is pending.
 	const cmdsAccepted = svc.AcceptStop | svc.AcceptShutdown
 	changes <- svc.Status{State: svc.StartPending}
 
-	// Start sedradMain in a separate goroutine so the service can start
+	// Start seradMain in a separate goroutine so the service can start
 	// quickly. Shutdown (along with a potential error) is reported via
-	// doneChan. startedChan is notified once sedrad is started so this can
+	// doneChan. startedChan is notified once serad is started so this can
 	// be properly logged
 	doneChan := make(chan error)
 	startedChan := make(chan struct{})
-	spawn("sedradMain-windows", func() {
+	spawn("seradMain-windows", func() {
 		err := s.main(startedChan)
 		doneChan <- err
 	})
@@ -108,7 +108,7 @@ loop:
 	return false, 0
 }
 
-// logServiceStart logs information about sedrad when the main server has
+// logServiceStart logs information about serad when the main server has
 // been started to the Windows event log.
 func (s *Service) logServiceStart() {
 	var message string

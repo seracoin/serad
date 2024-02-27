@@ -1,8 +1,8 @@
 package addressmanager
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/util/mstime"
 	"net"
 	"reflect"
 	"testing"

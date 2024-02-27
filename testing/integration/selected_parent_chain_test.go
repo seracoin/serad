@@ -3,20 +3,20 @@ package integration
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 )
 
 func TestVirtualSelectedParentChain(t *testing.T) {
-	// Setup a couple of sedrad instances
-	sedrad1, sedrad2, _, teardown := standardSetup(t)
+	// Setup a couple of serad instances
+	serad1, serad2, _, teardown := standardSetup(t)
 	defer teardown()
 
 	// Register to virtual selected parent chain changes
 	onVirtualSelectedParentChainChangedChan := make(chan *appmessage.VirtualSelectedParentChainChangedNotificationMessage)
-	err := sedrad1.rpcClient.RegisterForVirtualSelectedParentChainChangedNotifications(true,
+	err := serad1.rpcClient.RegisterForVirtualSelectedParentChainChangedNotifications(true,
 		func(notification *appmessage.VirtualSelectedParentChainChangedNotificationMessage) {
 			onVirtualSelectedParentChainChangedChan <- notification
 		})
@@ -24,14 +24,14 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 		t.Fatalf("Failed to register for virtual selected parent chain change notifications: %s", err)
 	}
 
-	// In sedrad1, mine a chain over the genesis and make sure
+	// In serad1, mine a chain over the genesis and make sure
 	// each chain changed notifications contains only one entry
 	// in `added` and nothing in `removed`
-	chain1TipHash := consensushashing.BlockHash(sedrad1.config.NetParams().GenesisBlock)
+	chain1TipHash := consensushashing.BlockHash(serad1.config.NetParams().GenesisBlock)
 	chain1TipHashString := chain1TipHash.String()
 	const blockAmountToMine = 10
 	for i := 0; i < blockAmountToMine; i++ {
-		minedBlock := mineNextBlock(t, sedrad1)
+		minedBlock := mineNextBlock(t, serad1)
 		notification := <-onVirtualSelectedParentChainChangedChan
 		if len(notification.RemovedChainBlockHashes) > 0 {
 			t.Fatalf("RemovedChainBlockHashes is unexpectedly not empty")
@@ -50,16 +50,16 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 		chain1TipHashString = minedBlockHashString
 	}
 
-	// In sedrad2, mine a different chain of `blockAmountToMine` + 1
+	// In serad2, mine a different chain of `blockAmountToMine` + 1
 	// blocks over the genesis
 	var chain2Tip *externalapi.DomainBlock
 	for i := 0; i < blockAmountToMine+1; i++ {
-		chain2Tip = mineNextBlock(t, sedrad2)
+		chain2Tip = mineNextBlock(t, serad2)
 	}
 
-	// Connect the two sedrads. This should trigger sync
+	// Connect the two serads. This should trigger sync
 	// between the two nodes
-	connect(t, sedrad1, sedrad2)
+	connect(t, serad1, serad2)
 
 	chain2TipHash := consensushashing.BlockHash(chain2Tip)
 	chain2TipHashString := chain2TipHash.String()
@@ -79,7 +79,7 @@ func TestVirtualSelectedParentChain(t *testing.T) {
 
 	// Get the virtual selected parent chain from the tip of
 	// the first chain
-	virtualSelectedParentChainFromChain1Tip, err := sedrad1.rpcClient.GetVirtualSelectedParentChainFromBlock(
+	virtualSelectedParentChainFromChain1Tip, err := serad1.rpcClient.GetVirtualSelectedParentChainFromBlock(
 		chain1TipHashString, true)
 	if err != nil {
 		t.Fatalf("GetVirtualSelectedParentChainFromBlock failed: %s", err)

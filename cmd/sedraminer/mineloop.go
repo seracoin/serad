@@ -2,18 +2,18 @@ package main
 
 import (
 	nativeerrors "errors"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/version"
 	"math/rand"
 	"sync/atomic"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/cmd/sedraminer/templatemanager"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/pow"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/cmd/seraminer/templatemanager"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/pow"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/util"
 	"github.com/pkg/errors"
 )
 
@@ -176,7 +176,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 		}
 		if !isSynced && !mineWhenNotSynced {
 			if shouldLog {
-				log.Warnf("sedrad is not synced. Skipping current block template")
+				log.Warnf("serad is not synced. Skipping current block template")
 			}
 			time.Sleep(sleepTimeWhenNotSynced)
 			continue
@@ -188,7 +188,7 @@ func getBlockForMining(mineWhenNotSynced bool) (*externalapi.DomainBlock, *pow.S
 
 func templatesLoop(client *minerClient, miningAddr util.Address, errChan chan error) {
 	getBlockTemplate := func() {
-		template, err := client.GetBlockTemplate(miningAddr.String(), "sedraminer-"+version.Version())
+		template, err := client.GetBlockTemplate(miningAddr.String(), "seraminer-"+version.Version())
 		if nativeerrors.Is(err, router.ErrTimeout) {
 			log.Warnf("Got timeout while requesting block template from %s: %s", client.Address(), err)
 			reconnectErr := client.Reconnect()

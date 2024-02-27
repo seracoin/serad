@@ -30,11 +30,11 @@ func InterruptListener() chan struct{} {
 		// channel to notify the caller.
 		select {
 		case sig := <-interruptChannel:
-			sdrdLog.Infof("Received signal (%s). Shutting down...",
+			sradLog.Infof("Received signal (%s). Shutting down...",
 				sig)
 
 		case <-ShutdownRequestChannel:
-			sdrdLog.Info("Shutdown requested. Shutting down...")
+			sradLog.Info("Shutdown requested. Shutting down...")
 		}
 		close(c)
 
@@ -44,11 +44,11 @@ func InterruptListener() chan struct{} {
 		for {
 			select {
 			case sig := <-interruptChannel:
-				sdrdLog.Infof("Received signal (%s). Already "+
+				sradLog.Infof("Received signal (%s). Already "+
 					"shutting down...", sig)
 
 			case <-ShutdownRequestChannel:
-				sdrdLog.Info("Shutdown requested. Already " +
+				sradLog.Info("Shutdown requested. Already " +
 					"shutting down...")
 			}
 		}

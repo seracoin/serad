@@ -2,10 +2,10 @@ package mempool
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 )
 
 func (mp *mempool) validateTransactionPreUTXOEntry(transaction *externalapi.DomainTransaction) error {
@@ -54,7 +54,7 @@ func (mp *mempool) validateTransactionInContext(transaction *externalapi.DomainT
 	}
 
 	numExtraOuts := len(transaction.Outputs) - len(transaction.Inputs)
-	if !hasCoinbaseInput && numExtraOuts > 2 && transaction.Fee < uint64(numExtraOuts)*constants.SeepPerSedra {
+	if !hasCoinbaseInput && numExtraOuts > 2 && transaction.Fee < uint64(numExtraOuts)*constants.SeepPerSera {
 		log.Warnf("Rejected spam tx %s from mempool (%d outputs)", consensushashing.TransactionID(transaction), len(transaction.Outputs))
 		return transactionRuleError(RejectSpamTx, fmt.Sprintf("Rejected spam tx %s from mempool", consensushashing.TransactionID(transaction)))
 	}

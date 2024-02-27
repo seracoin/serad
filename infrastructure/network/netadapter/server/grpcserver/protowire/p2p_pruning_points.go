@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_PruningPoints) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_PruningPoints) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_PruningPoints is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_PruningPoints is nil")
 	}
 
 	if x.PruningPoints == nil {
@@ -27,7 +27,7 @@ func (x *SedradMessage_PruningPoints) toAppMessage() (appmessage.Message, error)
 	}, nil
 }
 
-func (x *SedradMessage_PruningPoints) fromAppMessage(msgPruningPoints *appmessage.MsgPruningPoints) error {
+func (x *SeradMessage_PruningPoints) fromAppMessage(msgPruningPoints *appmessage.MsgPruningPoints) error {
 	blockHeaders := make([]*BlockHeader, len(msgPruningPoints.Headers))
 	for i, blockHeader := range msgPruningPoints.Headers {
 		blockHeaders[i] = &BlockHeader{}

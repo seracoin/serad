@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgUnexpectedPruningPoint represents a sedra UnexpectedPruningPoint message
+// MsgUnexpectedPruningPoint represents a sera UnexpectedPruningPoint message
 type MsgUnexpectedPruningPoint struct {
 	baseMessage
 }
@@ -10,7 +10,7 @@ func (msg *MsgUnexpectedPruningPoint) Command() MessageCommand {
 	return CmdUnexpectedPruningPoint
 }
 
-// NewMsgUnexpectedPruningPoint returns a new sedra UnexpectedPruningPoint message
+// NewMsgUnexpectedPruningPoint returns a new sera UnexpectedPruningPoint message
 func NewMsgUnexpectedPruningPoint() *MsgUnexpectedPruningPoint {
 	return &MsgUnexpectedPruningPoint{}
 }

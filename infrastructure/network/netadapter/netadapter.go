@@ -4,12 +4,12 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/id"
+	routerpkg "github.com/seracoin/serad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server/grpcserver"
 	"github.com/pkg/errors"
 )
 

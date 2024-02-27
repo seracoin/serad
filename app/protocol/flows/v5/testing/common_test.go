@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
 	"github.com/pkg/errors"
 )
 

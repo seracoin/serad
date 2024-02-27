@@ -2,12 +2,12 @@ package server
 
 import (
 	"context"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet/serialization"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient"
 	"github.com/pkg/errors"
 	"time"
 )
@@ -38,7 +38,7 @@ func (s *server) broadcast(transactions [][]byte, isDomain bool) ([]string, erro
 				return nil, err
 			}
 		} else if !isDomain { //default in proto3 is false
-			tx, err = libsedrawallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
+			tx, err = libserawallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
 			if err != nil {
 				return nil, err
 			}

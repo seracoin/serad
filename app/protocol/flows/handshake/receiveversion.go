@@ -1,12 +1,12 @@
 package handshake
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/protocol/common"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

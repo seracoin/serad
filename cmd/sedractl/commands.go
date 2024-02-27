@@ -5,42 +5,42 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server/grpcserver/protowire"
 )
 
 var commandTypes = []reflect.Type{
-	reflect.TypeOf(protowire.SedradMessage_AddPeerRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetConnectedPeerInfoRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetPeerAddressesRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetCurrentNetworkRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetInfoRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_AddPeerRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetConnectedPeerInfoRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetPeerAddressesRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetCurrentNetworkRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetInfoRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetBlockRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBlocksRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetHeadersRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBlockCountRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBlockDagInfoRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetSelectedTipHashRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetVirtualSelectedParentBlueScoreRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetVirtualSelectedParentChainFromBlockRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_ResolveFinalityConflictRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_EstimateNetworkHashesPerSecondRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetBlockRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetBlocksRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetHeadersRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetBlockCountRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetBlockDagInfoRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetSelectedTipHashRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetVirtualSelectedParentBlueScoreRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetVirtualSelectedParentChainFromBlockRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_ResolveFinalityConflictRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_EstimateNetworkHashesPerSecondRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetBlockTemplateRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_SubmitBlockRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetBlockTemplateRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_SubmitBlockRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetMempoolEntryRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetMempoolEntriesRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetMempoolEntriesByAddressesRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetMempoolEntryRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetMempoolEntriesRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetMempoolEntriesByAddressesRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_SubmitTransactionRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_SubmitTransactionRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_GetUtxosByAddressesRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetBalanceByAddressRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_GetCoinSupplyRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetUtxosByAddressesRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetBalanceByAddressRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_GetCoinSupplyRequest{}),
 
-	reflect.TypeOf(protowire.SedradMessage_BanRequest{}),
-	reflect.TypeOf(protowire.SedradMessage_UnbanRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_BanRequest{}),
+	reflect.TypeOf(protowire.SeradMessage_UnbanRequest{}),
 }
 
 type commandDescription struct {

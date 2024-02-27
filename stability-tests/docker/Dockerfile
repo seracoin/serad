@@ -1,14 +1,14 @@
-ARG SEDRAD_IMAGE
-ARG SEDRAMINER_IMAGE
+ARG SERAD_IMAGE
+ARG SERAMINER_IMAGE
 
-FROM ${SEDRAD_IMAGE} as sedrad
-FROM ${SEDRAMINER_IMAGE} as sedraminer
+FROM ${SERAD_IMAGE} as serad
+FROM ${SERAMINER_IMAGE} as seraminer
 
 FROM golang:1.19-alpine
 
-RUN mkdir -p /go/src/github.com/sedracoin/sedrad
+RUN mkdir -p /go/src/github.com/seracoin/serad
 
-WORKDIR /go/src/github.com/sedracoin/sedrad
+WORKDIR /go/src/github.com/seracoin/serad
 
 RUN apk add bash build-base git
 
@@ -19,11 +19,11 @@ RUN go mod download
 
 COPY . .
 
-COPY --from=sedrad /app/ /app/
-COPY --from=sedraminer /app/ /app/
+COPY --from=serad /app/ /app/
+COPY --from=seraminer /app/ /app/
 ENV PATH="/app:${PATH}"
 
-WORKDIR /go/src/github.com/sedracoin/sedrad/stability-tests
+WORKDIR /go/src/github.com/seracoin/serad/stability-tests
 
 RUN go install ./...
 

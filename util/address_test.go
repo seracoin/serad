@@ -12,7 +12,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 )
 
 func TestAddresses(t *testing.T) {
@@ -29,11 +29,11 @@ func TestAddresses(t *testing.T) {
 		// Positive P2PK tests.
 		{
 			name:    "mainnet p2pk",
-			addr:    "sedra:qr35ennsep3hxfe7lnz5ee7j5jgmkjswsn35ennsep3hxfe7ln35cdv0dy335",
-			encoded: "sedra:qr35ennsep3hxfe7lnz5ee7j5jgmkjswsn35ennsep3hxfe7ln35cdv0dy335",
+			addr:    "sera:qr35ennsep3hxfe7lnz5ee7j5jgmkjswsn35ennsep3hxfe7ln35cdv0dy335",
+			encoded: "sera:qr35ennsep3hxfe7lnz5ee7j5jgmkjswsn35ennsep3hxfe7ln35cdv0dy335",
 			valid:   true,
 			result: util.TstAddressPubKey(
-				util.Bech32PrefixSedra,
+				util.Bech32PrefixSera,
 				[util.PublicKeySize]byte{
 					0xe3, 0x4c, 0xce, 0x70, 0xc8, 0x63, 0x73, 0x27, 0x3e, 0xfc,
 					0xc5, 0x4c, 0xe7, 0xd2, 0xa4, 0x91, 0xbb, 0x4a, 0x0e, 0x84,
@@ -46,18 +46,18 @@ func TestAddresses(t *testing.T) {
 					0xc5, 0x4c, 0xe7, 0xd2, 0xa4, 0x91, 0xbb, 0x4a, 0x0e, 0x84,
 					0xe3, 0x4c, 0xce, 0x70, 0xc8, 0x63, 0x73, 0x27, 0x3e, 0xfc,
 					0xe3, 0x4c}
-				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSedra)
+				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSera)
 			},
 			passedPrefix:   util.Bech32PrefixUnknown,
-			expectedPrefix: util.Bech32PrefixSedra,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 		{
 			name:    "mainnet p2pk 2",
-			addr:    "sedra:qq80qvqs0lfxuzmt7sz3909ze6camq9d4t35ennsep3hxfe7ln35cvfqgz3z8",
-			encoded: "sedra:qq80qvqs0lfxuzmt7sz3909ze6camq9d4t35ennsep3hxfe7ln35cvfqgz3z8",
+			addr:    "sera:qq80qvqs0lfxuzmt7sz3909ze6camq9d4t35ennsep3hxfe7ln35cvfqgz3z8",
+			encoded: "sera:qq80qvqs0lfxuzmt7sz3909ze6camq9d4t35ennsep3hxfe7ln35cvfqgz3z8",
 			valid:   true,
 			result: util.TstAddressPubKey(
-				util.Bech32PrefixSedra,
+				util.Bech32PrefixSera,
 				[util.PublicKeySize]byte{
 					0x0e, 0xf0, 0x30, 0x10, 0x7f, 0xd2, 0x6e, 0x0b, 0x6b, 0xf4,
 					0x05, 0x12, 0xbc, 0xa2, 0xce, 0xb1, 0xdd, 0x80, 0xad, 0xaa,
@@ -71,18 +71,18 @@ func TestAddresses(t *testing.T) {
 					0xe3, 0x4c, 0xce, 0x70, 0xc8, 0x63, 0x73, 0x27, 0x3e, 0xfc,
 					0xe3, 0x4c,
 				}
-				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSedra)
+				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSera)
 			},
-			passedPrefix:   util.Bech32PrefixSedra,
-			expectedPrefix: util.Bech32PrefixSedra,
+			passedPrefix:   util.Bech32PrefixSera,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 		{
 			name:    "testnet p2pk",
-			addr:    "sedratest:qputx94qseratdmjs0j395mq8u03er0x3l35ennsep3hxfe7ln35ckquw528z",
-			encoded: "sedratest:qputx94qseratdmjs0j395mq8u03er0x3l35ennsep3hxfe7ln35ckquw528z",
+			addr:    "seratest:qputx94qseratdmjs0j395mq8u03er0x3l35ennsep3hxfe7ln35ckquw528z",
+			encoded: "seratest:qputx94qseratdmjs0j395mq8u03er0x3l35ennsep3hxfe7ln35ckquw528z",
 			valid:   true,
 			result: util.TstAddressPubKey(
-				util.Bech32PrefixSedraTest,
+				util.Bech32PrefixSeraTest,
 				[util.PublicKeySize]byte{
 					0x78, 0xb3, 0x16, 0xa0, 0x86, 0x47, 0xd5, 0xb7, 0x72, 0x83,
 					0xe5, 0x12, 0xd3, 0x60, 0x3f, 0x1f, 0x1c, 0x8d, 0xe6, 0x8f,
@@ -96,20 +96,20 @@ func TestAddresses(t *testing.T) {
 					0xe3, 0x4c, 0xce, 0x70, 0xc8, 0x63, 0x73, 0x27, 0x3e, 0xfc,
 					0xe3, 0x4c,
 				}
-				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSedraTest)
+				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSeraTest)
 			},
-			passedPrefix:   util.Bech32PrefixSedraTest,
-			expectedPrefix: util.Bech32PrefixSedraTest,
+			passedPrefix:   util.Bech32PrefixSeraTest,
+			expectedPrefix: util.Bech32PrefixSeraTest,
 		},
 
 		// ECDSA P2PK tests.
 		{
 			name:    "mainnet ecdsa p2pk",
-			addr:    "sedra:qyp0r5mcq4rd5grj3652ra09u5dcgwqq9ntuswp247nama5quyj40eq03sc2dkx",
-			encoded: "sedra:qyp0r5mcq4rd5grj3652ra09u5dcgwqq9ntuswp247nama5quyj40eq03sc2dkx",
+			addr:    "sera:qyp0r5mcq4rd5grj3652ra09u5dcgwqq9ntuswp247nama5quyj40eq03sc2dkx",
+			encoded: "sera:qyp0r5mcq4rd5grj3652ra09u5dcgwqq9ntuswp247nama5quyj40eq03sc2dkx",
 			valid:   true,
 			result: util.TstAddressPubKeyECDSA(
-				util.Bech32PrefixSedra,
+				util.Bech32PrefixSera,
 				[util.PublicKeySizeECDSA]byte{
 					0x02, 0xf1, 0xd3, 0x78, 0x05, 0x46, 0xda, 0x20, 0x72, 0x8e, 0xa8, 0xa1, 0xf5, 0xe5, 0xe5, 0x1b, 0x84, 0x38, 0x00, 0x2c, 0xd7, 0xc8, 0x38, 0x2a, 0xaf, 0xa7, 0xdd, 0xf6, 0x80, 0xe1, 0x25, 0x57, 0xe4,
 				}),
@@ -117,10 +117,10 @@ func TestAddresses(t *testing.T) {
 				publicKey := []byte{
 					0x02, 0xf1, 0xd3, 0x78, 0x05, 0x46, 0xda, 0x20, 0x72, 0x8e, 0xa8, 0xa1, 0xf5, 0xe5, 0xe5, 0x1b, 0x84, 0x38, 0x00, 0x2c, 0xd7, 0xc8, 0x38, 0x2a, 0xaf, 0xa7, 0xdd, 0xf6, 0x80, 0xe1, 0x25, 0x57, 0xe4,
 				}
-				return util.NewAddressPublicKeyECDSA(publicKey, util.Bech32PrefixSedra)
+				return util.NewAddressPublicKeyECDSA(publicKey, util.Bech32PrefixSera)
 			},
 			passedPrefix:   util.Bech32PrefixUnknown,
-			expectedPrefix: util.Bech32PrefixSedra,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 
 		// Negative P2PK tests.
@@ -133,27 +133,27 @@ func TestAddresses(t *testing.T) {
 					0x00, 0x0e, 0xf0, 0x30, 0x10, 0x7f, 0xd2, 0x6e, 0x0b, 0x6b,
 					0xf4, 0x05, 0x12, 0xbc, 0xa2, 0xce, 0xb1, 0xdd, 0x80, 0xad,
 					0xaa}
-				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSedra)
+				return util.NewAddressPublicKey(publicKey, util.Bech32PrefixSera)
 			},
-			passedPrefix:   util.Bech32PrefixSedra,
-			expectedPrefix: util.Bech32PrefixSedra,
+			passedPrefix:   util.Bech32PrefixSera,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 		{
 			name:           "p2pk bad checksum",
-			addr:           "sedra:qr35ennsep3hxfe7lnz5ee7j5jgmkjswss74as46gx",
+			addr:           "sera:qr35ennsep3hxfe7lnz5ee7j5jgmkjswss74as46gx",
 			valid:          false,
-			passedPrefix:   util.Bech32PrefixSedra,
-			expectedPrefix: util.Bech32PrefixSedra,
+			passedPrefix:   util.Bech32PrefixSera,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 
 		// Positive P2SH tests.
 		{
 			name:    "mainnet p2sh",
-			addr:    "sedra:prq20q4qd9ulr044cauyy9wtpeupqpjv67pn2vyc6acly7xqkrjdzmh8rj9f4",
-			encoded: "sedra:prq20q4qd9ulr044cauyy9wtpeupqpjv67pn2vyc6acly7xqkrjdzmh8rj9f4",
+			addr:    "sera:prq20q4qd9ulr044cauyy9wtpeupqpjv67pn2vyc6acly7xqkrjdzmh8rj9f4",
+			encoded: "sera:prq20q4qd9ulr044cauyy9wtpeupqpjv67pn2vyc6acly7xqkrjdzmh8rj9f4",
 			valid:   true,
 			result: util.TstAddressScriptHash(
-				util.Bech32PrefixSedra,
+				util.Bech32PrefixSera,
 				[blake2b.Size256]byte{
 					0xc0, 0xa7, 0x82, 0xa0, 0x69, 0x79, 0xf1, 0xbe,
 					0xb5, 0xc7, 0x78, 0x42, 0x15, 0xcb, 0x0e, 0x78,
@@ -183,18 +183,18 @@ func TestAddresses(t *testing.T) {
 					0xdb, 0xfb, 0x1e, 0x75, 0x4e, 0x35, 0xfa, 0x1c, 0x78, 0x44,
 					0xc4, 0x1f, 0x32, 0x2a, 0x18, 0x63, 0xd4, 0x62, 0x13, 0x53,
 					0xae}
-				return util.NewAddressScriptHash(script, util.Bech32PrefixSedra)
+				return util.NewAddressScriptHash(script, util.Bech32PrefixSera)
 			},
-			passedPrefix:   util.Bech32PrefixSedra,
-			expectedPrefix: util.Bech32PrefixSedra,
+			passedPrefix:   util.Bech32PrefixSera,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 		{
 			name:    "mainnet p2sh 2",
-			addr:    "sedra:pr5vxqxg0xrwl2zvxlq9rxffqx00sm44kn5vxqxg0xrwl2zvxl5vxyhvsake2",
-			encoded: "sedra:pr5vxqxg0xrwl2zvxlq9rxffqx00sm44kn5vxqxg0xrwl2zvxl5vxyhvsake2",
+			addr:    "sera:pr5vxqxg0xrwl2zvxlq9rxffqx00sm44kn5vxqxg0xrwl2zvxl5vxyhvsake2",
+			encoded: "sera:pr5vxqxg0xrwl2zvxlq9rxffqx00sm44kn5vxqxg0xrwl2zvxl5vxyhvsake2",
 			valid:   true,
 			result: util.TstAddressScriptHash(
-				util.Bech32PrefixSedra,
+				util.Bech32PrefixSera,
 				[blake2b.Size256]byte{
 					0xe8, 0xc3, 0x00, 0xc8, 0x79, 0x86, 0xef, 0xa8, 0x4c, 0x37,
 					0xc0, 0x51, 0x99, 0x29, 0x01, 0x9e, 0xf8, 0x6e, 0xb5, 0xb4,
@@ -208,18 +208,18 @@ func TestAddresses(t *testing.T) {
 					0xe8, 0xc3, 0x00, 0xc8, 0x79, 0x86, 0xef, 0xa8, 0x4c, 0x37,
 					0xe8, 0xc3,
 				}
-				return util.NewAddressScriptHashFromHash(hash, util.Bech32PrefixSedra)
+				return util.NewAddressScriptHashFromHash(hash, util.Bech32PrefixSera)
 			},
-			passedPrefix:   util.Bech32PrefixSedra,
-			expectedPrefix: util.Bech32PrefixSedra,
+			passedPrefix:   util.Bech32PrefixSera,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 		{
 			name:    "testnet p2sh",
-			addr:    "sedratest:przhjdpv93xfygpqtckdc2zkzuzqeyj2pt5vxqxg0xrwl2zvxl5vx35yyy2h9",
-			encoded: "sedratest:przhjdpv93xfygpqtckdc2zkzuzqeyj2pt5vxqxg0xrwl2zvxl5vx35yyy2h9",
+			addr:    "seratest:przhjdpv93xfygpqtckdc2zkzuzqeyj2pt5vxqxg0xrwl2zvxl5vx35yyy2h9",
+			encoded: "seratest:przhjdpv93xfygpqtckdc2zkzuzqeyj2pt5vxqxg0xrwl2zvxl5vx35yyy2h9",
 			valid:   true,
 			result: util.TstAddressScriptHash(
-				util.Bech32PrefixSedraTest,
+				util.Bech32PrefixSeraTest,
 				[blake2b.Size256]byte{
 					0xc5, 0x79, 0x34, 0x2c, 0x2c, 0x4c, 0x92, 0x20, 0x20, 0x5e,
 					0x2c, 0xdc, 0x28, 0x56, 0x17, 0x04, 0x0c, 0x92, 0x4a, 0x0a,
@@ -233,10 +233,10 @@ func TestAddresses(t *testing.T) {
 					0xe8, 0xc3, 0x00, 0xc8, 0x79, 0x86, 0xef, 0xa8, 0x4c, 0x37,
 					0xe8, 0xc3,
 				}
-				return util.NewAddressScriptHashFromHash(hash, util.Bech32PrefixSedraTest)
+				return util.NewAddressScriptHashFromHash(hash, util.Bech32PrefixSeraTest)
 			},
-			passedPrefix:   util.Bech32PrefixSedraTest,
-			expectedPrefix: util.Bech32PrefixSedraTest,
+			passedPrefix:   util.Bech32PrefixSeraTest,
+			expectedPrefix: util.Bech32PrefixSeraTest,
 		},
 
 		// Negative P2SH tests.
@@ -249,10 +249,10 @@ func TestAddresses(t *testing.T) {
 					0x00, 0xf8, 0x15, 0xb0, 0x36, 0xd9, 0xbb, 0xbc, 0xe5, 0xe9,
 					0xf2, 0xa0, 0x0a, 0xbd, 0x1b, 0xf3, 0xdc, 0x91, 0xe9, 0x55,
 					0x10}
-				return util.NewAddressScriptHashFromHash(hash, util.Bech32PrefixSedra)
+				return util.NewAddressScriptHashFromHash(hash, util.Bech32PrefixSera)
 			},
-			passedPrefix:   util.Bech32PrefixSedra,
-			expectedPrefix: util.Bech32PrefixSedra,
+			passedPrefix:   util.Bech32PrefixSera,
+			expectedPrefix: util.Bech32PrefixSera,
 		},
 	}
 
@@ -382,18 +382,18 @@ func TestDecodeAddressErrorConditions(t *testing.T) {
 			"decoded address's prefix could not be parsed",
 		},
 		{
-			"sedrasim:raskzctpv9skzctpv9skzctpv9skzctpvy37ct7zafpv9skzctpvymmnd3gh8",
-			util.Bech32PrefixSedraSim,
+			"serasim:raskzctpv9skzctpv9skzctpv9skzctpvy37ct7zafpv9skzctpvymmnd3gh8",
+			util.Bech32PrefixSeraSim,
 			"unknown address type",
 		},
 		{
-			"sedrasim:raskzcg58mth0an",
-			util.Bech32PrefixSedraSim,
+			"serasim:raskzcg58mth0an",
+			util.Bech32PrefixSeraSim,
 			"unknown address type",
 		},
 		{
-			"sedratest:qqq65mvpxcmajeq44n2n8vfn6u9f8l4zsy0xez0tzw",
-			util.Bech32PrefixSedra,
+			"seratest:qqq65mvpxcmajeq44n2n8vfn6u9f8l4zsy0xez0tzw",
+			util.Bech32PrefixSera,
 			"decoded address is of wrong network",
 		},
 	}
@@ -415,9 +415,9 @@ func TestParsePrefix(t *testing.T) {
 		expectedPrefix util.Bech32Prefix
 		expectedError  bool
 	}{
-		{"sedra", util.Bech32PrefixSedra, false},
-		{"sedratest", util.Bech32PrefixSedraTest, false},
-		{"sedrasim", util.Bech32PrefixSedraSim, false},
+		{"sera", util.Bech32PrefixSera, false},
+		{"seratest", util.Bech32PrefixSeraTest, false},
+		{"serasim", util.Bech32PrefixSeraSim, false},
 		{"blabla", util.Bech32PrefixUnknown, true},
 		{"unknown", util.Bech32PrefixUnknown, true},
 		{"", util.Bech32PrefixUnknown, true},
@@ -442,9 +442,9 @@ func TestPrefixToString(t *testing.T) {
 		prefix            util.Bech32Prefix
 		expectedPrefixStr string
 	}{
-		{util.Bech32PrefixSedra, "sedra"},
-		{util.Bech32PrefixSedraTest, "sedratest"},
-		{util.Bech32PrefixSedraSim, "sedrasim"},
+		{util.Bech32PrefixSera, "sera"},
+		{util.Bech32PrefixSeraTest, "seratest"},
+		{util.Bech32PrefixSeraSim, "serasim"},
 		{util.Bech32PrefixUnknown, ""},
 	}
 

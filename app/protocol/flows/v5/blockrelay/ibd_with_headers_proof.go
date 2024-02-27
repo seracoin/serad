@@ -2,12 +2,12 @@ package blockrelay
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/protocol/common"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 	"github.com/pkg/errors"
 	"time"
 )

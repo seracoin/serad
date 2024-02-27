@@ -1,9 +1,9 @@
 package difficultymanager
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/util/difficulty"
 	"math"
 	"math/big"
 )

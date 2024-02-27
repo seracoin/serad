@@ -12,11 +12,11 @@ const (
 	// MaxScriptPublicKeyVersion is the current latest supported public key script version.
 	MaxScriptPublicKeyVersion uint16 = 0
 
-	// SeepPerSedra is the number of seep in one sedra (1 SDR).
-	SeepPerSedra = 100_000_000
+	// SeepPerSera is the number of seep in one sera (1 SRA).
+	SeepPerSera = 100_000_000
 
 	// MaxSeep is the maximum transaction amount allowed in seep.
-	MaxSeep = uint64(29_000_000_000 * SeepPerSedra)
+	MaxSeep = uint64(29_000_000_000 * SeepPerSera)
 
 	// MaxTxInSequenceNum is the maximum sequence number the sequence field
 	// of a transaction input can be.

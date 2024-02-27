@@ -1,8 +1,8 @@
 package reachabilitymanager
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
 // orderedTreeNodeSet is an ordered set of model.DomainHash ordered by the respectful intervals.

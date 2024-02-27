@@ -5,23 +5,23 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	utxopkg "github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
+	utxopkg "github.com/seracoin/serad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient"
+	"github.com/seracoin/serad/stability-tests/common/mine"
+	"github.com/seracoin/serad/util"
 )
 
 const (
-	payAddress                       = "sedrasim:qzuax2jhawd354e54thhpd9m9wg03pdzwjlpr4vtq3k7xrpumhhtwa2hkr3ep"
+	payAddress                       = "serasim:qzuax2jhawd354e54thhpd9m9wg03pdzwjlpr4vtq3k7xrpumhhtwa2hkr3ep"
 	payAddressPrivateKey             = "05d8f681e954a550395ee2297fc1a14f6e801f554c0b9d48cd7165a7ea72ff77"
 	fundingCoinbaseTransactionAmount = 1000
 	outputsPerTransaction            = 3

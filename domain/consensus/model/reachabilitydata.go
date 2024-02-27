@@ -3,7 +3,7 @@ package model
 import (
 	"fmt"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
 // MutableReachabilityData represents a node in the reachability tree

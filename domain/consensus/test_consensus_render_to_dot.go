@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model"
 )
 
 // RenderDAGToDot is a helper function for debugging tests.

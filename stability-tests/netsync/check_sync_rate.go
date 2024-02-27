@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
+	"github.com/seracoin/serad/stability-tests/common/rpc"
 
 	"github.com/pkg/errors"
 )

@@ -1,11 +1,11 @@
 package rpc
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/rpc/rpccontext"
-	"github.com/sedracoin/sedrad/app/rpc/rpchandlers"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/rpc/rpccontext"
+	"github.com/seracoin/serad/app/rpc/rpchandlers"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

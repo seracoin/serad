@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
 // FinalityStore represents a store for finality data

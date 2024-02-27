@@ -4,8 +4,8 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 

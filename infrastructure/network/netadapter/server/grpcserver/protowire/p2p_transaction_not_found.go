@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_TransactionNotFound) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_TransactionNotFound) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_TransactionNotFound is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_TransactionNotFound is nil")
 	}
 	return x.TransactionNotFound.toAppMessage()
 }
@@ -23,7 +23,7 @@ func (x *TransactionNotFoundMessage) toAppMessage() (appmessage.Message, error) 
 	return appmessage.NewMsgTransactionNotFound(id), nil
 }
 
-func (x *SedradMessage_TransactionNotFound) fromAppMessage(msgTransactionsNotFound *appmessage.MsgTransactionNotFound) error {
+func (x *SeradMessage_TransactionNotFound) fromAppMessage(msgTransactionsNotFound *appmessage.MsgTransactionNotFound) error {
 	x.TransactionNotFound = &TransactionNotFoundMessage{
 		Id: domainTransactionIDToProto(msgTransactionsNotFound.ID),
 	}

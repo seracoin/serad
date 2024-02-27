@@ -5,13 +5,13 @@ import (
 	"sort"
 	"time"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-var keyChains = []uint8{libsedrawallet.ExternalKeychain, libsedrawallet.InternalKeychain}
+var keyChains = []uint8{libserawallet.ExternalKeychain, libserawallet.InternalKeychain}
 
 type walletAddressSet map[string]*walletAddress
 
@@ -188,7 +188,7 @@ func (s *server) updateAddressesAndLastUsedIndexes(requestedAddressSet walletAdd
 
 		s.addressSet[entry.Address] = walletAddress
 
-		if walletAddress.keyChain == libsedrawallet.ExternalKeychain {
+		if walletAddress.keyChain == libserawallet.ExternalKeychain {
 			if walletAddress.index > lastUsedExternalIndex {
 				lastUsedExternalIndex = walletAddress.index
 			}

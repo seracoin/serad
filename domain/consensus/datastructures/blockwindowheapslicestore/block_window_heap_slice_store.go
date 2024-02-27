@@ -1,11 +1,11 @@
 package blockwindowheapslicestore
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/lrucachehashandwindowsizetoblockghostdagdatahashpairs"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/util/staging"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/lrucachehashandwindowsizetoblockghostdagdatahashpairs"
+	"github.com/seracoin/serad/infrastructure/db/database"
+	"github.com/seracoin/serad/util/staging"
 	"github.com/pkg/errors"
 )
 

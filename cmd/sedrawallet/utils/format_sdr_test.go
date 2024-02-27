@@ -2,8 +2,8 @@ package utils
 
 import "testing"
 
-// Takes in a string representation of the Sdr value to convert to Seep
-func TestSdrToSeep(t *testing.T) {
+// Takes in a string representation of the Sra value to convert to Seep
+func TestSraToSeep(t *testing.T) {
 	type testVector struct {
 		originalAmount  string
 		convertedAmount uint64
@@ -18,7 +18,7 @@ func TestSdrToSeep(t *testing.T) {
 	}
 
 	for _, currentTestVector := range validCases {
-		convertedAmount, err := SdrToSeep(currentTestVector.originalAmount)
+		convertedAmount, err := SraToSeep(currentTestVector.originalAmount)
 
 		if err != nil {
 			t.Error(err)
@@ -35,7 +35,7 @@ func TestSdrToSeep(t *testing.T) {
 	}
 
 	for _, currentTestVector := range invalidCases {
-		_, err := SdrToSeep(currentTestVector)
+		_, err := SraToSeep(currentTestVector)
 
 		if err == nil {
 			t.Errorf("Expected an error but succeeded validation for test case %s", currentTestVector)
@@ -57,7 +57,7 @@ func TestValidateAmountFormat(t *testing.T) {
 	}
 
 	for _, testCase := range validCases {
-		err := validateSDRAmountFormat(testCase)
+		err := validateSRAAmountFormat(testCase)
 
 		if err != nil {
 			t.Error(err)
@@ -77,11 +77,11 @@ func TestValidateAmountFormat(t *testing.T) {
 		"111111111111111111111", // all digits
 		"111111111111A11111111", // non-period/non-digit where decimal would be
 		"000000000000.00000000", // all zeros
-		"sedra",                 // all text
+		"sera",                 // all text
 	}
 
 	for _, testCase := range invalidCases {
-		err := validateSDRAmountFormat(testCase)
+		err := validateSRAAmountFormat(testCase)
 
 		if err == nil {
 			t.Errorf("Expected an error but succeeded validation for test case %s", testCase)

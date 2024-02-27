@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_ResolveFinalityConflictRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_ResolveFinalityConflictRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_ResolveFinalityConflictRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_ResolveFinalityConflictRequest is nil")
 	}
 	return x.ResolveFinalityConflictRequest.toAppMessage()
 }
 
-func (x *SedradMessage_ResolveFinalityConflictRequest) fromAppMessage(message *appmessage.ResolveFinalityConflictRequestMessage) error {
+func (x *SeradMessage_ResolveFinalityConflictRequest) fromAppMessage(message *appmessage.ResolveFinalityConflictRequestMessage) error {
 	x.ResolveFinalityConflictRequest = &ResolveFinalityConflictRequestMessage{
 		FinalityBlockHash: message.FinalityBlockHash,
 	}
@@ -28,14 +28,14 @@ func (x *ResolveFinalityConflictRequestMessage) toAppMessage() (appmessage.Messa
 	}, nil
 }
 
-func (x *SedradMessage_ResolveFinalityConflictResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_ResolveFinalityConflictResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_ResolveFinalityConflictResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_ResolveFinalityConflictResponse is nil")
 	}
 	return x.ResolveFinalityConflictResponse.toAppMessage()
 }
 
-func (x *SedradMessage_ResolveFinalityConflictResponse) fromAppMessage(message *appmessage.ResolveFinalityConflictResponseMessage) error {
+func (x *SeradMessage_ResolveFinalityConflictResponse) fromAppMessage(message *appmessage.ResolveFinalityConflictResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

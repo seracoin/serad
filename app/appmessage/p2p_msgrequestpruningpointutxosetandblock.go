@@ -1,10 +1,10 @@
 package appmessage
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
-// MsgRequestPruningPointUTXOSet represents a sedra RequestPruningPointUTXOSet message
+// MsgRequestPruningPointUTXOSet represents a sera RequestPruningPointUTXOSet message
 type MsgRequestPruningPointUTXOSet struct {
 	baseMessage
 	PruningPointHash *externalapi.DomainHash

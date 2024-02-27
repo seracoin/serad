@@ -2,7 +2,7 @@ package profiling
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/logger"
 	"net"
 	"net/http"
 	"os"
@@ -12,7 +12,7 @@ import (
 	// Required for profiling
 	_ "net/http/pprof"
 
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/util/panics"
 	"runtime"
 	"runtime/pprof"
 )

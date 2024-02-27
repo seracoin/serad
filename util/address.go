@@ -8,7 +8,7 @@ import (
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/blake2b"
 
-	"github.com/sedracoin/sedrad/util/bech32"
+	"github.com/seracoin/serad/util/bech32"
 )
 
 var (
@@ -40,24 +40,24 @@ const (
 	Bech32PrefixUnknown Bech32Prefix = iota
 
 	// Prefix for the main network.
-	Bech32PrefixSedra
+	Bech32PrefixSera
 
 	// Prefix for the dev network.
-	Bech32PrefixSedraDev
+	Bech32PrefixSeraDev
 
 	// Prefix for the test network.
-	Bech32PrefixSedraTest
+	Bech32PrefixSeraTest
 
 	// Prefix for the simulation network.
-	Bech32PrefixSedraSim
+	Bech32PrefixSeraSim
 )
 
 // Map from strings to Bech32 address prefix constants for parsing purposes.
 var stringsToBech32Prefixes = map[string]Bech32Prefix{
-	"sedra":     Bech32PrefixSedra,
-	"sedradev":  Bech32PrefixSedraDev,
-	"sedratest": Bech32PrefixSedraTest,
-	"sedrasim":  Bech32PrefixSedraSim,
+	"sera":     Bech32PrefixSera,
+	"seradev":  Bech32PrefixSeraDev,
+	"seratest": Bech32PrefixSeraTest,
+	"serasim":  Bech32PrefixSeraSim,
 }
 
 // ParsePrefix attempts to parse a Bech32 address prefix.
@@ -82,7 +82,7 @@ func (prefix Bech32Prefix) String() string {
 }
 
 // encodeAddress returns a human-readable payment address given a network prefix
-// and a payload which encodes the sedra network and address type. It is used
+// and a payload which encodes the sera network and address type. It is used
 // in both pay-to-pubkey (P2PK) and pay-to-script-hash (P2SH) address
 // encoding.
 func encodeAddress(prefix Bech32Prefix, payload []byte, version byte) string {
@@ -118,7 +118,7 @@ type Address interface {
 	Prefix() Bech32Prefix
 
 	// IsForPrefix returns whether or not the address is associated with the
-	// passed sedra network.
+	// passed sera network.
 	IsForPrefix(prefix Bech32Prefix) bool
 }
 
@@ -199,7 +199,7 @@ func (a *AddressPublicKey) ScriptAddress() []byte {
 }
 
 // IsForPrefix returns whether or not the pay-to-pubkey address is associated
-// with the passed sedra network.
+// with the passed sera network.
 func (a *AddressPublicKey) IsForPrefix(prefix Bech32Prefix) bool {
 	return a.prefix == prefix
 }
@@ -261,7 +261,7 @@ func (a *AddressPublicKeyECDSA) ScriptAddress() []byte {
 }
 
 // IsForPrefix returns whether or not the pay-to-pubkey address is associated
-// with the passed sedra network.
+// with the passed sera network.
 func (a *AddressPublicKeyECDSA) IsForPrefix(prefix Bech32Prefix) bool {
 	return a.prefix == prefix
 }
@@ -326,7 +326,7 @@ func (a *AddressScriptHash) ScriptAddress() []byte {
 }
 
 // IsForPrefix returns whether or not the pay-to-script-hash address is associated
-// with the passed sedra network.
+// with the passed sera network.
 func (a *AddressScriptHash) IsForPrefix(prefix Bech32Prefix) bool {
 	return a.prefix == prefix
 }

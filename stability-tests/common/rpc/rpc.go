@@ -3,10 +3,10 @@ package rpc
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/seracoin/serad/domain/dagconfig"
 )
 
 const defaultRPCServer = "localhost"

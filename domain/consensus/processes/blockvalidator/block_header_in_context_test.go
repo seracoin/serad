@@ -2,18 +2,18 @@ package blockvalidator_test
 
 import (
 	"errors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 	"math/big"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/blockheader"
+	"github.com/seracoin/serad/domain/consensus/utils/blockheader"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
 )
 
 func TestValidateMedianTime(t *testing.T) {

@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_TrustedData) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_TrustedData) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_TrustedDataMessage is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_TrustedDataMessage is nil")
 	}
 
 	daaWindow := make([]*appmessage.TrustedDataDAAHeader, len(x.TrustedData.DaaWindow))
@@ -43,7 +43,7 @@ func (x *SedradMessage_TrustedData) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_TrustedData) fromAppMessage(msgTrustedData *appmessage.MsgTrustedData) error {
+func (x *SeradMessage_TrustedData) fromAppMessage(msgTrustedData *appmessage.MsgTrustedData) error {
 	x.TrustedData = &TrustedDataMessage{
 		DaaWindow:    make([]*DaaBlockV4, len(msgTrustedData.DAAWindow)),
 		GhostdagData: make([]*BlockGhostdagDataHashPair, len(msgTrustedData.GHOSTDAGData)),

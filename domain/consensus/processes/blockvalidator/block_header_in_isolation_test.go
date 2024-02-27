@@ -1,18 +1,18 @@
 package blockvalidator_test
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
+	"github.com/seracoin/serad/domain/consensus/model/testapi"
 	"reflect"
 	"runtime"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/blockheader"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/blockheader"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/util/mstime"
 	"github.com/pkg/errors"
 )
 

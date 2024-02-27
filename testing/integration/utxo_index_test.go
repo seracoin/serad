@@ -4,20 +4,20 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/domain/consensus/utils/utxo"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionid"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionid"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/util"
 )
 
 func TestUTXOIndex(t *testing.T) {
-	// Setup a single sedrad instance
+	// Setup a single serad instance
 	harnessParams := &harnessParams{
 		p2pAddress:              p2pAddress1,
 		rpcAddress:              rpcAddress1,
@@ -25,17 +25,17 @@ func TestUTXOIndex(t *testing.T) {
 		miningAddressPrivateKey: miningAddress1PrivateKey,
 		utxoIndex:               true,
 	}
-	sedrad, teardown := setupHarness(t, harnessParams)
+	serad, teardown := setupHarness(t, harnessParams)
 	defer teardown()
 
 	// skip the first block because it's paying to genesis script,
 	// which contains no outputs
-	mineNextBlock(t, sedrad)
+	mineNextBlock(t, serad)
 
 	// Register for UTXO changes
 	const blockAmountToMine = 100
 	onUTXOsChangedChan := make(chan *appmessage.UTXOsChangedNotificationMessage, blockAmountToMine)
-	err := sedrad.rpcClient.RegisterForUTXOsChangedNotifications([]string{miningAddress1}, func(
+	err := serad.rpcClient.RegisterForUTXOsChangedNotifications([]string{miningAddress1}, func(
 		notification *appmessage.UTXOsChangedNotificationMessage) {
 
 		onUTXOsChangedChan <- notification
@@ -46,22 +46,22 @@ func TestUTXOIndex(t *testing.T) {
 
 	// Mine some blocks
 	for i := 0; i < blockAmountToMine; i++ {
-		mineNextBlock(t, sedrad)
+		mineNextBlock(t, serad)
 	}
 
 	//check if rewards corrosponds to circulating supply.
-	getCoinSupplyResponse, err := sedrad.rpcClient.GetCoinSupply()
+	getCoinSupplyResponse, err := serad.rpcClient.GetCoinSupply()
 	if err != nil {
 		t.Fatalf("Error Retriving Coin supply: %s", err)
 	}
 
-	rewardsMinedSeep := uint64(blockAmountToMine * constants.SeepPerSedra * 500)
-	getBlockCountResponse, err := sedrad.rpcClient.GetBlockCount()
+	rewardsMinedSeep := uint64(blockAmountToMine * constants.SeepPerSera * 500)
+	getBlockCountResponse, err := serad.rpcClient.GetBlockCount()
 	if err != nil {
 		t.Fatalf("Error Retriving BlockCount: %s", err)
 	}
 	rewardsMinedViaBlockCountSeep := uint64(
-		(getBlockCountResponse.BlockCount - 2) * constants.SeepPerSedra * 500, // -2 because of genesis and virtual.
+		(getBlockCountResponse.BlockCount - 2) * constants.SeepPerSera * 500, // -2 because of genesis and virtual.
 	)
 
 	if getCoinSupplyResponse.CirculatingSeep != rewardsMinedSeep {
@@ -89,14 +89,14 @@ func TestUTXOIndex(t *testing.T) {
 	const transactionAmountToSpend = 5
 	for i := 0; i < transactionAmountToSpend; i++ {
 		rpcTransaction := buildTransactionForUTXOIndexTest(t, notificationEntries[i])
-		_, err = sedrad.rpcClient.SubmitTransaction(rpcTransaction, false)
+		_, err = serad.rpcClient.SubmitTransaction(rpcTransaction, false)
 		if err != nil {
 			t.Fatalf("Error submitting transaction: %s", err)
 		}
 	}
 
 	// Mine a block to include the above transactions
-	mineNextBlock(t, sedrad)
+	mineNextBlock(t, serad)
 
 	// Make sure this block removed the UTXOs we spent
 	notification := <-onUTXOsChangedChan
@@ -128,7 +128,7 @@ func TestUTXOIndex(t *testing.T) {
 
 	// Get all the UTXOs and make sure the response is equivalent
 	// to the data collected via notifications
-	utxosByAddressesResponse, err := sedrad.rpcClient.GetUTXOsByAddresses([]string{miningAddress1})
+	utxosByAddressesResponse, err := serad.rpcClient.GetUTXOsByAddresses([]string{miningAddress1})
 	if err != nil {
 		t.Fatalf("Failed to get UTXOs: %s", err)
 	}
@@ -184,7 +184,7 @@ func buildTransactionForUTXOIndexTest(t *testing.T, entry *appmessage.UTXOsByAdd
 	txIns := make([]*appmessage.TxIn, 1)
 	txIns[0] = appmessage.NewTxIn(appmessage.NewOutpoint(transactionID, entry.Outpoint.Index), []byte{}, 0, 1)
 
-	payeeAddress, err := util.DecodeAddress(miningAddress1, util.Bech32PrefixSedraSim)
+	payeeAddress, err := util.DecodeAddress(miningAddress1, util.Bech32PrefixSeraSim)
 	if err != nil {
 		t.Fatalf("Error decoding payeeAddress: %+v", err)
 	}

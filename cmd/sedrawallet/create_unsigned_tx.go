@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/client"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/utils"
 )
 
 func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
@@ -20,7 +20,7 @@ func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
 	ctx, cancel := context.WithTimeout(context.Background(), daemonTimeout)
 	defer cancel()
 
-	sendAmountSeep, err := utils.SdrToSeep(conf.SendAmount)
+	sendAmountSeep, err := utils.SraToSeep(conf.SendAmount)
 
 	if err != nil {
 		return err

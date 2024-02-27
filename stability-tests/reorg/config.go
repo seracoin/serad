@@ -4,8 +4,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/stability-tests/common"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/stability-tests/common"
 
 	"github.com/jessevdk/go-flags"
 )

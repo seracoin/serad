@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_Ping) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_Ping) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_Ping is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_Ping is nil")
 	}
 	return x.Ping.toAppMessage()
 }
@@ -21,7 +21,7 @@ func (x *PingMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_Ping) fromAppMessage(msgPing *appmessage.MsgPing) error {
+func (x *SeradMessage_Ping) fromAppMessage(msgPing *appmessage.MsgPing) error {
 	x.Ping = &PingMessage{
 		Nonce: msgPing.Nonce,
 	}

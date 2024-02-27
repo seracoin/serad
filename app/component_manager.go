@@ -4,25 +4,25 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
+	"github.com/seracoin/serad/domain/miningmanager/mempool"
 
-	"github.com/sedracoin/sedrad/app/protocol"
-	"github.com/sedracoin/sedrad/app/rpc"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/utxoindex"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	infrastructuredatabase "github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/app/protocol"
+	"github.com/seracoin/serad/app/rpc"
+	"github.com/seracoin/serad/domain"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/utxoindex"
+	"github.com/seracoin/serad/infrastructure/config"
+	infrastructuredatabase "github.com/seracoin/serad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/network/addressmanager"
+	"github.com/seracoin/serad/infrastructure/network/connmanager"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/id"
+	"github.com/seracoin/serad/util/panics"
 )
 
-// ComponentManager is a wrapper for all the Sedrad Services
+// ComponentManager is a wrapper for all the Serad Services
 type ComponentManager struct {
 	cfg               *config.Config
 	addressManager    *addressmanager.AddressManager
@@ -34,14 +34,14 @@ type ComponentManager struct {
 	started, shutdown int32
 }
 
-// Start launches all the Sedrad Services.
+// Start launches all the Serad Services.
 func (a *ComponentManager) Start() {
 	// Already started?
 	if atomic.AddInt32(&a.started, 1) != 1 {
 		return
 	}
 
-	log.Trace("Starting sedrad")
+	log.Trace("Starting serad")
 
 	err := a.netAdapter.Start()
 	if err != nil {
@@ -51,15 +51,15 @@ func (a *ComponentManager) Start() {
 	a.connectionManager.Start()
 }
 
-// Stop gracefully shuts down all the Sedrad Services.
+// Stop gracefully shuts down all the Serad Services.
 func (a *ComponentManager) Stop() {
 	// Make sure this only happens once.
 	if atomic.AddInt32(&a.shutdown, 1) != 1 {
-		log.Infof("sedrad is already in the process of shutting down")
+		log.Infof("serad is already in the process of shutting down")
 		return
 	}
 
-	log.Warnf("sedrad shutting down")
+	log.Warnf("serad shutting down")
 
 	a.connectionManager.Stop()
 

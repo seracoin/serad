@@ -1,10 +1,10 @@
 package appmessage
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
-// MsgRequestBlockLocator implements the Message interface and represents a sedra
+// MsgRequestBlockLocator implements the Message interface and represents a sera
 // RequestBlockLocator message. It is used to request a block locator between low
 // and high hash.
 // The locator is returned via a locator message (MsgBlockLocator).

@@ -1,12 +1,12 @@
 syntax = "proto3";
 package protowire;
 
-option go_package = "github.com/sedracoin/sedrad/protowire";
+option go_package = "github.com/seracoin/serad/protowire";
 
 import "p2p.proto";
 import "rpc.proto";
 
-message SedradMessage {
+message SeradMessage {
   oneof payload {
     AddressesMessage addresses = 1;
     BlockMessage block = 2;
@@ -143,9 +143,9 @@ message SedradMessage {
 }
 
 service P2P {
-  rpc MessageStream (stream SedradMessage) returns (stream SedradMessage) {}
+  rpc MessageStream (stream SeradMessage) returns (stream SeradMessage) {}
 }
 
 service RPC {
-  rpc MessageStream (stream SedradMessage) returns (stream SedradMessage) {}
+  rpc MessageStream (stream SeradMessage) returns (stream SeradMessage) {}
 }

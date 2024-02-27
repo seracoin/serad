@@ -4,7 +4,7 @@
 
 package appmessage
 
-// MsgVerAck defines a sedra verack message which is used for a peer to
+// MsgVerAck defines a sera verack message which is used for a peer to
 // acknowledge a version message (MsgVersion) after it has used the information
 // to negotiate parameters. It implements the Message interface.
 //
@@ -19,7 +19,7 @@ func (msg *MsgVerAck) Command() MessageCommand {
 	return CmdVerAck
 }
 
-// NewMsgVerAck returns a new sedra verack message that conforms to the
+// NewMsgVerAck returns a new sera verack message that conforms to the
 // Message interface.
 func NewMsgVerAck() *MsgVerAck {
 	return &MsgVerAck{}

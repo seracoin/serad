@@ -9,17 +9,17 @@ import (
 	"math"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensusreference"
+	"github.com/seracoin/serad/domain/consensusreference"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/util"
 	"github.com/pkg/errors"
 )
 
@@ -206,7 +206,7 @@ func TestCheckTransactionStandardInIsolation(t *testing.T) {
 		Sequence:         constants.MaxTxInSequenceNum,
 	}
 	addrHash := [32]byte{0x01}
-	addr, err := util.NewAddressPublicKey(addrHash[:], util.Bech32PrefixSedraTest)
+	addr, err := util.NewAddressPublicKey(addrHash[:], util.Bech32PrefixSeraTest)
 	if err != nil {
 		t.Fatalf("NewAddressPublicKey: unexpected error: %v", err)
 	}
@@ -215,7 +215,7 @@ func TestCheckTransactionStandardInIsolation(t *testing.T) {
 		t.Fatalf("PayToAddrScript: unexpected error: %v", err)
 	}
 	dummyTxOut := externalapi.DomainTransactionOutput{
-		Value:           100000000, // 1 SDR
+		Value:           100000000, // 1 SRA
 		ScriptPublicKey: dummyScriptPublicKey,
 	}
 

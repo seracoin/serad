@@ -6,8 +6,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
+	"github.com/seracoin/serad/cmd/serawallet/keys"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
 	"github.com/pkg/errors"
 )
 
@@ -48,7 +48,7 @@ func sign(conf *signConfig) error {
 	updatedPartiallySignedTransactions := make([][]byte, len(partiallySignedTransactions))
 	for i, partiallySignedTransaction := range partiallySignedTransactions {
 		updatedPartiallySignedTransactions[i], err =
-			libsedrawallet.Sign(conf.NetParams(), privateKeys, partiallySignedTransaction, keysFile.ECDSA)
+			libserawallet.Sign(conf.NetParams(), privateKeys, partiallySignedTransaction, keysFile.ECDSA)
 		if err != nil {
 			return err
 		}
@@ -57,7 +57,7 @@ func sign(conf *signConfig) error {
 	areAllTransactionsFullySigned := true
 	for _, updatedPartiallySignedTransaction := range updatedPartiallySignedTransactions {
 		// This is somewhat redundant to check all transactions, but we do that just-in-case
-		isFullySigned, err := libsedrawallet.IsTransactionFullySigned(updatedPartiallySignedTransaction)
+		isFullySigned, err := libserawallet.IsTransactionFullySigned(updatedPartiallySignedTransaction)
 		if err != nil {
 			return err
 		}

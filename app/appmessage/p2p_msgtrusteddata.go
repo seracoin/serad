@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgTrustedData represents a sedra TrustedData message
+// MsgTrustedData represents a sera TrustedData message
 type MsgTrustedData struct {
 	baseMessage
 

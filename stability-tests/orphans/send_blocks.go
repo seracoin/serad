@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/standalone"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/standalone"
 	"github.com/pkg/errors"
 )
 

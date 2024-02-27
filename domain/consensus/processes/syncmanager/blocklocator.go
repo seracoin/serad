@@ -1,9 +1,9 @@
 package syncmanager
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/database"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/database"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 

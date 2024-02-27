@@ -3,11 +3,11 @@ package mempool
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/seracoin/serad/domain/dagconfig"
 )
 
 const (

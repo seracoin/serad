@@ -1,7 +1,7 @@
 package reachabilitymanager
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model"
 	"github.com/pkg/errors"
 	"math"
 )

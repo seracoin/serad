@@ -5,15 +5,15 @@ import (
 	"sync/atomic"
 	"unsafe"
 
-	"github.com/sedracoin/sedrad/domain/consensusreference"
+	"github.com/seracoin/serad/domain/consensusreference"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/miningmanager"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
-	"github.com/sedracoin/sedrad/domain/prefixmanager"
-	"github.com/sedracoin/sedrad/domain/prefixmanager/prefix"
-	infrastructuredatabase "github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/miningmanager"
+	"github.com/seracoin/serad/domain/miningmanager/mempool"
+	"github.com/seracoin/serad/domain/prefixmanager"
+	"github.com/seracoin/serad/domain/prefixmanager/prefix"
+	infrastructuredatabase "github.com/seracoin/serad/infrastructure/db/database"
 	"github.com/pkg/errors"
 )
 

@@ -2,11 +2,11 @@ package util_test
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/seracoin/serad/util/difficulty"
 	"math"
 	"math/big"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 )
 
 func ExampleAmount() {
@@ -20,9 +20,9 @@ func ExampleAmount() {
 	a = util.Amount(1e5)
 	fmt.Println("100,000 Seep:", a)
 	// Output:
-	// Zero Seep: 0 SDR
-	// 100,000,000 Seep: 1 SDR
-	// 100,000 Seep: 0.001 SDR
+	// Zero Seep: 0 SRA
+	// 100,000,000 Seep: 1 SRA
+	// 100,000 Seep: 0.001 SRA
 }
 
 func ExampleNewAmount() {
@@ -54,26 +54,26 @@ func ExampleNewAmount() {
 	}
 	fmt.Println(amountNaN) //Output 4
 
-	// Output: 1 SDR
-	// 0.01234567 SDR
-	// 0 SDR
-	// invalid sedra amount
+	// Output: 1 SRA
+	// 0.01234567 SRA
+	// 0 SRA
+	// invalid sera amount
 }
 
 func ExampleAmount_unitConversions() {
 	amount := util.Amount(44433322211100)
 
-	fmt.Println("Seep to kSDR:", amount.Format(util.AmountKiloSDR))
-	fmt.Println("Seep to SDR:", amount)
-	fmt.Println("Seep to MilliSDR:", amount.Format(util.AmountMilliSDR))
-	fmt.Println("Seep to MicroSDR:", amount.Format(util.AmountMicroSDR))
+	fmt.Println("Seep to kSRA:", amount.Format(util.AmountKiloSRA))
+	fmt.Println("Seep to SRA:", amount)
+	fmt.Println("Seep to MilliSRA:", amount.Format(util.AmountMilliSRA))
+	fmt.Println("Seep to MicroSRA:", amount.Format(util.AmountMicroSRA))
 	fmt.Println("Seep to Seep:", amount.Format(util.AmountSeep))
 
 	// Output:
-	// Seep to kSDR: 444.333222111 kSDR
-	// Seep to SDR: 444333.222111 SDR
-	// Seep to MilliSDR: 444333222.111 mSDR
-	// Seep to MicroSDR: 444333222111 μSDR
+	// Seep to kSRA: 444.333222111 kSRA
+	// Seep to SRA: 444333.222111 SRA
+	// Seep to MilliSRA: 444333222.111 mSRA
+	// Seep to MicroSRA: 444333222111 μSRA
 	// Seep to Seep: 44433322211100 Seep
 }
 

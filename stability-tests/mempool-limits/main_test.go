@@ -1,10 +1,10 @@
 package mempoollimits
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/util/panics"
+	"github.com/seracoin/serad/util/profiling"
 	"os"
 	"testing"
 )
@@ -73,9 +73,9 @@ func TestMempoolLimits(t *testing.T) {
 }
 
 func buildRPCClient(t *testing.T) *rpcclient.RPCClient {
-	client, err := rpcclient.NewRPCClient(activeConfig().SedradRPCAddress)
+	client, err := rpcclient.NewRPCClient(activeConfig().SeradRPCAddress)
 	if err != nil {
-		t.Fatalf("error connecting to %s: %s", activeConfig().SedradRPCAddress, err)
+		t.Fatalf("error connecting to %s: %s", activeConfig().SeradRPCAddress, err)
 	}
 	return client
 }

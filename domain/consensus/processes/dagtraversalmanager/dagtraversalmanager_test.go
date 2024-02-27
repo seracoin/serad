@@ -3,11 +3,11 @@ package dagtraversalmanager_test
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
 )
 
 func TestLowestChainBlockAboveOrEqualToBlueScore(t *testing.T) {

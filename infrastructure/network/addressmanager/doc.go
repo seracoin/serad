@@ -1,10 +1,10 @@
 /*
-Package addressmanager implements concurrency safe sedra address manager.
+Package addressmanager implements concurrency safe sera address manager.
 
 # Address Manager Overview
 
-In order maintain the peer-to-peer sedra network, there needs to be a source
-of addresses to connect to as nodes come and go. The sedra protocol provides
+In order maintain the peer-to-peer sera network, there needs to be a source
+of addresses to connect to as nodes come and go. The sera protocol provides
 the getaddr and addr messages to allow peers to communicate known addresses with
 each other. However, there needs to a mechanism to store those results and
 select peers from them. It is also important to note that remote peers can't

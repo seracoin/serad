@@ -1,8 +1,8 @@
 package grpcclient
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server/grpcserver/protowire"
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/encoding/protojson"
 )
@@ -12,7 +12,7 @@ import (
 // that arrives back, and returns the response as JSON
 func (c *GRPCClient) PostJSON(requestJSON string) (string, error) {
 	requestBytes := []byte(requestJSON)
-	var parsedRequest protowire.SedradMessage
+	var parsedRequest protowire.SeradMessage
 	err := protojson.Unmarshal(requestBytes, &parsedRequest)
 	if err != nil {
 		return "", errors.Wrapf(err, "error parsing the request")
@@ -51,7 +51,7 @@ func (c *GRPCClient) PostAppMessage(requestAppMessage appmessage.Message) (appme
 // Post is a helper function that sends the given request to the
 // RPC server, accepts the first response that arrives back, and
 // returns the response
-func (c *GRPCClient) Post(request *protowire.SedradMessage) (*protowire.SedradMessage, error) {
+func (c *GRPCClient) Post(request *protowire.SeradMessage) (*protowire.SeradMessage, error) {
 	err := c.stream.Send(request)
 	if err != nil {
 		return nil, errors.Wrapf(err, "error sending the request to the RPC server")

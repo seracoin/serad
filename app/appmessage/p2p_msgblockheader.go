@@ -7,10 +7,10 @@ package appmessage
 import (
 	"math/big"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/util/mstime"
 )
 
 // BaseBlockHeaderPayload is the base number of bytes a block header can be,
@@ -30,7 +30,7 @@ const MaxNumParentBlocks = 255
 // BaseBlockHeaderPayload + up to MaxNumParentBlocks hashes of parent blocks
 const MaxBlockHeaderPayload = BaseBlockHeaderPayload + (MaxNumParentBlocks * externalapi.DomainHashSize)
 
-// MsgBlockHeader defines information about a block and is used in the sedra
+// MsgBlockHeader defines information about a block and is used in the sera
 // block (MsgBlock) and headers (MsgHeader) messages.
 type MsgBlockHeader struct {
 	baseMessage

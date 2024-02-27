@@ -2,22 +2,22 @@ package common
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/seracoin/serad/domain/dagconfig"
 	"os"
 	"sync/atomic"
 	"syscall"
 	"testing"
 )
 
-// RunSedradForTesting runs sedrad for testing purposes
-func RunSedradForTesting(t *testing.T, testName string, rpcAddress string) func() {
+// RunSeradForTesting runs serad for testing purposes
+func RunSeradForTesting(t *testing.T, testName string, rpcAddress string) func() {
 	appDir, err := TempDir(testName)
 	if err != nil {
 		t.Fatalf("TempDir: %s", err)
 	}
 
-	sedradRunCommand, err := StartCmd("SEDRAD",
-		"sedrad",
+	seradRunCommand, err := StartCmd("SERAD",
+		"serad",
 		NetworkCliArgumentFromNetParams(&dagconfig.DevnetParams),
 		"--appdir", appDir,
 		"--rpclisten", rpcAddress,
@@ -26,20 +26,20 @@ func RunSedradForTesting(t *testing.T, testName string, rpcAddress string) func(
 	if err != nil {
 		t.Fatalf("StartCmd: %s", err)
 	}
-	t.Logf("sedrad started with --appdir=%s", appDir)
+	t.Logf("serad started with --appdir=%s", appDir)
 
 	isShutdown := uint64(0)
 	go func() {
-		err := sedradRunCommand.Wait()
+		err := seradRunCommand.Wait()
 		if err != nil {
 			if atomic.LoadUint64(&isShutdown) == 0 {
-				panic(fmt.Sprintf("sedrad closed unexpectedly: %s. See logs at: %s", err, appDir))
+				panic(fmt.Sprintf("serad closed unexpectedly: %s. See logs at: %s", err, appDir))
 			}
 		}
 	}()
 
 	return func() {
-		err := sedradRunCommand.Process.Signal(syscall.SIGTERM)
+		err := seradRunCommand.Process.Signal(syscall.SIGTERM)
 		if err != nil {
 			t.Fatalf("Signal: %s", err)
 		}
@@ -48,6 +48,6 @@ func RunSedradForTesting(t *testing.T, testName string, rpcAddress string) func(
 			t.Fatalf("RemoveAll: %s", err)
 		}
 		atomic.StoreUint64(&isShutdown, 1)
-		t.Logf("sedrad stopped")
+		t.Logf("serad stopped")
 	}
 }

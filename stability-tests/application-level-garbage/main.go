@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/standalone"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/standalone"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/util/panics"
+	"github.com/seracoin/serad/util/profiling"
 )
 
 func main() {
@@ -25,10 +25,10 @@ func main() {
 		profiling.Start(cfg.Profile, log)
 	}
 
-	sedradConfig := config.DefaultConfig()
-	sedradConfig.NetworkFlags = cfg.NetworkFlags
+	seradConfig := config.DefaultConfig()
+	seradConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(sedradConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(seradConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating minimalNetAdapter: %+v", err)
 		backendLog.Close()

@@ -1,11 +1,11 @@
-# Contributing to sedrad
+# Contributing to serad
 
-Any contribution to sedrad is very welcome.
+Any contribution to serad is very welcome.
 
 ## Getting started
 
-If you want to start contributing to sedrad and don't know where to start, you can pick an issue from
-the [list](https://github.com/sedracoin/sedrad/issues).
+If you want to start contributing to serad and don't know where to start, you can pick an issue from
+the [list](https://github.com/seracoin/serad/issues).
 
 If you want to make a big change it's better to discuss it first by opening an issue or talk about it in
 [Discord](https://discord.gg/WmGhhzk) to avoid duplicate work.

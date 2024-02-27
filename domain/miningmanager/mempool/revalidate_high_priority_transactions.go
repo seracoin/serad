@@ -1,9 +1,9 @@
 package mempool
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool/model"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/miningmanager/mempool/model"
+	"github.com/seracoin/serad/infrastructure/logger"
 )
 
 func (mp *mempool) revalidateHighPriorityTransactions() ([]*externalapi.DomainTransaction, error) {

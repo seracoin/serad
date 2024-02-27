@@ -4,10 +4,10 @@ import (
 	"os"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/stability-tests/common/rpc"
+	"github.com/seracoin/serad/util/panics"
+	"github.com/seracoin/serad/util/profiling"
 	"github.com/pkg/errors"
 )
 

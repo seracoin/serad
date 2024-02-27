@@ -1,7 +1,7 @@
 syntax = "proto3";
 package protoserialization;
 
-option go_package = "github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization/protoserialization";
+option go_package = "github.com/seracoin/serad/cmd/serawallet/libserawallet/serialization/protoserialization";
 
 message PartiallySignedTransaction{
   TransactionMessage tx = 1;

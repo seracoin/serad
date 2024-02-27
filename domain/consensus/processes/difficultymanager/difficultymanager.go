@@ -4,13 +4,13 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util/math"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/util/math"
 
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/seracoin/serad/util/difficulty"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
 // DifficultyManager provides a method to resolve the

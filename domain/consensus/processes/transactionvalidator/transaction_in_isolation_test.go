@@ -3,13 +3,13 @@ package transactionvalidator_test
 import (
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
 	"github.com/pkg/errors"
 )
 
@@ -93,7 +93,7 @@ func TestValidateTransactionInIsolationAndPopulateMass(t *testing.T) {
 				&txSubnetworkData{subnetworks.SubnetworkIDCoinbase, 0, make([]byte, consensusConfig.MaxCoinbasePayloadLength+1)},
 				nil,
 				ruleerrors.ErrBadCoinbasePayloadLen, 0},
-			{"non-zero gas in sedra", 1, 1, 1,
+			{"non-zero gas in sera", 1, 1, 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				func(tx *externalapi.DomainTransaction) {
@@ -105,7 +105,7 @@ func TestValidateTransactionInIsolationAndPopulateMass(t *testing.T) {
 				&txSubnetworkData{subnetworks.SubnetworkIDRegistry, 1, []byte{}},
 				nil,
 				ruleerrors.ErrInvalidGas, 0},
-			{"non-zero payload in sedra", 1, 1, 1,
+			{"non-zero payload in sera", 1, 1, 1,
 				subnetworks.SubnetworkIDNative,
 				nil,
 				func(tx *externalapi.DomainTransaction) {

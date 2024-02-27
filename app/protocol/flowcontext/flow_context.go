@@ -4,18 +4,18 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/util/mstime"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/domain"
+	"github.com/seracoin/serad/domain"
 
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/network/addressmanager"
+	"github.com/seracoin/serad/infrastructure/network/connmanager"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/id"
 )
 
 // OnNewBlockTemplateHandler is a handler function that's triggered when a new block template is available

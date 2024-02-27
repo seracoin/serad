@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgRequestNextPruningPointAndItsAnticoneBlocks implements the Message interface and represents a sedra
+// MsgRequestNextPruningPointAndItsAnticoneBlocks implements the Message interface and represents a sera
 // RequestNextPruningPointAndItsAnticoneBlocks message. It is used to notify the IBD syncer peer to send
 // more blocks from the pruning anticone.
 //
@@ -15,7 +15,7 @@ func (msg *MsgRequestNextPruningPointAndItsAnticoneBlocks) Command() MessageComm
 	return CmdRequestNextPruningPointAndItsAnticoneBlocks
 }
 
-// NewMsgRequestNextPruningPointAndItsAnticoneBlocks returns a new sedra RequestNextPruningPointAndItsAnticoneBlocks message that conforms to the
+// NewMsgRequestNextPruningPointAndItsAnticoneBlocks returns a new sera RequestNextPruningPointAndItsAnticoneBlocks message that conforms to the
 // Message interface.
 func NewMsgRequestNextPruningPointAndItsAnticoneBlocks() *MsgRequestNextPruningPointAndItsAnticoneBlocks {
 	return &MsgRequestNextPruningPointAndItsAnticoneBlocks{}

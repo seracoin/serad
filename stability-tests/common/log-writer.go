@@ -3,7 +3,7 @@ package common
 import (
 	"strings"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/logger"
 )
 
 // LogWriter writes to the given log with the given log level and prefix

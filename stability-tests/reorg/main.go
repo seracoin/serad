@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/util/profiling"
 )
 
 func main() {

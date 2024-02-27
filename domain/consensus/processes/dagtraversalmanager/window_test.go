@@ -5,13 +5,13 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashset"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/hashset"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/dagconfig"
 	"github.com/pkg/errors"
 )
 

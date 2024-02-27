@@ -1,11 +1,11 @@
 package pow
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/serialization"
-	"github.com/sedracoin/sedrad/util/difficulty"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/hashes"
+	"github.com/seracoin/serad/domain/consensus/utils/serialization"
+	"github.com/seracoin/serad/util/difficulty"
 
 	"github.com/pkg/errors"
 	"math/big"

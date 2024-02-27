@@ -1,6 +1,6 @@
-# sedraminer
+# seraminer
 
-sedraminer is a CPU-based miner for sedrad
+seraminer is a CPU-based miner for serad
 
 ## Requirements
 
@@ -19,11 +19,11 @@ Go 1.19 or later.
 $ go version
 ```
 
-- Run the following commands to obtain and install sedrad including all dependencies:
+- Run the following commands to obtain and install serad including all dependencies:
 
 ```bash
-$ git clone https://github.com/sedracoin/sedrad
-$ cd sedrad/cmd/sedraminer
+$ git clone https://github.com/seracoin/serad
+$ cd serad/cmd/seraminer
 $ go install .
 ```
 
@@ -33,13 +33,13 @@ $ go install .
   
 ## Usage
 
-The full sedraminer configuration options can be seen with:
+The full seraminer configuration options can be seen with:
 
 ```bash
-$ sedraminer --help
+$ seraminer --help
 ```
 
 But the minimum configuration needed to run it is:
 ```bash
-$ sedraminer --miningaddr=<YOUR_MINING_ADDRESS>
+$ seraminer --miningaddr=<YOUR_MINING_ADDRESS>
 ```

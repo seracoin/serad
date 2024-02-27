@@ -1,8 +1,8 @@
 package staging
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/infrastructure/logger"
 	"sync/atomic"
 )
 

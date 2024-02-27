@@ -3,7 +3,7 @@ This tests that two nodes that are connected to each other
 stay synced while one of them mines a chain.
 
 ## Running
- 1. `go install` sedrad and simple-sync.
+ 1. `go install` serad and simple-sync.
  2. `cd run`
  3. `./run.sh`
 

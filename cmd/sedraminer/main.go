@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/version"
 
 	"github.com/pkg/errors"
 
 	_ "net/http/pprof"
 
-	"github.com/sedracoin/sedrad/infrastructure/os/signal"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/seracoin/serad/infrastructure/os/signal"
+	"github.com/seracoin/serad/util/panics"
+	"github.com/seracoin/serad/util/profiling"
 )
 
 func main() {

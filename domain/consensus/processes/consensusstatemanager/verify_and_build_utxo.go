@@ -3,15 +3,15 @@ package consensusstatemanager
 import (
 	"sort"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/merkle"
+	"github.com/seracoin/serad/domain/consensus/utils/merkle"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
 	"github.com/pkg/errors"
 )
 

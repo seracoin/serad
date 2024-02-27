@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetHeadersRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetHeadersRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetHeadersRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetHeadersRequest is nil")
 	}
 	return x.GetHeadersRequest.toAppMessage()
 }
 
-func (x *SedradMessage_GetHeadersRequest) fromAppMessage(message *appmessage.GetHeadersRequestMessage) error {
+func (x *SeradMessage_GetHeadersRequest) fromAppMessage(message *appmessage.GetHeadersRequestMessage) error {
 	x.GetHeadersRequest = &GetHeadersRequestMessage{
 		StartHash:   message.StartHash,
 		Limit:       message.Limit,
@@ -32,14 +32,14 @@ func (x *GetHeadersRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_GetHeadersResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetHeadersResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetHeadersResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetHeadersResponse is nil")
 	}
 	return x.GetHeadersResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetHeadersResponse) fromAppMessage(message *appmessage.GetHeadersResponseMessage) error {
+func (x *SeradMessage_GetHeadersResponse) fromAppMessage(message *appmessage.GetHeadersResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

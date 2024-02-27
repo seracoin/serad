@@ -1,27 +1,27 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_NotifyFinalityConflictsRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_NotifyFinalityConflictsRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.NotifyFinalityConflictsRequestMessage{}, nil
 }
 
-func (x *SedradMessage_NotifyFinalityConflictsRequest) fromAppMessage(_ *appmessage.NotifyFinalityConflictsRequestMessage) error {
+func (x *SeradMessage_NotifyFinalityConflictsRequest) fromAppMessage(_ *appmessage.NotifyFinalityConflictsRequestMessage) error {
 	x.NotifyFinalityConflictsRequest = &NotifyFinalityConflictsRequestMessage{}
 	return nil
 }
 
-func (x *SedradMessage_NotifyFinalityConflictsResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_NotifyFinalityConflictsResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_NotifyFinalityConflictsResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_NotifyFinalityConflictsResponse is nil")
 	}
 	return x.NotifyFinalityConflictsResponse.toAppMessage()
 }
 
-func (x *SedradMessage_NotifyFinalityConflictsResponse) fromAppMessage(message *appmessage.NotifyFinalityConflictsResponseMessage) error {
+func (x *SeradMessage_NotifyFinalityConflictsResponse) fromAppMessage(message *appmessage.NotifyFinalityConflictsResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -46,14 +46,14 @@ func (x *NotifyFinalityConflictsResponseMessage) toAppMessage() (appmessage.Mess
 	}, nil
 }
 
-func (x *SedradMessage_FinalityConflictNotification) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_FinalityConflictNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_FinalityConflictNotification is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_FinalityConflictNotification is nil")
 	}
 	return x.FinalityConflictNotification.toAppMessage()
 }
 
-func (x *SedradMessage_FinalityConflictNotification) fromAppMessage(message *appmessage.FinalityConflictNotificationMessage) error {
+func (x *SeradMessage_FinalityConflictNotification) fromAppMessage(message *appmessage.FinalityConflictNotificationMessage) error {
 	x.FinalityConflictNotification = &FinalityConflictNotificationMessage{
 		ViolatingBlockHash: message.ViolatingBlockHash,
 	}
@@ -69,14 +69,14 @@ func (x *FinalityConflictNotificationMessage) toAppMessage() (appmessage.Message
 	}, nil
 }
 
-func (x *SedradMessage_FinalityConflictResolvedNotification) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_FinalityConflictResolvedNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_FinalityConflictResolvedNotification is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_FinalityConflictResolvedNotification is nil")
 	}
 	return x.FinalityConflictResolvedNotification.toAppMessage()
 }
 
-func (x *SedradMessage_FinalityConflictResolvedNotification) fromAppMessage(message *appmessage.FinalityConflictResolvedNotificationMessage) error {
+func (x *SeradMessage_FinalityConflictResolvedNotification) fromAppMessage(message *appmessage.FinalityConflictResolvedNotificationMessage) error {
 	x.FinalityConflictResolvedNotification = &FinalityConflictResolvedNotificationMessage{
 		FinalityBlockHash: message.FinalityBlockHash,
 	}

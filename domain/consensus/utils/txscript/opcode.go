@@ -11,13 +11,13 @@ import (
 	"fmt"
 	"hash"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 
 	"golang.org/x/crypto/blake2b"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 
-	"github.com/sedracoin/go-secp256k1"
+	"github.com/seracoin/go-secp256k1"
 )
 
 // An opcode defines the information related to a txscript opcode. opfunc, if
@@ -31,7 +31,7 @@ type opcode struct {
 	opfunc func(*parsedOpcode, *Engine) error
 }
 
-// These constants are the values of the sedra script opcodes.
+// These constants are the values of the sera script opcodes.
 const (
 	Op0                   = 0x00 // 0
 	OpFalse               = 0x00 // 0 - AKA Op0

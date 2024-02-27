@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet/serialization"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"strings"
@@ -48,8 +48,8 @@ func parse(conf *parseConfig) error {
 			partiallySignedInput := partiallySignedTransaction.PartiallySignedInputs[index]
 
 			if conf.Verbose {
-				fmt.Printf("Input %d: \tOutpoint: %s:%d \tAmount: %.2f sedra\n", index, input.PreviousOutpoint.TransactionID,
-					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.SeepPerSedra))
+				fmt.Printf("Input %d: \tOutpoint: %s:%d \tAmount: %.2f sera\n", index, input.PreviousOutpoint.TransactionID,
+					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.SeepPerSera))
 			}
 
 			allInputSeep += partiallySignedInput.PrevOutput.Value
@@ -71,8 +71,8 @@ func parse(conf *parseConfig) error {
 				addressString = fmt.Sprintf("<Non-standard transaction script public key: %s>", scriptPublicKeyHex)
 			}
 
-			fmt.Printf("Output %d: \tRecipient: %s \tAmount: %.2f sedra\n",
-				index, addressString, float64(output.Value)/float64(constants.SeepPerSedra))
+			fmt.Printf("Output %d: \tRecipient: %s \tAmount: %.2f sera\n",
+				index, addressString, float64(output.Value)/float64(constants.SeepPerSera))
 
 			allOutputSeep += output.Value
 		}

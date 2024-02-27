@@ -8,11 +8,11 @@ import (
 	"encoding/binary"
 	"strconv"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
 const (
@@ -54,14 +54,14 @@ const (
 	minTxPayload = 10
 )
 
-// Outpoint defines a sedra data type that is used to track previous
+// Outpoint defines a sera data type that is used to track previous
 // transaction outputs.
 type Outpoint struct {
 	TxID  externalapi.DomainTransactionID
 	Index uint32
 }
 
-// NewOutpoint returns a new sedra transaction outpoint point with the
+// NewOutpoint returns a new sera transaction outpoint point with the
 // provided hash and index.
 func NewOutpoint(txID *externalapi.DomainTransactionID, index uint32) *Outpoint {
 	return &Outpoint{
@@ -85,7 +85,7 @@ func (o Outpoint) String() string {
 	return string(buf)
 }
 
-// TxIn defines a sedra transaction input.
+// TxIn defines a sera transaction input.
 type TxIn struct {
 	PreviousOutpoint Outpoint
 	SignatureScript  []byte
@@ -93,7 +93,7 @@ type TxIn struct {
 	SigOpCount       byte
 }
 
-// NewTxIn returns a new sedra transaction input with the provided
+// NewTxIn returns a new sera transaction input with the provided
 // previous outpoint point and signature script with a default sequence of
 // MaxTxInSequenceNum.
 func NewTxIn(prevOut *Outpoint, signatureScript []byte, sequence uint64, sigOpCount byte) *TxIn {
@@ -105,13 +105,13 @@ func NewTxIn(prevOut *Outpoint, signatureScript []byte, sequence uint64, sigOpCo
 	}
 }
 
-// TxOut defines a sedra transaction output.
+// TxOut defines a sera transaction output.
 type TxOut struct {
 	Value        uint64
 	ScriptPubKey *externalapi.ScriptPublicKey
 }
 
-// NewTxOut returns a new sedra transaction output with the provided
+// NewTxOut returns a new sera transaction output with the provided
 // transaction value and public key script.
 func NewTxOut(value uint64, scriptPubKey *externalapi.ScriptPublicKey) *TxOut {
 	return &TxOut{
@@ -120,7 +120,7 @@ func NewTxOut(value uint64, scriptPubKey *externalapi.ScriptPublicKey) *TxOut {
 	}
 }
 
-// MsgTx implements the Message interface and represents a sedra tx message.
+// MsgTx implements the Message interface and represents a sera tx message.
 // It is used to deliver transaction information in response to a getdata
 // message (MsgGetData) for a given transaction.
 //

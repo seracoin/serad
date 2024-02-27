@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-option go_package = "github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb";
-package sedrawalletd;
+option go_package = "github.com/seracoin/serad/cmd/serawallet/daemon/pb";
+package serawalletd;
 
-service sedrawalletd {
+service serawalletd {
   rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {}
   rpc GetExternalSpendableUTXOs (GetExternalSpendableUTXOsRequest) returns (GetExternalSpendableUTXOsResponse) {}
   rpc CreateUnsignedTransactions (CreateUnsignedTransactionsRequest) returns (CreateUnsignedTransactionsResponse) {}

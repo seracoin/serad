@@ -7,24 +7,24 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/config"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 	"github.com/pkg/errors"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/version"
 )
 
 const (
-	defaultLogFilename          = "sedraminer.log"
-	defaultErrLogFilename       = "sedraminer_err.log"
+	defaultLogFilename          = "seraminer.log"
+	defaultErrLogFilename       = "seraminer_err.log"
 	defaultTargetBlockRateRatio = 2.0
 )
 
 var (
 	// Default configuration options
-	defaultAppDir     = util.AppDir("sedraminer", false)
+	defaultAppDir     = util.AppDir("seraminer", false)
 	defaultLogFile    = filepath.Join(defaultAppDir, defaultLogFilename)
 	defaultErrLogFile = filepath.Join(defaultAppDir, defaultErrLogFilename)
 	defaultRPCServer  = "localhost"

@@ -13,7 +13,7 @@ import (
 	"github.com/pkg/errors"
 )
 
-// SetLimits raises some process limits to values which allow sedrad and
+// SetLimits raises some process limits to values which allow serad and
 // associated utilities to run.
 func SetLimits(desiredLimits *DesiredLimits) error {
 	var rLimit syscall.Rlimit

@@ -5,18 +5,18 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/rpc/rpccontext"
-	"github.com/sedracoin/sedrad/app/rpc/rpchandlers"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/miningmanager"
-	"github.com/sedracoin/sedrad/infrastructure/config"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/rpc/rpccontext"
+	"github.com/seracoin/serad/app/rpc/rpchandlers"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/testapi"
+	"github.com/seracoin/serad/domain/consensus/utils/hashes"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/miningmanager"
+	"github.com/seracoin/serad/infrastructure/config"
 )
 
 type fakeDomain struct {

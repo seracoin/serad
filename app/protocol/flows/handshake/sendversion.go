@@ -1,22 +1,22 @@
 package handshake
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/protocol/common"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/version"
 	"github.com/pkg/errors"
 )
 
 var (
 	// userAgentName is the user agent name and is used to help identify
-	// ourselves to other sedra peers.
-	userAgentName = "sedrad"
+	// ourselves to other sera peers.
+	userAgentName = "serad"
 
 	// userAgentVersion is the user agent version and is used to help
-	// identify ourselves to other sedra peers.
+	// identify ourselves to other sera peers.
 	userAgentVersion = version.Version()
 
 	// defaultServices describes the default services that are supported by

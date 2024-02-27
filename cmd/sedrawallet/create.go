@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet/bip32"
+	"github.com/seracoin/serad/cmd/serawallet/utils"
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
+	"github.com/seracoin/serad/cmd/serawallet/keys"
 )
 
 func create(conf *createConfig) error {
@@ -32,8 +32,8 @@ func create(conf *createConfig) error {
 	}
 
 	fmt.Printf("Notice the above is neither a secret key to your wallet " +
-		"(use \"sedrawallet dump-unencrypted-data\" to see a secret seed phrase) " +
-		"nor a wallet public address (use \"sedrawallet new-address\" to create and see one)\n\n")
+		"(use \"serawallet dump-unencrypted-data\" to see a secret seed phrase) " +
+		"nor a wallet public address (use \"serawallet new-address\" to create and see one)\n\n")
 
 	extendedPublicKeys := make([]string, conf.NumPrivateKeys, conf.NumPublicKeys)
 	copy(extendedPublicKeys, signerExtendedPublicKeys)
@@ -58,7 +58,7 @@ func create(conf *createConfig) error {
 	// For a read only wallet the cosigner index is 0
 	cosignerIndex := uint32(0)
 	if len(signerExtendedPublicKeys) > 0 {
-		cosignerIndex, err = libsedrawallet.MinimumCosignerIndex(signerExtendedPublicKeys, extendedPublicKeys)
+		cosignerIndex, err = libserawallet.MinimumCosignerIndex(signerExtendedPublicKeys, extendedPublicKeys)
 		if err != nil {
 			return err
 		}

@@ -8,16 +8,16 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/domain/consensus/utils/utxo"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/util"
 )
 
 func mkGetKey(keys map[string]*secp256k1.SchnorrKeyPair) KeyDB {
@@ -213,7 +213,7 @@ func TestSignTxOutput(t *testing.T) {
 				break
 			}
 
-			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSedraTest)
+			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSeraTest)
 			if err != nil {
 				t.Errorf("failed to make address for %s: %v",
 					msg, err)
@@ -263,7 +263,7 @@ func TestSignTxOutput(t *testing.T) {
 				break
 			}
 
-			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSedraTest)
+			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSeraTest)
 			if err != nil {
 				t.Errorf("failed to make address for %s: %v",
 					msg, err)
@@ -340,7 +340,7 @@ func TestSignTxOutput(t *testing.T) {
 				break
 			}
 
-			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSedraTest)
+			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSeraTest)
 			if err != nil {
 				t.Errorf("failed to make address for %s: %v",
 					msg, err)
@@ -354,7 +354,7 @@ func TestSignTxOutput(t *testing.T) {
 			}
 
 			scriptAddr, err := util.NewAddressScriptHash(
-				scriptPubKey.Script, util.Bech32PrefixSedraTest)
+				scriptPubKey.Script, util.Bech32PrefixSeraTest)
 			if err != nil {
 				t.Errorf("failed to make p2sh addr for %s: %v",
 					msg, err)
@@ -404,7 +404,7 @@ func TestSignTxOutput(t *testing.T) {
 				break
 			}
 
-			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSedraTest)
+			address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSeraTest)
 			if err != nil {
 				t.Errorf("failed to make address for %s: %v",
 					msg, err)
@@ -418,7 +418,7 @@ func TestSignTxOutput(t *testing.T) {
 			}
 
 			scriptAddr, err := util.NewAddressScriptHash(
-				scriptPubKey.Script, util.Bech32PrefixSedraTest)
+				scriptPubKey.Script, util.Bech32PrefixSeraTest)
 			if err != nil {
 				t.Errorf("failed to make p2sh addr for %s: %v",
 					msg, err)
@@ -486,7 +486,7 @@ func generateKeys() (keyPair *secp256k1.SchnorrKeyPair, scriptPublicKey *externa
 	if err != nil {
 		return nil, nil, nil, errors.Errorf("failed to serialize a pubkey for %s: %s", pubKey, err)
 	}
-	address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSedraTest)
+	address, err := util.NewAddressPublicKey(serializedPubKey[:], util.Bech32PrefixSeraTest)
 	if err != nil {
 		return nil, nil, nil, errors.Errorf("failed to make address for %s: %s", serializedPubKey, err)
 	}

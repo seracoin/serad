@@ -4,14 +4,14 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/seracoin/serad/domain/dagconfig"
 
-	"github.com/sedracoin/sedrad/infrastructure/db/database/ldb"
+	"github.com/seracoin/serad/infrastructure/db/database/ldb"
 
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/db/database"
 
-	"github.com/sedracoin/sedrad/app"
-	"github.com/sedracoin/sedrad/infrastructure/config"
+	"github.com/seracoin/serad/app"
+	"github.com/seracoin/serad/infrastructure/config"
 )
 
 type appHarness struct {

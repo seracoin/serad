@@ -2,24 +2,24 @@ package transactionrelay_test
 
 import (
 	"errors"
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/transactionrelay"
+	"github.com/seracoin/serad/app/protocol/flowcontext"
+	"github.com/seracoin/serad/app/protocol/flows/v5/transactionrelay"
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/domain"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/miningmanager/mempool"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/util/panics"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
 )
 
 type mocTransactionsRelayContext struct {

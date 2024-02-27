@@ -1,4 +1,4 @@
-package libsedrawallet
+package libserawallet
 
 const (
 	// ExternalKeychain is the key chain that is used to create receive addresses

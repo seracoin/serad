@@ -7,7 +7,7 @@ package bech32_test
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/sedracoin/sedrad/util/bech32"
+	"github.com/seracoin/serad/util/bech32"
 )
 
 // This example demonstrates how to decode a bech32 encoded string.

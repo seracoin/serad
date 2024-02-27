@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient/grpcclient"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient/grpcclient"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/util/panics"
+	"github.com/seracoin/serad/util/profiling"
 	"github.com/pkg/errors"
 )
 

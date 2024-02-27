@@ -2,9 +2,9 @@ package grpcserver
 
 import (
 	"context"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/seracoin/serad/util/panics"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/encoding/gzip"

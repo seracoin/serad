@@ -3,7 +3,7 @@ package dagconfig_test
 import (
 	"testing"
 
-	. "github.com/sedracoin/sedrad/domain/dagconfig"
+	. "github.com/seracoin/serad/domain/dagconfig"
 )
 
 // Define some of the required parameters for a user-registered

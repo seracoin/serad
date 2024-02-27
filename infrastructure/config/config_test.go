@@ -7,9 +7,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
 func TestCreateDefaultConfigFile(t *testing.T) {
@@ -18,16 +18,16 @@ func TestCreateDefaultConfigFile(t *testing.T) {
 	if !ok {
 		t.Fatalf("Failed finding config file path")
 	}
-	sampleConfigFile := filepath.Join(filepath.Dir(path), "sample-sedrad.conf")
+	sampleConfigFile := filepath.Join(filepath.Dir(path), "sample-serad.conf")
 
 	// Setup a temporary directory
-	tmpDir, err := ioutil.TempDir("", "sedrad")
+	tmpDir, err := ioutil.TempDir("", "serad")
 	if err != nil {
 		t.Fatalf("Failed creating a temporary directory: %v", err)
 	}
 	testpath := filepath.Join(tmpDir, "test.conf")
 
-	// copy config file to location of sedrad binary
+	// copy config file to location of serad binary
 	data, err := ioutil.ReadFile(sampleConfigFile)
 	if err != nil {
 		t.Fatalf("Failed reading sample config file: %v", err)
@@ -36,7 +36,7 @@ func TestCreateDefaultConfigFile(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Failed obtaining app path: %v", err)
 	}
-	tmpConfigFile := filepath.Join(appPath, "sample-sedrad.conf")
+	tmpConfigFile := filepath.Join(appPath, "sample-serad.conf")
 	err = ioutil.WriteFile(tmpConfigFile, data, 0644)
 	if err != nil {
 		t.Fatalf("Failed copying sample config file: %v", err)

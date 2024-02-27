@@ -1,12 +1,12 @@
 package integration
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/config"
 	"runtime"
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient"
 )
 
 const rpcTimeout = 10 * time.Second

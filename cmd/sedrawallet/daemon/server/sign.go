@@ -3,9 +3,9 @@ package server
 import (
 	"context"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
 )
 
 func (s *server) Sign(_ context.Context, request *pb.SignRequest) (*pb.SignResponse, error) {
@@ -26,7 +26,7 @@ func (s *server) signTransactions(unsignedTransactions [][]byte, password string
 	}
 	signedTransactions := make([][]byte, len(unsignedTransactions))
 	for i, unsignedTransaction := range unsignedTransactions {
-		signedTransaction, err := libsedrawallet.Sign(s.params, mnemonics, unsignedTransaction, s.keysFile.ECDSA)
+		signedTransaction, err := libserawallet.Sign(s.params, mnemonics, unsignedTransaction, s.keysFile.ECDSA)
 		if err != nil {
 			return nil, err
 		}

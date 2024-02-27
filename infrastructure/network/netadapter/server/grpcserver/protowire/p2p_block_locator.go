@@ -1,14 +1,14 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_BlockLocator) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_BlockLocator) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_BlockLocator is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_BlockLocator is nil")
 	}
 	hashes, err := x.BlockLocator.toAppMessage()
 	if err != nil {
@@ -28,7 +28,7 @@ func (x *BlockLocatorMessage) toAppMessage() ([]*externalapi.DomainHash, error) 
 	return protoHashesToDomain(x.Hashes)
 }
 
-func (x *SedradMessage_BlockLocator) fromAppMessage(msgBlockLocator *appmessage.MsgBlockLocator) error {
+func (x *SeradMessage_BlockLocator) fromAppMessage(msgBlockLocator *appmessage.MsgBlockLocator) error {
 	if len(msgBlockLocator.BlockLocatorHashes) > appmessage.MaxBlockLocatorsPerMsg {
 		return errors.Errorf("too many block locator hashes for message "+
 			"[count %d, max %d]", len(msgBlockLocator.BlockLocatorHashes), appmessage.MaxBlockLocatorsPerMsg)

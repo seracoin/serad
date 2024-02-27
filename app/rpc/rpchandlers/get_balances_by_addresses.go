@@ -1,9 +1,9 @@
 package rpchandlers
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/rpc/rpccontext"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/rpc/rpccontext"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 
@@ -11,7 +11,7 @@ import (
 func HandleGetBalancesByAddresses(context *rpccontext.Context, _ *router.Router, request appmessage.Message) (appmessage.Message, error) {
 	if !context.Config.UTXOIndex {
 		errorMessage := &appmessage.GetBalancesByAddressesResponseMessage{}
-		errorMessage.Error = appmessage.RPCErrorf("Method unavailable when sedrad is run without --utxoindex")
+		errorMessage.Error = appmessage.RPCErrorf("Method unavailable when serad is run without --utxoindex")
 		return errorMessage, nil
 	}
 

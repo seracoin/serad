@@ -1,10 +1,10 @@
 package appmessage
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
-// MsgIBDBlockLocator represents a sedra ibdBlockLocator message
+// MsgIBDBlockLocator represents a sera ibdBlockLocator message
 type MsgIBDBlockLocator struct {
 	baseMessage
 	TargetHash         *externalapi.DomainHash
@@ -16,7 +16,7 @@ func (msg *MsgIBDBlockLocator) Command() MessageCommand {
 	return CmdIBDBlockLocator
 }
 
-// NewMsgIBDBlockLocator returns a new sedra ibdBlockLocator message
+// NewMsgIBDBlockLocator returns a new sera ibdBlockLocator message
 func NewMsgIBDBlockLocator(targetHash *externalapi.DomainHash,
 	blockLocatorHashes []*externalapi.DomainHash) *MsgIBDBlockLocator {
 

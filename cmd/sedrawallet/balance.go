@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/client"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/utils"
 )
 
 func balance(conf *balanceConfig) error {
@@ -32,12 +32,12 @@ func balance(conf *balanceConfig) error {
 		println("Address                                                                       Available             Pending")
 		println("-----------------------------------------------------------------------------------------------------------")
 		for _, addressBalance := range response.AddressBalances {
-			fmt.Printf("%s %s %s\n", addressBalance.Address, utils.FormatSdr(addressBalance.Available), utils.FormatSdr(addressBalance.Pending))
+			fmt.Printf("%s %s %s\n", addressBalance.Address, utils.FormatSra(addressBalance.Available), utils.FormatSra(addressBalance.Pending))
 		}
 		println("-----------------------------------------------------------------------------------------------------------")
 		print("                                                 ")
 	}
-	fmt.Printf("Total balance, SDR %s %s%s\n", utils.FormatSdr(response.Available), utils.FormatSdr(response.Pending), pendingSuffix)
+	fmt.Printf("Total balance, SRA %s %s%s\n", utils.FormatSra(response.Available), utils.FormatSra(response.Pending), pendingSuffix)
 
 	return nil
 }

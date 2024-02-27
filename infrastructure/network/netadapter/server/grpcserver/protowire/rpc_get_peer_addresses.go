@@ -1,29 +1,29 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetPeerAddressesRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetPeerAddressesRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetPeerAddressesRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetPeerAddressesRequest is nil")
 	}
 	return &appmessage.GetPeerAddressesRequestMessage{}, nil
 }
 
-func (x *SedradMessage_GetPeerAddressesRequest) fromAppMessage(_ *appmessage.GetPeerAddressesRequestMessage) error {
+func (x *SeradMessage_GetPeerAddressesRequest) fromAppMessage(_ *appmessage.GetPeerAddressesRequestMessage) error {
 	return nil
 }
 
-func (x *SedradMessage_GetPeerAddressesResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetPeerAddressesResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetPeerAddressesResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetPeerAddressesResponse is nil")
 	}
 	return x.GetPeerAddressesResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetPeerAddressesResponse) fromAppMessage(message *appmessage.GetPeerAddressesResponseMessage) error {
+func (x *SeradMessage_GetPeerAddressesResponse) fromAppMessage(message *appmessage.GetPeerAddressesResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

@@ -1,11 +1,11 @@
 package blockrelay
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/protocol/peer"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/domain"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
 )
 
 // HandleIBDBlockLocatorContext is the interface for the context needed for the HandleIBDBlockLocator flow.

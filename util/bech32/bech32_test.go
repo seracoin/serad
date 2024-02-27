@@ -5,7 +5,7 @@
 package bech32_test
 
 import (
-	"github.com/sedracoin/sedrad/util/bech32"
+	"github.com/seracoin/serad/util/bech32"
 	"testing"
 )
 

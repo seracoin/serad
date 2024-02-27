@@ -3,10 +3,10 @@ package blockprocessor
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/processes/blockprocessor/blocklogger"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/processes/blockprocessor/blocklogger"
+	"github.com/seracoin/serad/infrastructure/logger"
 )
 
 // blockProcessor is responsible for processing incoming blocks

@@ -4,9 +4,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 

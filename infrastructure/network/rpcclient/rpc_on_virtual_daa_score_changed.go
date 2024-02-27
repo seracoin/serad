@@ -1,8 +1,8 @@
 package rpcclient
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	routerpkg "github.com/seracoin/serad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

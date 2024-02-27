@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_Block) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_Block) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrap(errorNil, "SedradMessage_Block is nil")
+		return nil, errors.Wrap(errorNil, "SeradMessage_Block is nil")
 	}
 	return x.Block.toAppMessage()
 }
 
-func (x *SedradMessage_Block) fromAppMessage(msgBlock *appmessage.MsgBlock) error {
+func (x *SeradMessage_Block) fromAppMessage(msgBlock *appmessage.MsgBlock) error {
 	x.Block = new(BlockMessage)
 	return x.Block.fromAppMessage(msgBlock)
 }

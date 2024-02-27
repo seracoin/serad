@@ -1,7 +1,7 @@
 package connmanager
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
 )
 
 type connectionSet map[string]*netadapter.NetConnection

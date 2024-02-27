@@ -1,6 +1,6 @@
 package database
 
-// Transaction defines the interface of a generic sedrad database
+// Transaction defines the interface of a generic serad database
 // transaction.
 //
 // Note: Transactions provide data consistency over the state of

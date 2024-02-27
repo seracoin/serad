@@ -6,11 +6,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/keys"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/client"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/keys"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
+	"github.com/seracoin/serad/cmd/serawallet/utils"
 	"github.com/pkg/errors"
 )
 
@@ -35,7 +35,7 @@ func send(conf *sendConfig) error {
 
 	var sendAmountSeep uint64
 	if !conf.IsSendAll {
-		sendAmountSeep, err = utils.SdrToSeep(conf.SendAmount)
+		sendAmountSeep, err = utils.SraToSeep(conf.SendAmount)
 
 		if err != nil {
 			return err
@@ -68,7 +68,7 @@ func send(conf *sendConfig) error {
 
 	signedTransactions := make([][]byte, len(createUnsignedTransactionsResponse.UnsignedTransactions))
 	for i, unsignedTransaction := range createUnsignedTransactionsResponse.UnsignedTransactions {
-		signedTransaction, err := libsedrawallet.Sign(conf.NetParams(), mnemonics, unsignedTransaction, keysFile.ECDSA)
+		signedTransaction, err := libserawallet.Sign(conf.NetParams(), mnemonics, unsignedTransaction, keysFile.ECDSA)
 		if err != nil {
 			return err
 		}

@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgReady implements the Message interface and represents a sedra
+// MsgReady implements the Message interface and represents a sera
 // Ready message. It is used to notify that the peer is ready to receive
 // messages.
 //
@@ -15,7 +15,7 @@ func (msg *MsgReady) Command() MessageCommand {
 	return CmdReady
 }
 
-// NewMsgReady returns a new sedra Ready message that conforms to the
+// NewMsgReady returns a new sera Ready message that conforms to the
 // Message interface.
 func NewMsgReady() *MsgReady {
 	return &MsgReady{}

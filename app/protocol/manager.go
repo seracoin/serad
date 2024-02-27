@@ -5,20 +5,20 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/app/protocol/common"
+	"github.com/seracoin/serad/app/protocol/common"
 
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/domain"
+	"github.com/seracoin/serad/domain"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/addressmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/app/protocol/flowcontext"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/network/addressmanager"
+	"github.com/seracoin/serad/infrastructure/network/connmanager"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
 )
 
 // Manager manages the p2p protocol

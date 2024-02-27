@@ -1,8 +1,8 @@
 package ready
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/util/panics"
 )
 
 var log = logger.RegisterSubSystem("PROT")

@@ -18,21 +18,21 @@ import (
 
 	"github.com/btcsuite/go-socks/socks"
 	"github.com/jessevdk/go-flags"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/util/network"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/util"
+	"github.com/seracoin/serad/util/network"
+	"github.com/seracoin/serad/version"
 	"github.com/pkg/errors"
 )
 
 const (
-	defaultConfigFilename      = "sedrad.conf"
+	defaultConfigFilename      = "serad.conf"
 	defaultLogLevel            = "info"
 	defaultLogDirname          = "logs"
-	defaultLogFilename         = "sedrad.log"
-	defaultErrLogFilename      = "sedrad_err.log"
+	defaultLogFilename         = "serad.log"
+	defaultErrLogFilename      = "serad_err.log"
 	defaultTargetOutboundPeers = 8
 	defaultMaxInboundPeers     = 117
 	defaultBanDuration         = time.Hour * 24
@@ -51,14 +51,14 @@ const (
 	//DefaultMaxOrphanTxSize is the default maximum size for an orphan transaction
 	DefaultMaxOrphanTxSize  = 100_000
 	defaultSigCacheMaxSize  = 100_000
-	sampleConfigFilename    = "sample-sedrad.conf"
+	sampleConfigFilename    = "sample-serad.conf"
 	defaultMaxUTXOCacheSize = 5_000_000_000
 	defaultProtocolVersion  = 5
 )
 
 var (
-	// DefaultAppDir is the default home directory for sedrad.
-	DefaultAppDir = util.AppDir("sedrad", false)
+	// DefaultAppDir is the default home directory for serad.
+	DefaultAppDir = util.AppDir("serad", false)
 
 	defaultConfigFile  = filepath.Join(DefaultAppDir, defaultConfigFilename)
 	defaultDataDir     = filepath.Join(DefaultAppDir)
@@ -66,14 +66,14 @@ var (
 	defaultRPCCertFile = filepath.Join(DefaultAppDir, "rpc.cert")
 )
 
-//go:embed sample-sedrad.conf
+//go:embed sample-serad.conf
 var sampleConfig string
 
 // RunServiceCommand is only set to a real function on Windows. It is used
 // to parse and execute service commands specified via the -s flag.
 var RunServiceCommand func(string) error
 
-// Flags defines the configuration options for sedrad.
+// Flags defines the configuration options for serad.
 //
 // See loadConfig for details on the configuration load process.
 type Flags struct {
@@ -110,7 +110,7 @@ type Flags struct {
 	Profile                         string        `long:"profile" description:"Enable HTTP profiling on given port -- NOTE port must be between 1024 and 65536"`
 	LogLevel                        string        `short:"d" long:"loglevel" description:"Logging level for all subsystems {trace, debug, info, warn, error, critical} -- You may also specify <subsystem>=<level>,<subsystem2>=<level>,... to set the log level for individual subsystems -- Use show to list available subsystems"`
 	Upnp                            bool          `long:"upnp" description:"Use UPnP to map our listening port outside of NAT"`
-	MinRelayTxFee                   float64       `long:"minrelaytxfee" description:"The minimum transaction fee in SDR/kB to be considered a non-zero fee."`
+	MinRelayTxFee                   float64       `long:"minrelaytxfee" description:"The minimum transaction fee in SRA/kB to be considered a non-zero fee."`
 	MaxOrphanTxs                    uint64        `long:"maxorphantx" description:"Max number of orphan transactions to keep in memory"`
 	BlockMaxMass                    uint64        `long:"blockmaxmass" description:"Maximum transaction mass to be used when creating a block"`
 	UserAgentComments               []string      `long:"uacomment" description:"Comment to add to the user agent -- See BIP 14 for more information."`
@@ -130,7 +130,7 @@ type Flags struct {
 	ServiceOptions *ServiceOptions
 }
 
-// Config defines the configuration options for sedrad.
+// Config defines the configuration options for serad.
 //
 // See loadConfig for details on the configuration load process.
 type Config struct {
@@ -196,7 +196,7 @@ func defaultFlags() *Flags {
 	}
 }
 
-// DefaultConfig returns the default sedrad configuration
+// DefaultConfig returns the default serad configuration
 func DefaultConfig() *Config {
 	config := &Config{Flags: defaultFlags()}
 	config.NetworkFlags.ActiveNetParams = &dagconfig.MainnetParams
@@ -212,7 +212,7 @@ func DefaultConfig() *Config {
 //  3. Load configuration file overwriting defaults with any specified options
 //  4. Parse CLI options and overwrite/add any specified options
 //
-// The above results in sedrad functioning properly without any config settings
+// The above results in serad functioning properly without any config settings
 // while still allowing the user to override settings with config files and
 // command line options. Command line options always take precedence.
 func LoadConfig() (*Config, error) {
@@ -575,7 +575,7 @@ func LoadConfig() (*Config, error) {
 	return cfg, nil
 }
 
-// createDefaultConfig copies the file sample-sedrad.conf to the given destination path,
+// createDefaultConfig copies the file sample-serad.conf to the given destination path,
 // and populates it with some randomly generated RPC username and password.
 func createDefaultConfigFile(destinationPath string) error {
 	// Create the destination directory if it does not exists

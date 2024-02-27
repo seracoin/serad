@@ -3,13 +3,13 @@ package transactionvalidator
 import (
 	"math"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
 	"github.com/pkg/errors"
 )
 
@@ -150,8 +150,8 @@ func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.Doma
 		// output values of the input transactions must not be negative
 		// or more than the max allowed per transaction. All amounts in
 		// a transaction are in a unit value known as a seep. One
-		// sedra is a quantity of seep as defined by the
-		// SeepPerSedra constant.
+		// sera is a quantity of seep as defined by the
+		// SeepPerSera constant.
 		totalSeepIn, err = v.checkEntryAmounts(utxoEntry, totalSeepIn)
 		if err != nil {
 			return 0, err

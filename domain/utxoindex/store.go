@@ -3,10 +3,10 @@ package utxoindex
 import (
 	"encoding/binary"
 
-	"github.com/sedracoin/sedrad/domain/consensus/database/binaryserialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/domain/consensus/database/binaryserialization"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

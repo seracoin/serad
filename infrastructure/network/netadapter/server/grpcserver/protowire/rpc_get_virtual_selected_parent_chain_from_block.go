@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetVirtualSelectedParentChainFromBlockRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetVirtualSelectedParentChainFromBlockRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetVirtualSelectedParentChainFromBlockRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetVirtualSelectedParentChainFromBlockRequest is nil")
 	}
 	return x.GetVirtualSelectedParentChainFromBlockRequest.toAppMessage()
 }
 
-func (x *SedradMessage_GetVirtualSelectedParentChainFromBlockRequest) fromAppMessage(message *appmessage.GetVirtualSelectedParentChainFromBlockRequestMessage) error {
+func (x *SeradMessage_GetVirtualSelectedParentChainFromBlockRequest) fromAppMessage(message *appmessage.GetVirtualSelectedParentChainFromBlockRequestMessage) error {
 	x.GetVirtualSelectedParentChainFromBlockRequest = &GetVirtualSelectedParentChainFromBlockRequestMessage{
 		StartHash:                     message.StartHash,
 		IncludeAcceptedTransactionIds: message.IncludeAcceptedTransactionIDs,
@@ -30,14 +30,14 @@ func (x *GetVirtualSelectedParentChainFromBlockRequestMessage) toAppMessage() (a
 	}, nil
 }
 
-func (x *SedradMessage_GetVirtualSelectedParentChainFromBlockResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetVirtualSelectedParentChainFromBlockResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetVirtualSelectedParentChainFromBlockResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetVirtualSelectedParentChainFromBlockResponse is nil")
 	}
 	return x.GetVirtualSelectedParentChainFromBlockResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetVirtualSelectedParentChainFromBlockResponse) fromAppMessage(message *appmessage.GetVirtualSelectedParentChainFromBlockResponseMessage) error {
+func (x *SeradMessage_GetVirtualSelectedParentChainFromBlockResponse) fromAppMessage(message *appmessage.GetVirtualSelectedParentChainFromBlockResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

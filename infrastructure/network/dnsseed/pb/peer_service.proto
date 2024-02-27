@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/sedracoin/sedrad/pb";
+option go_package = "github.com/seracoin/serad/pb";
 
 service PeerService {
   rpc GetPeersList(GetPeersListRequest) returns (GetPeersListResponse) {}

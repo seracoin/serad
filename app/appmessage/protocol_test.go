@@ -33,16 +33,16 @@ func TestServiceFlagStringer(t *testing.T) {
 	}
 }
 
-// TestSedraNetStringer tests the stringized output for sedra net types.
-func TestSedraNetStringer(t *testing.T) {
+// TestSeraNetStringer tests the stringized output for sera net types.
+func TestSeraNetStringer(t *testing.T) {
 	tests := []struct {
-		in   SedraNet
+		in   SeraNet
 		want string
 	}{
 		{Mainnet, "Mainnet"},
 		{Testnet, "Testnet"},
 		{Simnet, "Simnet"},
-		{0xffffffff, "Unknown SedraNet (4294967295)"},
+		{0xffffffff, "Unknown SeraNet (4294967295)"},
 	}
 
 	t.Logf("Running %d tests", len(tests))

@@ -7,22 +7,22 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 	"github.com/pkg/errors"
 )
 
-// FormatSdr takes the amount of seeps as uint64, and returns amount of SDR with 8  decimal places
-func FormatSdr(amount uint64) string {
+// FormatSra takes the amount of seeps as uint64, and returns amount of SRA with 8  decimal places
+func FormatSra(amount uint64) string {
 	res := "                   "
 	if amount > 0 {
-		res = fmt.Sprintf("%19.8f", float64(amount)/constants.SeepPerSedra)
+		res = fmt.Sprintf("%19.8f", float64(amount)/constants.SeepPerSera)
 	}
 	return res
 }
 
-// SdrToSeep takes in a string representation of the Sdr value to convert to Seep
-func SdrToSeep(amount string) (uint64, error) {
-	err := validateSDRAmountFormat(amount)
+// SraToSeep takes in a string representation of the Sra value to convert to Seep
+func SraToSeep(amount string) (uint64, error) {
+	err := validateSRAAmountFormat(amount)
 
 	if err != nil {
 		return 0, err
@@ -33,11 +33,11 @@ func SdrToSeep(amount string) (uint64, error) {
 	parts := strings.Split(amount, ".")
 	amountStr := ""
 
-	if constants.SeepPerSedra%10 != 0 {
-		return 0, errors.Errorf("Unable to convert to seep when SeepPerSedra is not a multiple of 10")
+	if constants.SeepPerSera%10 != 0 {
+		return 0, errors.Errorf("Unable to convert to seep when SeepPerSera is not a multiple of 10")
 	}
 
-	decimalPlaces := int(math.Log10(constants.SeepPerSedra))
+	decimalPlaces := int(math.Log10(constants.SeepPerSera))
 	decimalStr := ""
 
 	if len(parts) == 2 {
@@ -52,7 +52,7 @@ func SdrToSeep(amount string) (uint64, error) {
 	return convertedAmount, err
 }
 
-func validateSDRAmountFormat(amount string) error {
+func validateSRAAmountFormat(amount string) error {
 	// Check whether it's an integer, or a float with max 8 digits
 	match, err := regexp.MatchString("^([1-9]\\d{0,11}|0)(\\.\\d{0,8})?$", amount)
 

@@ -4,10 +4,10 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/prefixmanager/prefix"
+	"github.com/seracoin/serad/domain/prefixmanager/prefix"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/db/database/ldb"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/infrastructure/db/database/ldb"
 )
 
 func TestNewConsensus(t *testing.T) {

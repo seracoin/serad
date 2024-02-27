@@ -2,7 +2,7 @@ package externalapi
 
 import "math/big"
 
-// DomainBlock represents a sedra block
+// DomainBlock represents a sera block
 type DomainBlock struct {
 	Header       BlockHeader
 	Transactions []*DomainTransaction
@@ -54,7 +54,7 @@ type BlockHeader interface {
 	ToMutable() MutableBlockHeader
 }
 
-// BaseBlockHeader represents the header part of a sedra block
+// BaseBlockHeader represents the header part of a sera block
 type BaseBlockHeader interface {
 	Version() uint16
 	Parents() []BlockLevelParents

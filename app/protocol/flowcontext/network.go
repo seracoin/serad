@@ -1,11 +1,11 @@
 package flowcontext
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/infrastructure/network/connmanager"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/protocol/common"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	"github.com/seracoin/serad/infrastructure/network/connmanager"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
 	"github.com/pkg/errors"
 )
 

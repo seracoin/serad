@@ -3,7 +3,7 @@ package ldb
 import (
 	"bytes"
 
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/db/database"
 	"github.com/pkg/errors"
 	"github.com/syndtr/goleveldb/leveldb/iterator"
 	"github.com/syndtr/goleveldb/leveldb/util"

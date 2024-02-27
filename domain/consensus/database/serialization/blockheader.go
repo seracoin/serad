@@ -1,8 +1,8 @@
 package serialization
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/blockheader"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/blockheader"
 	"github.com/pkg/errors"
 	"math"
 	"math/big"

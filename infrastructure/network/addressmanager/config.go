@@ -3,7 +3,7 @@ package addressmanager
 import (
 	"net"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/config"
 )
 
 // Config is a descriptor which specifies the AddressManager instance configuration.

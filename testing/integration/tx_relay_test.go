@@ -6,18 +6,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
+	"github.com/seracoin/serad/app/protocol/flowcontext"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/domain/consensus/utils/utxo"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/util"
 )
 
 func TestTxRelay(t *testing.T) {
@@ -139,7 +139,7 @@ func generateTx(t *testing.T, firstBlockCoinbase *externalapi.DomainTransaction,
 	txIns := make([]*appmessage.TxIn, 1)
 	txIns[0] = appmessage.NewTxIn(appmessage.NewOutpoint(consensushashing.TransactionID(firstBlockCoinbase), 0), []byte{}, 0, 1)
 
-	payeeAddress, err := util.DecodeAddress(payee.miningAddress, util.Bech32PrefixSedraSim)
+	payeeAddress, err := util.DecodeAddress(payee.miningAddress, util.Bech32PrefixSeraSim)
 	if err != nil {
 		t.Fatalf("Error decoding payeeAddress: %+v", err)
 	}

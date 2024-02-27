@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/infrastructure/db/database/ldb"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/infrastructure/db/database/ldb"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/stability-tests/common/mine"
 	"github.com/pkg/errors"
 )
 

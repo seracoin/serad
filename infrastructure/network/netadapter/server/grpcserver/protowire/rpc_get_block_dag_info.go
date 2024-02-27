@@ -1,25 +1,25 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetBlockDagInfoRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetBlockDagInfoRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetBlockDagInfoRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetBlockDagInfoRequest is nil")
 	}
 	return &appmessage.GetBlockDAGInfoRequestMessage{}, nil
 }
 
-func (x *SedradMessage_GetBlockDagInfoRequest) fromAppMessage(_ *appmessage.GetBlockDAGInfoRequestMessage) error {
+func (x *SeradMessage_GetBlockDagInfoRequest) fromAppMessage(_ *appmessage.GetBlockDAGInfoRequestMessage) error {
 	x.GetBlockDagInfoRequest = &GetBlockDagInfoRequestMessage{}
 	return nil
 }
 
-func (x *SedradMessage_GetBlockDagInfoResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetBlockDagInfoResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetBlockDagInfoResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetBlockDagInfoResponse is nil")
 	}
 	return x.GetBlockDagInfoResponse.toAppMessage()
 }
@@ -50,7 +50,7 @@ func (x *GetBlockDagInfoResponseMessage) toAppMessage() (appmessage.Message, err
 	}, nil
 }
 
-func (x *SedradMessage_GetBlockDagInfoResponse) fromAppMessage(message *appmessage.GetBlockDAGInfoResponseMessage) error {
+func (x *SeradMessage_GetBlockDagInfoResponse) fromAppMessage(message *appmessage.GetBlockDAGInfoResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

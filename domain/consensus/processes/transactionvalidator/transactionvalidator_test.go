@@ -1,21 +1,21 @@
 package transactionvalidator_test
 
 import (
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/util"
 
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"
 )
 
@@ -58,7 +58,7 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 			Sequence:         constants.MaxTxInSequenceNum,
 			SigOpCount:       1,
 			UTXOEntry: utxo.NewUTXOEntry(
-				100_000_000, // 1 SDR
+				100_000_000, // 1 SRA
 				scriptPublicKey,
 				true,
 				uint64(5)),
@@ -68,7 +68,7 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 			SignatureScript:  []byte{},
 			SigOpCount:       1,
 			UTXOEntry: utxo.NewUTXOEntry(
-				100_000_000, // 1 SDR
+				100_000_000, // 1 SRA
 				scriptPublicKey,
 				true,
 				uint64(5)),
@@ -79,7 +79,7 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 			Sequence:         constants.MaxTxInSequenceNum,
 			SigOpCount:       1,
 			UTXOEntry: utxo.NewUTXOEntry(
-				100_000_000, // 1 SDR
+				100_000_000, // 1 SRA
 				scriptPublicKey,
 				true,
 				uint64(6)),
@@ -110,11 +110,11 @@ func TestValidateTransactionInContextAndPopulateFee(t *testing.T) {
 		}
 
 		txOutput := externalapi.DomainTransactionOutput{
-			Value:           100000000, // 1 SDR
+			Value:           100000000, // 1 SRA
 			ScriptPublicKey: scriptPublicKey,
 		}
 		txOutputBigValue := externalapi.DomainTransactionOutput{
-			Value:           200_000_000, // 2 SDR
+			Value:           200_000_000, // 2 SRA
 			ScriptPublicKey: scriptPublicKey,
 		}
 

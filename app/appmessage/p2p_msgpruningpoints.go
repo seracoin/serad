@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgPruningPoints represents a sedra PruningPoints message
+// MsgPruningPoints represents a sera PruningPoints message
 type MsgPruningPoints struct {
 	baseMessage
 

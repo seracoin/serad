@@ -3,15 +3,15 @@ package mempool
 import (
 	"sync"
 
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/domain/consensusreference"
+	"github.com/seracoin/serad/domain/consensusreference"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	miningmanagermodel "github.com/sedracoin/sedrad/domain/miningmanager/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	miningmanagermodel "github.com/seracoin/serad/domain/miningmanager/model"
 )
 
 type mempool struct {
@@ -161,12 +161,12 @@ func (mp *mempool) BlockCandidateTransactions() []*externalapi.DomainTransaction
 			}
 
 			numExtraOuts := len(tx.Outputs) - len(tx.Inputs)
-			if !hasCoinbaseInput && numExtraOuts > 2 && tx.Fee < uint64(numExtraOuts)*constants.SeepPerSedra {
+			if !hasCoinbaseInput && numExtraOuts > 2 && tx.Fee < uint64(numExtraOuts)*constants.SeepPerSera {
 				log.Debugf("Filtered spam tx %s", consensushashing.TransactionID(tx))
 				continue
 			}
 
-			if hasCoinbaseInput || tx.Fee > uint64(numExtraOuts)*constants.SeepPerSedra {
+			if hasCoinbaseInput || tx.Fee > uint64(numExtraOuts)*constants.SeepPerSera {
 				candidateTxs = append(candidateTxs, tx)
 			} else {
 				txNewestUTXODaaScore := tx.Inputs[0].UTXOEntry.BlockDAAScore()

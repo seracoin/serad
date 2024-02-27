@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/stability-tests/common/mine"
+	"github.com/seracoin/serad/stability-tests/common/rpc"
+	"github.com/seracoin/serad/util/panics"
+	"github.com/seracoin/serad/util/profiling"
 	"github.com/pkg/errors"
 )
 

@@ -2,19 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus"
 	"os/exec"
 	"strings"
 	"sync/atomic"
 	"syscall"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/stability-tests/common/mine"
+	"github.com/seracoin/serad/stability-tests/common/rpc"
+	"github.com/seracoin/serad/util"
+	"github.com/seracoin/serad/util/panics"
 	"github.com/pkg/errors"
 )
 
@@ -30,7 +30,7 @@ func startNode(name string, rpcAddress, listen, connect, profilePort, dataDir st
 	log.Infof("Data directory for %s is %s", name, dataDir)
 
 	args := []string{
-		"sedrad",
+		"serad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", dataDir,
 		"--logdir", dataDir,
@@ -119,7 +119,7 @@ func setupNodeWithRPC(name, listen, rpcListen, connect, profilePort, dataDir str
 func setupSyncee() (*rpc.Client, func(), error) {
 	const syncedProfilePort = "6061"
 
-	synceeDataDir, err := useDirOrCreateTemp(activeConfig().SynceeDataDirectory, "syncee-sedrad-data-dir")
+	synceeDataDir, err := useDirOrCreateTemp(activeConfig().SynceeDataDirectory, "syncee-serad-data-dir")
 	if err != nil {
 		return nil, nil, err
 	}
@@ -131,7 +131,7 @@ func setupSyncee() (*rpc.Client, func(), error) {
 func setupSyncer() (*rpc.Client, func(), error) {
 	const syncerProfilePort = "6062"
 
-	syncerDataDir, err := useDirOrCreateTemp(activeConfig().SyncerDataDirectory, "syncer-sedrad-data-dir")
+	syncerDataDir, err := useDirOrCreateTemp(activeConfig().SyncerDataDirectory, "syncer-serad-data-dir")
 	if err != nil {
 		return nil, nil, err
 	}

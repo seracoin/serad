@@ -1,11 +1,11 @@
 package acceptancedatastore
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/database/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/lrucache"
-	"github.com/sedracoin/sedrad/util/staging"
+	"github.com/seracoin/serad/domain/consensus/database/serialization"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/lrucache"
+	"github.com/seracoin/serad/util/staging"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -1,7 +1,7 @@
 package database
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/db/database"
 )
 
 // ErrNotFound denotes that the requested item was not

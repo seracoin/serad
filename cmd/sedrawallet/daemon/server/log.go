@@ -5,10 +5,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/util/panics"
 )
 
 var (
@@ -16,7 +16,7 @@ var (
 	log        = backendLog.Logger("KSWD")
 	spawn      = panics.GoroutineWrapperFunc(log)
 
-	defaultAppDir     = util.AppDir("sedrawallet", false)
+	defaultAppDir     = util.AppDir("serawallet", false)
 	defaultLogFile    = filepath.Join(defaultAppDir, "daemon.log")
 	defaultErrLogFile = filepath.Join(defaultAppDir, "daemon_err.log")
 )

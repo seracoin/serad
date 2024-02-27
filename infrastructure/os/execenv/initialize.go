@@ -5,10 +5,10 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/sedracoin/sedrad/infrastructure/os/limits"
+	"github.com/seracoin/serad/infrastructure/os/limits"
 )
 
-// Initialize initializes the execution environment required to run sedrad
+// Initialize initializes the execution environment required to run serad
 func Initialize(desiredLimits *limits.DesiredLimits) {
 	// Use all processor cores.
 	runtime.GOMAXPROCS(runtime.NumCPU())

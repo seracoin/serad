@@ -4,7 +4,7 @@
 
 package appmessage
 
-// MsgPing implements the Message interface and represents a sedra ping
+// MsgPing implements the Message interface and represents a sera ping
 // message.
 //
 // For versions BIP0031Version and earlier, it is used primarily to confirm
@@ -28,7 +28,7 @@ func (msg *MsgPing) Command() MessageCommand {
 	return CmdPing
 }
 
-// NewMsgPing returns a new sedra ping message that conforms to the Message
+// NewMsgPing returns a new sera ping message that conforms to the Message
 // interface. See MsgPing for details.
 func NewMsgPing(nonce uint64) *MsgPing {
 	return &MsgPing{

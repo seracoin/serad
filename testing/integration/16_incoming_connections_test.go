@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 )
 
 func Test16IncomingConnections(t *testing.T) {

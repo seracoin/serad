@@ -14,10 +14,10 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// SedrawalletdClient is the client API for Sedrawalletd service.
+// SerawalletdClient is the client API for Serawalletd service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type SedrawalletdClient interface {
+type SerawalletdClient interface {
 	GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error)
 	GetExternalSpendableUTXOs(ctx context.Context, in *GetExternalSpendableUTXOsRequest, opts ...grpc.CallOption) (*GetExternalSpendableUTXOsResponse, error)
 	CreateUnsignedTransactions(ctx context.Context, in *CreateUnsignedTransactionsRequest, opts ...grpc.CallOption) (*CreateUnsignedTransactionsResponse, error)
@@ -31,99 +31,99 @@ type SedrawalletdClient interface {
 	Sign(ctx context.Context, in *SignRequest, opts ...grpc.CallOption) (*SignResponse, error)
 }
 
-type sedrawalletdClient struct {
+type serawalletdClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewSedrawalletdClient(cc grpc.ClientConnInterface) SedrawalletdClient {
-	return &sedrawalletdClient{cc}
+func NewSerawalletdClient(cc grpc.ClientConnInterface) SerawalletdClient {
+	return &serawalletdClient{cc}
 }
 
-func (c *sedrawalletdClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
+func (c *serawalletdClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
 	out := new(GetBalanceResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/GetBalance", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/GetBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) GetExternalSpendableUTXOs(ctx context.Context, in *GetExternalSpendableUTXOsRequest, opts ...grpc.CallOption) (*GetExternalSpendableUTXOsResponse, error) {
+func (c *serawalletdClient) GetExternalSpendableUTXOs(ctx context.Context, in *GetExternalSpendableUTXOsRequest, opts ...grpc.CallOption) (*GetExternalSpendableUTXOsResponse, error) {
 	out := new(GetExternalSpendableUTXOsResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/GetExternalSpendableUTXOs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/GetExternalSpendableUTXOs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) CreateUnsignedTransactions(ctx context.Context, in *CreateUnsignedTransactionsRequest, opts ...grpc.CallOption) (*CreateUnsignedTransactionsResponse, error) {
+func (c *serawalletdClient) CreateUnsignedTransactions(ctx context.Context, in *CreateUnsignedTransactionsRequest, opts ...grpc.CallOption) (*CreateUnsignedTransactionsResponse, error) {
 	out := new(CreateUnsignedTransactionsResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/CreateUnsignedTransactions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/CreateUnsignedTransactions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) ShowAddresses(ctx context.Context, in *ShowAddressesRequest, opts ...grpc.CallOption) (*ShowAddressesResponse, error) {
+func (c *serawalletdClient) ShowAddresses(ctx context.Context, in *ShowAddressesRequest, opts ...grpc.CallOption) (*ShowAddressesResponse, error) {
 	out := new(ShowAddressesResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/ShowAddresses", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/ShowAddresses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) NewAddress(ctx context.Context, in *NewAddressRequest, opts ...grpc.CallOption) (*NewAddressResponse, error) {
+func (c *serawalletdClient) NewAddress(ctx context.Context, in *NewAddressRequest, opts ...grpc.CallOption) (*NewAddressResponse, error) {
 	out := new(NewAddressResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/NewAddress", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/NewAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
+func (c *serawalletdClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) Broadcast(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error) {
+func (c *serawalletdClient) Broadcast(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error) {
 	out := new(BroadcastResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/Broadcast", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/Broadcast", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) Send(ctx context.Context, in *SendRequest, opts ...grpc.CallOption) (*SendResponse, error) {
+func (c *serawalletdClient) Send(ctx context.Context, in *SendRequest, opts ...grpc.CallOption) (*SendResponse, error) {
 	out := new(SendResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/Send", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/Send", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *sedrawalletdClient) Sign(ctx context.Context, in *SignRequest, opts ...grpc.CallOption) (*SignResponse, error) {
+func (c *serawalletdClient) Sign(ctx context.Context, in *SignRequest, opts ...grpc.CallOption) (*SignResponse, error) {
 	out := new(SignResponse)
-	err := c.cc.Invoke(ctx, "/sedrawalletd.sedrawalletd/Sign", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/serawalletd.serawalletd/Sign", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// SedrawalletdServer is the server API for Sedrawalletd service.
-// All implementations must embed UnimplementedSedrawalletdServer
+// SerawalletdServer is the server API for Serawalletd service.
+// All implementations must embed UnimplementedSerawalletdServer
 // for forward compatibility
-type SedrawalletdServer interface {
+type SerawalletdServer interface {
 	GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error)
 	GetExternalSpendableUTXOs(context.Context, *GetExternalSpendableUTXOsRequest) (*GetExternalSpendableUTXOsResponse, error)
 	CreateUnsignedTransactions(context.Context, *CreateUnsignedTransactionsRequest) (*CreateUnsignedTransactionsResponse, error)
@@ -135,259 +135,259 @@ type SedrawalletdServer interface {
 	Send(context.Context, *SendRequest) (*SendResponse, error)
 	// Since SignRequest contains a password - this command should only be used on a trusted or secure connection
 	Sign(context.Context, *SignRequest) (*SignResponse, error)
-	mustEmbedUnimplementedSedrawalletdServer()
+	mustEmbedUnimplementedSerawalletdServer()
 }
 
-// UnimplementedSedrawalletdServer must be embedded to have forward compatible implementations.
-type UnimplementedSedrawalletdServer struct {
+// UnimplementedSerawalletdServer must be embedded to have forward compatible implementations.
+type UnimplementedSerawalletdServer struct {
 }
 
-func (UnimplementedSedrawalletdServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
+func (UnimplementedSerawalletdServer) GetBalance(context.Context, *GetBalanceRequest) (*GetBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
 }
-func (UnimplementedSedrawalletdServer) GetExternalSpendableUTXOs(context.Context, *GetExternalSpendableUTXOsRequest) (*GetExternalSpendableUTXOsResponse, error) {
+func (UnimplementedSerawalletdServer) GetExternalSpendableUTXOs(context.Context, *GetExternalSpendableUTXOsRequest) (*GetExternalSpendableUTXOsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetExternalSpendableUTXOs not implemented")
 }
-func (UnimplementedSedrawalletdServer) CreateUnsignedTransactions(context.Context, *CreateUnsignedTransactionsRequest) (*CreateUnsignedTransactionsResponse, error) {
+func (UnimplementedSerawalletdServer) CreateUnsignedTransactions(context.Context, *CreateUnsignedTransactionsRequest) (*CreateUnsignedTransactionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUnsignedTransactions not implemented")
 }
-func (UnimplementedSedrawalletdServer) ShowAddresses(context.Context, *ShowAddressesRequest) (*ShowAddressesResponse, error) {
+func (UnimplementedSerawalletdServer) ShowAddresses(context.Context, *ShowAddressesRequest) (*ShowAddressesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ShowAddresses not implemented")
 }
-func (UnimplementedSedrawalletdServer) NewAddress(context.Context, *NewAddressRequest) (*NewAddressResponse, error) {
+func (UnimplementedSerawalletdServer) NewAddress(context.Context, *NewAddressRequest) (*NewAddressResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method NewAddress not implemented")
 }
-func (UnimplementedSedrawalletdServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
+func (UnimplementedSerawalletdServer) Shutdown(context.Context, *ShutdownRequest) (*ShutdownResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Shutdown not implemented")
 }
-func (UnimplementedSedrawalletdServer) Broadcast(context.Context, *BroadcastRequest) (*BroadcastResponse, error) {
+func (UnimplementedSerawalletdServer) Broadcast(context.Context, *BroadcastRequest) (*BroadcastResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Broadcast not implemented")
 }
-func (UnimplementedSedrawalletdServer) Send(context.Context, *SendRequest) (*SendResponse, error) {
+func (UnimplementedSerawalletdServer) Send(context.Context, *SendRequest) (*SendResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Send not implemented")
 }
-func (UnimplementedSedrawalletdServer) Sign(context.Context, *SignRequest) (*SignResponse, error) {
+func (UnimplementedSerawalletdServer) Sign(context.Context, *SignRequest) (*SignResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Sign not implemented")
 }
-func (UnimplementedSedrawalletdServer) mustEmbedUnimplementedSedrawalletdServer() {}
+func (UnimplementedSerawalletdServer) mustEmbedUnimplementedSerawalletdServer() {}
 
-// UnsafeSedrawalletdServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to SedrawalletdServer will
+// UnsafeSerawalletdServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to SerawalletdServer will
 // result in compilation errors.
-type UnsafeSedrawalletdServer interface {
-	mustEmbedUnimplementedSedrawalletdServer()
+type UnsafeSerawalletdServer interface {
+	mustEmbedUnimplementedSerawalletdServer()
 }
 
-func RegisterSedrawalletdServer(s grpc.ServiceRegistrar, srv SedrawalletdServer) {
-	s.RegisterService(&Sedrawalletd_ServiceDesc, srv)
+func RegisterSerawalletdServer(s grpc.ServiceRegistrar, srv SerawalletdServer) {
+	s.RegisterService(&Serawalletd_ServiceDesc, srv)
 }
 
-func _Sedrawalletd_GetBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_GetBalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBalanceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).GetBalance(ctx, in)
+		return srv.(SerawalletdServer).GetBalance(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/GetBalance",
+		FullMethod: "/serawalletd.serawalletd/GetBalance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).GetBalance(ctx, req.(*GetBalanceRequest))
+		return srv.(SerawalletdServer).GetBalance(ctx, req.(*GetBalanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_GetExternalSpendableUTXOs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_GetExternalSpendableUTXOs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetExternalSpendableUTXOsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).GetExternalSpendableUTXOs(ctx, in)
+		return srv.(SerawalletdServer).GetExternalSpendableUTXOs(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/GetExternalSpendableUTXOs",
+		FullMethod: "/serawalletd.serawalletd/GetExternalSpendableUTXOs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).GetExternalSpendableUTXOs(ctx, req.(*GetExternalSpendableUTXOsRequest))
+		return srv.(SerawalletdServer).GetExternalSpendableUTXOs(ctx, req.(*GetExternalSpendableUTXOsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_CreateUnsignedTransactions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_CreateUnsignedTransactions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateUnsignedTransactionsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).CreateUnsignedTransactions(ctx, in)
+		return srv.(SerawalletdServer).CreateUnsignedTransactions(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/CreateUnsignedTransactions",
+		FullMethod: "/serawalletd.serawalletd/CreateUnsignedTransactions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).CreateUnsignedTransactions(ctx, req.(*CreateUnsignedTransactionsRequest))
+		return srv.(SerawalletdServer).CreateUnsignedTransactions(ctx, req.(*CreateUnsignedTransactionsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_ShowAddresses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_ShowAddresses_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ShowAddressesRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).ShowAddresses(ctx, in)
+		return srv.(SerawalletdServer).ShowAddresses(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/ShowAddresses",
+		FullMethod: "/serawalletd.serawalletd/ShowAddresses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).ShowAddresses(ctx, req.(*ShowAddressesRequest))
+		return srv.(SerawalletdServer).ShowAddresses(ctx, req.(*ShowAddressesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_NewAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_NewAddress_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(NewAddressRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).NewAddress(ctx, in)
+		return srv.(SerawalletdServer).NewAddress(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/NewAddress",
+		FullMethod: "/serawalletd.serawalletd/NewAddress",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).NewAddress(ctx, req.(*NewAddressRequest))
+		return srv.(SerawalletdServer).NewAddress(ctx, req.(*NewAddressRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_Shutdown_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ShutdownRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).Shutdown(ctx, in)
+		return srv.(SerawalletdServer).Shutdown(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/Shutdown",
+		FullMethod: "/serawalletd.serawalletd/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).Shutdown(ctx, req.(*ShutdownRequest))
+		return srv.(SerawalletdServer).Shutdown(ctx, req.(*ShutdownRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_Broadcast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_Broadcast_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(BroadcastRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).Broadcast(ctx, in)
+		return srv.(SerawalletdServer).Broadcast(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/Broadcast",
+		FullMethod: "/serawalletd.serawalletd/Broadcast",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).Broadcast(ctx, req.(*BroadcastRequest))
+		return srv.(SerawalletdServer).Broadcast(ctx, req.(*BroadcastRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_Send_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_Send_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SendRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).Send(ctx, in)
+		return srv.(SerawalletdServer).Send(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/Send",
+		FullMethod: "/serawalletd.serawalletd/Send",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).Send(ctx, req.(*SendRequest))
+		return srv.(SerawalletdServer).Send(ctx, req.(*SendRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Sedrawalletd_Sign_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Serawalletd_Sign_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SignRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SedrawalletdServer).Sign(ctx, in)
+		return srv.(SerawalletdServer).Sign(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sedrawalletd.sedrawalletd/Sign",
+		FullMethod: "/serawalletd.serawalletd/Sign",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SedrawalletdServer).Sign(ctx, req.(*SignRequest))
+		return srv.(SerawalletdServer).Sign(ctx, req.(*SignRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Sedrawalletd_ServiceDesc is the grpc.ServiceDesc for Sedrawalletd service.
+// Serawalletd_ServiceDesc is the grpc.ServiceDesc for Serawalletd service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Sedrawalletd_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "sedrawalletd.sedrawalletd",
-	HandlerType: (*SedrawalletdServer)(nil),
+var Serawalletd_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "serawalletd.serawalletd",
+	HandlerType: (*SerawalletdServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetBalance",
-			Handler:    _Sedrawalletd_GetBalance_Handler,
+			Handler:    _Serawalletd_GetBalance_Handler,
 		},
 		{
 			MethodName: "GetExternalSpendableUTXOs",
-			Handler:    _Sedrawalletd_GetExternalSpendableUTXOs_Handler,
+			Handler:    _Serawalletd_GetExternalSpendableUTXOs_Handler,
 		},
 		{
 			MethodName: "CreateUnsignedTransactions",
-			Handler:    _Sedrawalletd_CreateUnsignedTransactions_Handler,
+			Handler:    _Serawalletd_CreateUnsignedTransactions_Handler,
 		},
 		{
 			MethodName: "ShowAddresses",
-			Handler:    _Sedrawalletd_ShowAddresses_Handler,
+			Handler:    _Serawalletd_ShowAddresses_Handler,
 		},
 		{
 			MethodName: "NewAddress",
-			Handler:    _Sedrawalletd_NewAddress_Handler,
+			Handler:    _Serawalletd_NewAddress_Handler,
 		},
 		{
 			MethodName: "Shutdown",
-			Handler:    _Sedrawalletd_Shutdown_Handler,
+			Handler:    _Serawalletd_Shutdown_Handler,
 		},
 		{
 			MethodName: "Broadcast",
-			Handler:    _Sedrawalletd_Broadcast_Handler,
+			Handler:    _Serawalletd_Broadcast_Handler,
 		},
 		{
 			MethodName: "Send",
-			Handler:    _Sedrawalletd_Send_Handler,
+			Handler:    _Serawalletd_Send_Handler,
 		},
 		{
 			MethodName: "Sign",
-			Handler:    _Sedrawalletd_Sign_Handler,
+			Handler:    _Serawalletd_Sign_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "sedrawalletd.proto",
+	Metadata: "serawalletd.proto",
 }

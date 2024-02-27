@@ -1,7 +1,7 @@
 package math_test
 
 import (
-	utilMath "github.com/sedracoin/sedrad/util/math"
+	utilMath "github.com/seracoin/serad/util/math"
 	"math"
 	"testing"
 )

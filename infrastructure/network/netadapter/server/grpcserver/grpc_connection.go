@@ -5,13 +5,13 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server/grpcserver/protowire"
 	"github.com/pkg/errors"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server"
 	"google.golang.org/grpc"
 )
 
@@ -37,8 +37,8 @@ type gRPCConnection struct {
 }
 
 type grpcStream interface {
-	Send(*protowire.SedradMessage) error
-	Recv() (*protowire.SedradMessage, error)
+	Send(*protowire.SeradMessage) error
+	Recv() (*protowire.SeradMessage, error)
 }
 
 func newConnection(server *gRPCServer, address *net.TCPAddr, stream grpcStream,
@@ -127,7 +127,7 @@ func (c *gRPCConnection) Address() *net.TCPAddr {
 	return c.address
 }
 
-func (c *gRPCConnection) receive() (*protowire.SedradMessage, error) {
+func (c *gRPCConnection) receive() (*protowire.SeradMessage, error) {
 	// We use RLock here and in send() because they can work
 	// in parallel. closeSend(), however, must not have either
 	// receive() nor send() running while it's running.
@@ -137,7 +137,7 @@ func (c *gRPCConnection) receive() (*protowire.SedradMessage, error) {
 	return c.stream.Recv()
 }
 
-func (c *gRPCConnection) send(message *protowire.SedradMessage) error {
+func (c *gRPCConnection) send(message *protowire.SeradMessage) error {
 	// We use RLock here and in receive() because they can work
 	// in parallel. closeSend(), however, must not have either
 	// receive() nor send() running while it's running.

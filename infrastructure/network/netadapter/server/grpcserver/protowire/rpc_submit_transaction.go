@@ -3,18 +3,18 @@ package protowire
 import (
 	"math"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_SubmitTransactionRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_SubmitTransactionRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_SubmitTransactionRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_SubmitTransactionRequest is nil")
 	}
 	return x.SubmitTransactionRequest.toAppMessage()
 }
 
-func (x *SedradMessage_SubmitTransactionRequest) fromAppMessage(message *appmessage.SubmitTransactionRequestMessage) error {
+func (x *SeradMessage_SubmitTransactionRequest) fromAppMessage(message *appmessage.SubmitTransactionRequestMessage) error {
 	x.SubmitTransactionRequest = &SubmitTransactionRequestMessage{
 		Transaction: &RpcTransaction{},
 		AllowOrphan: message.AllowOrphan,
@@ -37,14 +37,14 @@ func (x *SubmitTransactionRequestMessage) toAppMessage() (appmessage.Message, er
 	}, nil
 }
 
-func (x *SedradMessage_SubmitTransactionResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_SubmitTransactionResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_SubmitTransactionResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_SubmitTransactionResponse is nil")
 	}
 	return x.SubmitTransactionResponse.toAppMessage()
 }
 
-func (x *SedradMessage_SubmitTransactionResponse) fromAppMessage(message *appmessage.SubmitTransactionResponseMessage) error {
+func (x *SeradMessage_SubmitTransactionResponse) fromAppMessage(message *appmessage.SubmitTransactionResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_RequestHeaders) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_RequestHeaders) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_RequestBlockLocator is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_RequestBlockLocator is nil")
 	}
 	lowHash, err := x.RequestHeaders.LowHash.toDomain()
 	if err != nil {
@@ -45,7 +45,7 @@ func (x *RequestHeadersMessage) toAppMessage() (appmessage.Message, error) {
 
 }
 
-func (x *SedradMessage_RequestHeaders) fromAppMessage(msgRequestHeaders *appmessage.MsgRequestHeaders) error {
+func (x *SeradMessage_RequestHeaders) fromAppMessage(msgRequestHeaders *appmessage.MsgRequestHeaders) error {
 	x.RequestHeaders = &RequestHeadersMessage{
 		LowHash:  domainHashToProto(msgRequestHeaders.LowHash),
 		HighHash: domainHashToProto(msgRequestHeaders.HighHash),

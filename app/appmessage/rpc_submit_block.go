@@ -60,7 +60,7 @@ func NewSubmitBlockResponseMessage() *SubmitBlockResponseMessage {
 	return &SubmitBlockResponseMessage{}
 }
 
-// RPCBlock is a sedrad block representation meant to be
+// RPCBlock is a serad block representation meant to be
 // used over RPC
 type RPCBlock struct {
 	Header       *RPCBlockHeader
@@ -68,7 +68,7 @@ type RPCBlock struct {
 	VerboseData  *RPCBlockVerboseData
 }
 
-// RPCBlockHeader is a sedrad block header representation meant to be
+// RPCBlockHeader is a serad block header representation meant to be
 // used over RPC
 type RPCBlockHeader struct {
 	Version              uint32

@@ -5,17 +5,17 @@ import (
 	"math"
 	"math/big"
 
-	difficultyPackage "github.com/sedracoin/sedrad/util/difficulty"
+	difficultyPackage "github.com/seracoin/serad/util/difficulty"
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
+	"github.com/seracoin/serad/domain/consensus/utils/hashes"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/dagconfig"
 )
 
 // ErrBuildBlockVerboseDataInvalidBlock indicates that a block that was given to BuildBlockVerboseData is invalid.

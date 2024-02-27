@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"io"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionid"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/serialization"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionid"
 	"github.com/pkg/errors"
 )
 

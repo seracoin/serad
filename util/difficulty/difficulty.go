@@ -114,7 +114,7 @@ func BigToCompact(n *big.Int) uint32 {
 	return compact
 }
 
-// CalcWork calculates a work value from difficulty bits. sedra increases
+// CalcWork calculates a work value from difficulty bits. sera increases
 // the difficulty for generating a block by decreasing the value which the
 // generated hash must be less than. This difficulty target is stored in each
 // block header using a compact representation as described in the documentation

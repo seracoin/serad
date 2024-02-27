@@ -3,11 +3,11 @@ package main
 import (
 	"time"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/stability-tests/common/rpc"
+	"github.com/seracoin/serad/util"
 	"github.com/pkg/errors"
 )
 
@@ -32,7 +32,7 @@ func mineLoop(syncerRPCClient, syncedRPCClient *rpc.Client) error {
 		err = mineBlock(syncerRPCClient.Address(), miningAddr)
 		if err != nil {
 			// Ignore error and instead check that the block count changed correctly.
-			// TODO: Fix the race condition in sedraminer so it won't panic (proper shutdown handler)
+			// TODO: Fix the race condition in seraminer so it won't panic (proper shutdown handler)
 			log.Warnf("mineBlock returned an err: %s", err)
 		}
 
@@ -129,8 +129,8 @@ func areTipsAreEqual(resultA, resultB *appmessage.GetBlockDAGInfoResponseMessage
 }
 
 func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
-	sedraMinerCmd, err := common.StartCmd("MINER",
-		"sedraminer",
+	seraMinerCmd, err := common.StartCmd("MINER",
+		"seraminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", syncerRPCAddress,
 		"--mine-when-not-synced",
@@ -140,5 +140,5 @@ func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
 	if err != nil {
 		return err
 	}
-	return errors.Wrapf(sedraMinerCmd.Wait(), "error with command '%s'", sedraMinerCmd)
+	return errors.Wrapf(seraMinerCmd.Wait(), "error with command '%s'", seraMinerCmd)
 }

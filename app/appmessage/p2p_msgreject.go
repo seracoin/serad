@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgReject implements the Message interface and represents a sedra
+// MsgReject implements the Message interface and represents a sera
 // Reject message. It is used to notify peers why they are banned.
 type MsgReject struct {
 	baseMessage
@@ -13,7 +13,7 @@ func (msg *MsgReject) Command() MessageCommand {
 	return CmdReject
 }
 
-// NewMsgReject returns a new sedra Reject message that conforms to the
+// NewMsgReject returns a new sera Reject message that conforms to the
 // Message interface.
 func NewMsgReject(reason string) *MsgReject {
 	return &MsgReject{

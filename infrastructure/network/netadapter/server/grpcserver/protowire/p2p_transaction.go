@@ -3,18 +3,18 @@ package protowire
 import (
 	"math"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_Transaction) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_Transaction) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_Transaction is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_Transaction is nil")
 	}
 	return x.Transaction.toAppMessage()
 }
 
-func (x *SedradMessage_Transaction) fromAppMessage(msgTx *appmessage.MsgTx) error {
+func (x *SeradMessage_Transaction) fromAppMessage(msgTx *appmessage.MsgTx) error {
 	x.Transaction = new(TransactionMessage)
 	x.Transaction.fromAppMessage(msgTx)
 	return nil

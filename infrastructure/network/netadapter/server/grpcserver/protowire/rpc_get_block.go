@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetBlockRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetBlockRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetBlockRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetBlockRequest is nil")
 	}
 	return x.GetBlockRequest.toAppMessage()
 }
@@ -22,7 +22,7 @@ func (x *GetBlockRequestMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_GetBlockRequest) fromAppMessage(message *appmessage.GetBlockRequestMessage) error {
+func (x *SeradMessage_GetBlockRequest) fromAppMessage(message *appmessage.GetBlockRequestMessage) error {
 	x.GetBlockRequest = &GetBlockRequestMessage{
 		Hash:                message.Hash,
 		IncludeTransactions: message.IncludeTransactions,
@@ -30,9 +30,9 @@ func (x *SedradMessage_GetBlockRequest) fromAppMessage(message *appmessage.GetBl
 	return nil
 }
 
-func (x *SedradMessage_GetBlockResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetBlockResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetBlockResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetBlockResponse is nil")
 	}
 	return x.GetBlockResponse.toAppMessage()
 }
@@ -63,7 +63,7 @@ func (x *GetBlockResponseMessage) toAppMessage() (appmessage.Message, error) {
 	}, nil
 }
 
-func (x *SedradMessage_GetBlockResponse) fromAppMessage(message *appmessage.GetBlockResponseMessage) error {
+func (x *SeradMessage_GetBlockResponse) fromAppMessage(message *appmessage.GetBlockResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

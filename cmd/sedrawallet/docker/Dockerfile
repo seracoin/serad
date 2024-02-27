@@ -1,9 +1,9 @@
 # -- multistage docker build: stage #1: build stage
 FROM golang:1.18-alpine AS build
 
-RUN mkdir -p /go/src/github.com/sedracoin/sedrad
+RUN mkdir -p /go/src/github.com/seracoin/serad
 
-WORKDIR /go/src/github.com/sedracoin/sedrad
+WORKDIR /go/src/github.com/seracoin/serad
 
 RUN apk add --no-cache curl git openssh binutils gcc musl-dev
 
@@ -14,8 +14,8 @@ RUN go mod download
 
 COPY . .
 
-WORKDIR /go/src/github.com/sedracoin/sedrad/cmd/sedrawallet
-RUN GOOS=linux go build -a -installsuffix cgo -o sedrawallet .
+WORKDIR /go/src/github.com/seracoin/serad/cmd/serawallet
+RUN GOOS=linux go build -a -installsuffix cgo -o serawallet .
 
 # --- multistage docker build: stage #2: runtime image
 FROM alpine
@@ -23,7 +23,7 @@ WORKDIR /app
 
 RUN apk add --no-cache ca-certificates tini
 
-COPY --from=build /go/src/github.com/sedracoin/sedrad/cmd/sedrawallet/sedrawallet /app/
+COPY --from=build /go/src/github.com/seracoin/serad/cmd/serawallet/serawallet /app/
 
 USER nobody
 ENTRYPOINT [ "/sbin/tini", "--" ]

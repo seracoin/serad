@@ -8,14 +8,14 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/util/network"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/util/network"
 
 	"github.com/pkg/errors"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 )
 
 // These variables are the DAG proof-of-work limit parameters for each default
@@ -25,19 +25,19 @@ var (
 	// the overhead of creating it multiple times.
 	bigOne = big.NewInt(1)
 
-	// mainPowMax is the highest proof of work value a sedra block can
+	// mainPowMax is the highest proof of work value a sera block can
 	// have for the main network. It is the value 2^255 - 1.
 	mainPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// testnetPowMax is the highest proof of work value a sedra block
+	// testnetPowMax is the highest proof of work value a sera block
 	// can have for the test network. It is the value 2^255 - 1.
 	testnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// simnetPowMax is the highest proof of work value a sedra block
+	// simnetPowMax is the highest proof of work value a sera block
 	// can have for the simulation test network. It is the value 2^255 - 1.
 	simnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
 
-	// devnetPowMax is the highest proof of work value a sedra block
+	// devnetPowMax is the highest proof of work value a sera block
 	// can have for the development network. It is the value
 	// 2^255 - 1.
 	devnetPowMax = new(big.Int).Sub(new(big.Int).Lsh(bigOne, 255), bigOne)
@@ -46,8 +46,8 @@ var (
 // KType defines the size of GHOSTDAG consensus algorithm K parameter.
 type KType uint8
 
-// Params defines a sedra network by its parameters. These parameters may be
-// used by sedra applications to differentiate networks as well as addresses
+// Params defines a sera network by its parameters. These parameters may be
+// used by sera applications to differentiate networks as well as addresses
 // and keys for one network from those intended for use on another network.
 type Params struct {
 	// K defines the K parameter for GHOSTDAG consensus algorithm.
@@ -58,7 +58,7 @@ type Params struct {
 	Name string
 
 	// Net defines the magic bytes used to identify the network.
-	Net appmessage.SedraNet
+	Net appmessage.SeraNet
 
 	// RPCPort defines the rpc server port
 	RPCPort string
@@ -90,7 +90,7 @@ type Params struct {
 
 	// SubsidyGenesisReward SubsidyMergeSetRewardMultiplier, and
 	// SubsidyPastRewardMultiplier are part of the block subsidy equation.
-	// Further details: https://hashdag.medium.com/sedra-launch-plan-9a63f4d754a6
+	// Further details: https://hashdag.medium.com/sera-launch-plan-9a63f4d754a6
 	SubsidyGenesisReward            uint64
 	PreDeflationaryPhaseBaseSubsidy uint64
 	DeflationaryPhaseBaseSubsidy    uint64
@@ -175,7 +175,7 @@ type Params struct {
 	// CoinbasePayloadScriptPublicKeyMaxLength is the maximum allowed script public key in the coinbase's payload
 	CoinbasePayloadScriptPublicKeyMaxLength uint8
 
-	// PruningProofM is the 'm' constant in the pruning proof. For more details see: https://github.com/sedracoin/research/issues/3
+	// PruningProofM is the 'm' constant in the pruning proof. For more details see: https://github.com/seracoin/research/issues/3
 	PruningProofM uint64
 
 	// DeflationaryPhaseDaaScore is the DAA score after which the monetary policy switches
@@ -206,17 +206,17 @@ func (p *Params) PruningDepth() uint64 {
 	return 2*p.FinalityDepth() + 4*p.MergeSetSizeLimit*uint64(p.K) + 2*uint64(p.K) + 2
 }
 
-// MainnetParams defines the network parameters for the main sedra network.
+// MainnetParams defines the network parameters for the main sera network.
 var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "sedra-mainnet",
+	Name:        "sera-mainnet",
 	Net:         appmessage.Mainnet,
 	RPCPort:     "22110",
 	DefaultPort: "22111",
 	DNSSeeds: []string{
-		"sedra-seed-1.sedracoin.com",
-		"sedra-seed-2.sedracoin.com",
-		"sedra-seed-3.sedracoin.com",
+		"sera-seed-1.seracoin.com",
+		"sera-seed-2.seracoin.com",
+		"sera-seed-3.seracoin.com",
 	},
 
 	// DAG parameters
@@ -247,7 +247,7 @@ var MainnetParams = Params{
 	AcceptUnroutable: false,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixSedra,
+	Prefix: util.Bech32PrefixSera,
 
 	// Address encoding magics
 	PrivateKeyID: 0x80, // starts with 5 (uncompressed) or K (compressed)
@@ -276,15 +276,15 @@ var MainnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// TestnetParams defines the network parameters for the test sedra network.
+// TestnetParams defines the network parameters for the test sera network.
 var TestnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "sedra-testnet-10",
+	Name:        "sera-testnet-10",
 	Net:         appmessage.Testnet,
 	RPCPort:     "22210",
 	DefaultPort: "22211",
 	DNSSeeds: []string{
-		//"sedracoin.com",
+		//"seracoin.com",
 	},
 
 	// DAG parameters
@@ -315,7 +315,7 @@ var TestnetParams = Params{
 	AcceptUnroutable: false,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixSedraTest,
+	Prefix: util.Bech32PrefixSeraTest,
 
 	// Address encoding magics
 	PrivateKeyID: 0xef, // starts with 9 (uncompressed) or c (compressed)
@@ -340,7 +340,7 @@ var TestnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// SimnetParams defines the network parameters for the simulation test sedra
+// SimnetParams defines the network parameters for the simulation test sera
 // network. This network is similar to the normal test network except it is
 // intended for private use within a group of individuals doing simulation
 // testing. The functionality is intended to differ in that the only nodes
@@ -349,7 +349,7 @@ var TestnetParams = Params{
 // just turn into another public testnet.
 var SimnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "sedra-simnet",
+	Name:        "sera-simnet",
 	Net:         appmessage.Simnet,
 	RPCPort:     "22510",
 	DefaultPort: "22511",
@@ -384,7 +384,7 @@ var SimnetParams = Params{
 
 	PrivateKeyID: 0x64, // starts with 4 (uncompressed) or F (compressed)
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixSedraSim,
+	Prefix: util.Bech32PrefixSeraSim,
 
 	// EnableNonNativeSubnetworks enables non-native/coinbase transactions
 	EnableNonNativeSubnetworks: false,
@@ -406,10 +406,10 @@ var SimnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// DevnetParams defines the network parameters for the development sedra network.
+// DevnetParams defines the network parameters for the development sera network.
 var DevnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "sedra-devnet",
+	Name:        "sera-devnet",
 	Net:         appmessage.Devnet,
 	RPCPort:     "22610",
 	DefaultPort: "22611",
@@ -443,7 +443,7 @@ var DevnetParams = Params{
 	AcceptUnroutable: true,
 
 	// Human-readable part for Bech32 encoded addresses
-	Prefix: util.Bech32PrefixSedraDev,
+	Prefix: util.Bech32PrefixSeraDev,
 
 	// Address encoding magics
 	PrivateKeyID: 0xef, // starts with 9 (uncompressed) or c (compressed)
@@ -468,14 +468,14 @@ var DevnetParams = Params{
 	MergeDepth:    defaultMergeDepth,
 }
 
-// ErrDuplicateNet describes an error where the parameters for a sedra
+// ErrDuplicateNet describes an error where the parameters for a sera
 // network could not be set due to the network already being a standard
 // network or previously-registered into this package.
-var ErrDuplicateNet = errors.New("duplicate sedra network")
+var ErrDuplicateNet = errors.New("duplicate sera network")
 
-var registeredNets = make(map[appmessage.SedraNet]struct{})
+var registeredNets = make(map[appmessage.SeraNet]struct{})
 
-// Register registers the network parameters for a sedra network. This may
+// Register registers the network parameters for a sera network. This may
 // error with ErrDuplicateNet if the network is already registered (either
 // due to a previous Register call, or the network being one of the default
 // networks).

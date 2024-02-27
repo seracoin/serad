@@ -5,11 +5,11 @@
 package dagconfig
 
 import (
-	"github.com/sedracoin/go-muhash"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/blockheader"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/go-muhash"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/blockheader"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
 	"math/big"
 )
 
@@ -21,7 +21,7 @@ var genesisTxPayload = []byte{
 	0x00, 0x00, //script version
 	0x01,                                           // Varint
 	0x00,                                           // OP-FALSE
-	0x73, 0x65, 0x64, 0x72, 0x61, 0x2D, 0x6D, 0x61, 0x69, 0x6E, 0x6E, 0x65, 0x74, // sedra mainnet payload
+	0x73, 0x65, 0x64, 0x72, 0x61, 0x2D, 0x6D, 0x61, 0x69, 0x6E, 0x6E, 0x65, 0x74, // sera mainnet payload
 }
 
 // genesisCoinbaseTx is the coinbase transaction for the genesis blocks for
@@ -69,7 +69,7 @@ var devnetGenesisTxPayload = []byte{
 	0x00, 0x00, //script version
 	0x01,                                           // Varint
 	0x00,                                           // OP-FALSE
-	0x73, 0x65, 0x64, 0x72, 0x61, 0x2D, 0x6D, 0x61, 0x69, 0x6E, 0x6E, 0x65, 0x74, // sedra mainnet payload
+	0x73, 0x65, 0x64, 0x72, 0x61, 0x2D, 0x6D, 0x61, 0x69, 0x6E, 0x6E, 0x65, 0x74, // sera mainnet payload
 }
 
 // devnetGenesisCoinbaseTx is the coinbase transaction for the genesis blocks for
@@ -118,7 +118,7 @@ var simnetGenesisTxPayload = []byte{
 	0x00, 0x00, // Script version
 	0x01,                                                                   // Varint
 	0x00,                                                                   // OP-FALSE
-	0x6b, 0x61, 0x73, 0x70, 0x61, 0x2d, 0x73, 0x69, 0x6d, 0x6e, 0x65, 0x74, // sedra-simnet
+	0x6b, 0x61, 0x73, 0x70, 0x61, 0x2d, 0x73, 0x69, 0x6d, 0x6e, 0x65, 0x74, // sera-simnet
 }
 
 // simnetGenesisCoinbaseTx is the coinbase transaction for the simnet genesis block.
@@ -172,7 +172,7 @@ var testnetGenesisTxPayload = []byte{
 	0x00, 0x00, // Script version
 	0x01,                                                                         // Varint
 	0x00,                                                                         // OP-FALSE
-	0x6b, 0x61, 0x73, 0x70, 0x61, 0x2d, 0x74, 0x65, 0x73, 0x74, 0x6e, 0x65, 0x74, // sedra-testnet
+	0x6b, 0x61, 0x73, 0x70, 0x61, 0x2d, 0x74, 0x65, 0x73, 0x74, 0x6e, 0x65, 0x74, // sera-testnet
 }
 
 // testnetGenesisCoinbaseTx is the coinbase transaction for the testnet genesis block.

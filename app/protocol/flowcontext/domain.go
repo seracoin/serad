@@ -1,7 +1,7 @@
 package flowcontext
 
 import (
-	"github.com/sedracoin/sedrad/domain"
+	"github.com/seracoin/serad/domain"
 )
 
 // Domain returns the Domain object associated to the flow context.

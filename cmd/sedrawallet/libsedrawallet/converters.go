@@ -1,19 +1,19 @@
-package libsedrawallet
+package libserawallet
 
 import (
 	"encoding/hex"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionid"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionid"
+	"github.com/seracoin/serad/domain/consensus/utils/utxo"
 )
 
-// SedrawalletdUTXOsTolibsedrawalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libsedrawallet.UTXO
-func SedrawalletdUTXOsTolibsedrawalletUTXOs(sedrawalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
-	UTXOs := make([]*UTXO, len(sedrawalletdUtxoEntires))
-	for i, entry := range sedrawalletdUtxoEntires {
+// SerawalletdUTXOsTolibserawalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libserawallet.UTXO
+func SerawalletdUTXOsTolibserawalletUTXOs(serawalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
+	UTXOs := make([]*UTXO, len(serawalletdUtxoEntires))
+	for i, entry := range serawalletdUtxoEntires {
 		script, err := hex.DecodeString(entry.UtxoEntry.ScriptPublicKey.ScriptPublicKey)
 		if err != nil {
 			return nil, err
@@ -41,8 +41,8 @@ func SedrawalletdUTXOsTolibsedrawalletUTXOs(sedrawalletdUtxoEntires []*pb.UtxosB
 	return UTXOs, nil
 }
 
-// AppMessageUTXOToSedrawalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
-func AppMessageUTXOToSedrawalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
+// AppMessageUTXOToSerawalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
+func AppMessageUTXOToSerawalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
 	return &pb.UtxosByAddressesEntry{
 		Outpoint: &pb.Outpoint{
 			TransactionId: appUTXOsByAddressesEntry.Outpoint.TransactionID,

@@ -1,26 +1,26 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetCurrentNetworkRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetCurrentNetworkRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.GetCurrentNetworkRequestMessage{}, nil
 }
 
-func (x *SedradMessage_GetCurrentNetworkRequest) fromAppMessage(_ *appmessage.GetCurrentNetworkRequestMessage) error {
+func (x *SeradMessage_GetCurrentNetworkRequest) fromAppMessage(_ *appmessage.GetCurrentNetworkRequestMessage) error {
 	return nil
 }
 
-func (x *SedradMessage_GetCurrentNetworkResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetCurrentNetworkResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetCurrentNetworkResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetCurrentNetworkResponse is nil")
 	}
 	return x.toAppMessage()
 }
 
-func (x *SedradMessage_GetCurrentNetworkResponse) fromAppMessage(message *appmessage.GetCurrentNetworkResponseMessage) error {
+func (x *SeradMessage_GetCurrentNetworkResponse) fromAppMessage(message *appmessage.GetCurrentNetworkResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

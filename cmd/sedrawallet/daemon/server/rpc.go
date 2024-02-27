@@ -3,8 +3,8 @@ package server
 import (
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient"
 )
 
 func connectToRPC(params *dagconfig.Params, rpcServer string, timeout uint32) (*rpcclient.RPCClient, error) {

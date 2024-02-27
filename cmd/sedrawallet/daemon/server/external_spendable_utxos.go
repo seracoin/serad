@@ -3,10 +3,10 @@ package server
 import (
 	"context"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
+	"github.com/seracoin/serad/util"
 )
 
 func (s *server) GetExternalSpendableUTXOs(_ context.Context, request *pb.GetExternalSpendableUTXOsRequest) (*pb.GetExternalSpendableUTXOsResponse, error) {
@@ -46,7 +46,7 @@ func (s *server) selectExternalSpendableUTXOs(externalUTXOs *appmessage.GetUTXOs
 		if !isExternalUTXOSpendable(entry, daaScore, maturity) {
 			continue
 		}
-		selectedExternalUtxos = append(selectedExternalUtxos, libsedrawallet.AppMessageUTXOToSedrawalletdUTXO(entry))
+		selectedExternalUtxos = append(selectedExternalUtxos, libserawallet.AppMessageUTXOToSerawalletdUTXO(entry))
 	}
 
 	return selectedExternalUtxos, nil

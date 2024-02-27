@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
+	"github.com/seracoin/serad/cmd/serawallet/utils"
+	"github.com/seracoin/serad/domain/dagconfig"
 	"github.com/pkg/errors"
 	"github.com/tyler-smith/go-bip39"
 )
@@ -19,7 +19,7 @@ func CreateMnemonics(params *dagconfig.Params, numKeys uint32, cmdLinePassword s
 	mnemonics := make([]string, numKeys)
 	for i := uint32(0); i < numKeys; i++ {
 		var err error
-		mnemonics[i], err = libsedrawallet.CreateMnemonic()
+		mnemonics[i], err = libserawallet.CreateMnemonic()
 		if err != nil {
 			return nil, nil, err
 		}
@@ -65,7 +65,7 @@ func encryptedMnemonicExtendedPublicKeyPairs(params *dagconfig.Params, mnemonics
 	extendedPublicKeys = make([]string, 0, len(mnemonics))
 
 	for _, mnemonic := range mnemonics {
-		extendedPublicKey, err := libsedrawallet.MasterPublicKeyFromMnemonic(params, mnemonic, isMultisig)
+		extendedPublicKey, err := libserawallet.MasterPublicKeyFromMnemonic(params, mnemonic, isMultisig)
 		if err != nil {
 			return nil, nil, err
 		}

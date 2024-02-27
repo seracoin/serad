@@ -1,14 +1,14 @@
-package libsedrawallet
+package libserawallet
 
 import (
 	"math"
 	"sort"
 	"strings"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/bip32"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet/bip32"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/util"
 	"github.com/pkg/errors"
 )
 

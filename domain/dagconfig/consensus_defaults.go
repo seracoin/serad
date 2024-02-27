@@ -1,7 +1,7 @@
 package dagconfig
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
 	"time"
 )
 
@@ -39,9 +39,9 @@ const (
 	// (Higher values make pruning attacks easier by a constant, lower values make merging after a split or a spike
 	// in block take longer)
 	defaultMergeSetSizeLimit                       = defaultGHOSTDAGK * 10
-	defaultSubsidyGenesisReward                    = 1 * constants.SeepPerSedra
-	defaultPreDeflationaryPhaseBaseSubsidy         = 500 * constants.SeepPerSedra
-	defaultDeflationaryPhaseBaseSubsidy            = 440 * constants.SeepPerSedra
+	defaultSubsidyGenesisReward                    = 1 * constants.SeepPerSera
+	defaultPreDeflationaryPhaseBaseSubsidy         = 500 * constants.SeepPerSera
+	defaultDeflationaryPhaseBaseSubsidy            = 440 * constants.SeepPerSera
 	defaultCoinbasePayloadScriptPublicKeyMaxLength = 150
 	// defaultDifficultyAdjustmentWindowSize is the number of blocks in a block's past used to calculate its difficulty
 	// target.

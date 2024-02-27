@@ -1,7 +1,7 @@
 package syncmanager
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/logger"
 )
 
 var log = logger.RegisterSubSystem("SYNC")

@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/client"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
 )
 
 func newAddress(conf *newAddressConfig) error {

@@ -3,8 +3,8 @@ package serialization
 import (
 	"io"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/util/binaryserializer"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/util/binaryserializer"
 	"github.com/pkg/errors"
 )
 

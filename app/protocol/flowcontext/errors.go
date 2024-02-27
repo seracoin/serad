@@ -5,9 +5,9 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
 
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
 )
 
 var (

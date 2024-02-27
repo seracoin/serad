@@ -1,10 +1,10 @@
 package consensushashing
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/serialization"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/hashes"
+	"github.com/seracoin/serad/domain/consensus/utils/serialization"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"
 )
 

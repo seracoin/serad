@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/stability-tests/common/rpc"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/stability-tests/common/rpc"
 	"github.com/pkg/errors"
 	"time"
 )

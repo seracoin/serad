@@ -12,17 +12,17 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
+	"github.com/seracoin/serad/cmd/serawallet/utils"
 
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/util"
 	"github.com/pkg/errors"
 	"golang.org/x/crypto/argon2"
 	"golang.org/x/crypto/chacha20poly1305"
 )
 
 var (
-	defaultAppDir = util.AppDir("sedrawallet", false)
+	defaultAppDir = util.AppDir("serawallet", false)
 )
 
 // LastVersion is the most up to date file format version

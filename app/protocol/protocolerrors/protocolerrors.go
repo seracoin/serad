@@ -1,7 +1,7 @@
 package protocolerrors
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
 	"github.com/pkg/errors"
 )
 

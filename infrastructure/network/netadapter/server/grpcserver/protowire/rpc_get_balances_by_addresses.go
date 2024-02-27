@@ -1,18 +1,18 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetBalancesByAddressesRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetBalancesByAddressesRequest) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetBalanceByAddressRequest is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetBalanceByAddressRequest is nil")
 	}
 	return x.GetBalancesByAddressesRequest.toAppMessage()
 }
 
-func (x *SedradMessage_GetBalancesByAddressesRequest) fromAppMessage(message *appmessage.GetBalancesByAddressesRequestMessage) error {
+func (x *SeradMessage_GetBalancesByAddressesRequest) fromAppMessage(message *appmessage.GetBalancesByAddressesRequestMessage) error {
 	x.GetBalancesByAddressesRequest = &GetBalancesByAddressesRequestMessage{
 		Addresses: message.Addresses,
 	}
@@ -28,14 +28,14 @@ func (x *GetBalancesByAddressesRequestMessage) toAppMessage() (appmessage.Messag
 	}, nil
 }
 
-func (x *SedradMessage_GetBalancesByAddressesResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetBalancesByAddressesResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
 		return nil, errors.Wrapf(errorNil, "GetBalanceByAddressResponse is nil")
 	}
 	return x.GetBalancesByAddressesResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetBalancesByAddressesResponse) fromAppMessage(message *appmessage.GetBalancesByAddressesResponseMessage) error {
+func (x *SeradMessage_GetBalancesByAddressesResponse) fromAppMessage(message *appmessage.GetBalancesByAddressesResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

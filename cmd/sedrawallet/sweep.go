@@ -5,22 +5,22 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/sedracoin/go-secp256k1"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/client"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet/serialization"
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/utils"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/dagconfig"
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/util/txmass"
+	"github.com/seracoin/go-secp256k1"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/client"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet/serialization"
+	"github.com/seracoin/serad/cmd/serawallet/utils"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/domain/dagconfig"
+	"github.com/seracoin/serad/domain/miningmanager/mempool"
+	"github.com/seracoin/serad/util"
+	"github.com/seracoin/serad/util/txmass"
 	"github.com/pkg/errors"
 )
 
@@ -33,7 +33,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	publicKeybytes, err := libsedrawallet.PublicKeyFromPrivateKey(privateKeyBytes)
+	publicKeybytes, err := libserawallet.PublicKeyFromPrivateKey(privateKeyBytes)
 	if err != nil {
 		return err
 	}
@@ -64,7 +64,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	UTXOs, err := libsedrawallet.SedrawalletdUTXOsTolibsedrawalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
+	UTXOs, err := libserawallet.SerawalletdUTXOsTolibserawalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
 	if err != nil {
 		return err
 	}
@@ -116,12 +116,12 @@ func sweep(conf *sweepConfig) error {
 	fmt.Println("\nTransaction ID(s):")
 	for i, txID := range response.TxIDs {
 		fmt.Printf("\t%s\n", txID)
-		fmt.Println("\tSwept:\t", utils.FormatSdr(splitTransactions[i].Outputs[0].Value), " SDR")
+		fmt.Println("\tSwept:\t", utils.FormatSra(splitTransactions[i].Outputs[0].Value), " SRA")
 		totalExtracted = totalExtracted + splitTransactions[i].Outputs[0].Value
 	}
 
 	fmt.Println("\nTotal Funds swept (including transaction fees):")
-	fmt.Println("\t", utils.FormatSdr(totalExtracted), " SDR")
+	fmt.Println("\t", utils.FormatSra(totalExtracted), " SRA")
 
 	return nil
 }
@@ -140,7 +140,7 @@ func newDummyTransaction() *externalapi.DomainTransaction {
 
 func createSplitTransactionsWithSchnorrPrivteKey(
 	params *dagconfig.Params,
-	selectedUTXOs []*libsedrawallet.UTXO,
+	selectedUTXOs []*libserawallet.UTXO,
 	toAddress util.Address,
 	feePerInput int) ([]*externalapi.DomainTransaction, error) {
 

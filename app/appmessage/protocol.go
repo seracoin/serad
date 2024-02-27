@@ -16,7 +16,7 @@ const (
 	DefaultServices = SFNodeNetwork | SFNodeBloom | SFNodeCF
 )
 
-// ServiceFlag identifies services supported by a sedra peer.
+// ServiceFlag identifies services supported by a sera peer.
 type ServiceFlag uint64
 
 const (
@@ -89,41 +89,41 @@ func (f ServiceFlag) String() string {
 	return s
 }
 
-// SedraNet represents which sedra network a message belongs to.
-type SedraNet uint32
+// SeraNet represents which sera network a message belongs to.
+type SeraNet uint32
 
-// Constants used to indicate the message sedra network. They can also be
+// Constants used to indicate the message sera network. They can also be
 // used to seek to the next message when a stream's state is unknown, but
 // this package does not provide that functionality since it's generally a
 // better idea to simply disconnect clients that are misbehaving over TCP.
 const (
-	// Mainnet represents the main sedra network.
-	Mainnet SedraNet = 0x3ddcf71d
+	// Mainnet represents the main sera network.
+	Mainnet SeraNet = 0x3ddcf71d
 
 	// Testnet represents the test network.
-	Testnet SedraNet = 0xddb8af8f
+	Testnet SeraNet = 0xddb8af8f
 
 	// Simnet represents the simulation test network.
-	Simnet SedraNet = 0x374dcf1c
+	Simnet SeraNet = 0x374dcf1c
 
 	// Devnet represents the development test network.
-	Devnet SedraNet = 0x732d87e1
+	Devnet SeraNet = 0x732d87e1
 )
 
-// bnStrings is a map of sedra networks back to their constant names for
+// bnStrings is a map of sera networks back to their constant names for
 // pretty printing.
-var bnStrings = map[SedraNet]string{
+var bnStrings = map[SeraNet]string{
 	Mainnet: "Mainnet",
 	Testnet: "Testnet",
 	Simnet:  "Simnet",
 	Devnet:  "Devnet",
 }
 
-// String returns the SedraNet in human-readable form.
-func (n SedraNet) String() string {
+// String returns the SeraNet in human-readable form.
+func (n SeraNet) String() string {
 	if s, ok := bnStrings[n]; ok {
 		return s
 	}
 
-	return fmt.Sprintf("Unknown SedraNet (%d)", uint32(n))
+	return fmt.Sprintf("Unknown SeraNet (%d)", uint32(n))
 }

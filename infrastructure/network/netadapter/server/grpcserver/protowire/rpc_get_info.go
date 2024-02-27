@@ -1,27 +1,27 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_GetInfoRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetInfoRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.GetInfoRequestMessage{}, nil
 }
 
-func (x *SedradMessage_GetInfoRequest) fromAppMessage(_ *appmessage.GetInfoRequestMessage) error {
+func (x *SeradMessage_GetInfoRequest) fromAppMessage(_ *appmessage.GetInfoRequestMessage) error {
 	x.GetInfoRequest = &GetInfoRequestMessage{}
 	return nil
 }
 
-func (x *SedradMessage_GetInfoResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_GetInfoResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_GetInfoResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_GetInfoResponse is nil")
 	}
 	return x.GetInfoResponse.toAppMessage()
 }
 
-func (x *SedradMessage_GetInfoResponse) fromAppMessage(message *appmessage.GetInfoResponseMessage) error {
+func (x *SeradMessage_GetInfoResponse) fromAppMessage(message *appmessage.GetInfoResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}

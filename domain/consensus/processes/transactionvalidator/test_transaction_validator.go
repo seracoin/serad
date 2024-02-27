@@ -1,9 +1,9 @@
 package transactionvalidator
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/testapi"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
 )
 
 type testTransactionValidator struct {

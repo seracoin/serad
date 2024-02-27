@@ -1,10 +1,10 @@
 package utxoindex
 
 import (
-	"github.com/sedracoin/sedrad/domain"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/domain"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/logger"
 	"sync"
 )
 

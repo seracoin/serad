@@ -1,13 +1,13 @@
 package blockvalidator
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/ruleerrors"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/pow"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/virtual"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/domain/consensus/model"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/ruleerrors"
+	"github.com/seracoin/serad/domain/consensus/utils/pow"
+	"github.com/seracoin/serad/domain/consensus/utils/virtual"
+	"github.com/seracoin/serad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

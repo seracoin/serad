@@ -1,16 +1,16 @@
 package ping
 
 import (
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
+	"github.com/seracoin/serad/app/protocol/common"
+	"github.com/seracoin/serad/app/protocol/flowcontext"
 	"github.com/pkg/errors"
 	"time"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	"github.com/sedracoin/sedrad/app/protocol/protocolerrors"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
-	"github.com/sedracoin/sedrad/util/random"
+	"github.com/seracoin/serad/app/appmessage"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	"github.com/seracoin/serad/app/protocol/protocolerrors"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/util/random"
 )
 
 // SendPingsContext is the interface for the context needed for the SendPings flow.

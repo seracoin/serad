@@ -5,8 +5,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/stability-tests/common/mine"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/stability-tests/common/mine"
 	"github.com/pkg/errors"
 )
 

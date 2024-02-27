@@ -1,27 +1,27 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_NotifyNewBlockTemplateRequest) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_NotifyNewBlockTemplateRequest) toAppMessage() (appmessage.Message, error) {
 	return &appmessage.NotifyNewBlockTemplateRequestMessage{}, nil
 }
 
-func (x *SedradMessage_NotifyNewBlockTemplateRequest) fromAppMessage(_ *appmessage.NotifyNewBlockTemplateRequestMessage) error {
+func (x *SeradMessage_NotifyNewBlockTemplateRequest) fromAppMessage(_ *appmessage.NotifyNewBlockTemplateRequestMessage) error {
 	x.NotifyNewBlockTemplateRequest = &NotifyNewBlockTemplateRequestMessage{}
 	return nil
 }
 
-func (x *SedradMessage_NotifyNewBlockTemplateResponse) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_NotifyNewBlockTemplateResponse) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_NotifyNewBlockTemplateResponse is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_NotifyNewBlockTemplateResponse is nil")
 	}
 	return x.NotifyNewBlockTemplateResponse.toAppMessage()
 }
 
-func (x *SedradMessage_NotifyNewBlockTemplateResponse) fromAppMessage(message *appmessage.NotifyNewBlockTemplateResponseMessage) error {
+func (x *SeradMessage_NotifyNewBlockTemplateResponse) fromAppMessage(message *appmessage.NotifyNewBlockTemplateResponseMessage) error {
 	var err *RPCError
 	if message.Error != nil {
 		err = &RPCError{Message: message.Error.Message}
@@ -46,14 +46,14 @@ func (x *NotifyNewBlockTemplateResponseMessage) toAppMessage() (appmessage.Messa
 	}, nil
 }
 
-func (x *SedradMessage_NewBlockTemplateNotification) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_NewBlockTemplateNotification) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_NewBlockTemplateNotification is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_NewBlockTemplateNotification is nil")
 	}
 	return x.NewBlockTemplateNotification.toAppMessage()
 }
 
-func (x *SedradMessage_NewBlockTemplateNotification) fromAppMessage(message *appmessage.NewBlockTemplateNotificationMessage) error {
+func (x *SeradMessage_NewBlockTemplateNotification) fromAppMessage(message *appmessage.NewBlockTemplateNotificationMessage) error {
 	x.NewBlockTemplateNotification = &NewBlockTemplateNotificationMessage{}
 	return nil
 }

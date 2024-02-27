@@ -12,7 +12,7 @@ import (
 	"testing"
 	"unicode"
 
-	"github.com/sedracoin/sedrad/util"
+	"github.com/seracoin/serad/util"
 )
 
 // TestAppDataDir tests the API for AppDir to ensure it gives expected

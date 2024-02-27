@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgRequestPruningPointAndItsAnticone represents a sedra RequestPruningPointAndItsAnticone message
+// MsgRequestPruningPointAndItsAnticone represents a sera RequestPruningPointAndItsAnticone message
 type MsgRequestPruningPointAndItsAnticone struct {
 	baseMessage
 }

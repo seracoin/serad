@@ -6,7 +6,7 @@
 package app
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/logger"
 )
 
-var log = logger.RegisterSubSystem("SDRD")
+var log = logger.RegisterSubSystem("SRAD")

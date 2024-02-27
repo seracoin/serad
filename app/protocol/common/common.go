@@ -1,8 +1,8 @@
 package common
 
 import (
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	routerpkg "github.com/seracoin/serad/infrastructure/network/netadapter/router"
 	"time"
 
 	"github.com/pkg/errors"

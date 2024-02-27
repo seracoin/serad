@@ -8,7 +8,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 )
 
 // TestIPTypes ensures the various functions which determine the type of an IP

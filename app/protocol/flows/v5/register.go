@@ -1,16 +1,16 @@
 package v5
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/app/protocol/flowcontext"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/addressexchange"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/blockrelay"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/ping"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/rejects"
-	"github.com/sedracoin/sedrad/app/protocol/flows/v5/transactionrelay"
-	peerpkg "github.com/sedracoin/sedrad/app/protocol/peer"
-	routerpkg "github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/app/protocol/common"
+	"github.com/seracoin/serad/app/protocol/flowcontext"
+	"github.com/seracoin/serad/app/protocol/flows/v5/addressexchange"
+	"github.com/seracoin/serad/app/protocol/flows/v5/blockrelay"
+	"github.com/seracoin/serad/app/protocol/flows/v5/ping"
+	"github.com/seracoin/serad/app/protocol/flows/v5/rejects"
+	"github.com/seracoin/serad/app/protocol/flows/v5/transactionrelay"
+	peerpkg "github.com/seracoin/serad/app/protocol/peer"
+	routerpkg "github.com/seracoin/serad/infrastructure/network/netadapter/router"
 )
 
 type protocolManager interface {

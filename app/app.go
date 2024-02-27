@@ -7,17 +7,17 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
-	"github.com/sedracoin/sedrad/infrastructure/db/database/ldb"
-	"github.com/sedracoin/sedrad/infrastructure/logger"
-	"github.com/sedracoin/sedrad/infrastructure/os/execenv"
-	"github.com/sedracoin/sedrad/infrastructure/os/limits"
-	"github.com/sedracoin/sedrad/infrastructure/os/signal"
-	"github.com/sedracoin/sedrad/infrastructure/os/winservice"
-	"github.com/sedracoin/sedrad/util/panics"
-	"github.com/sedracoin/sedrad/util/profiling"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/db/database/ldb"
+	"github.com/seracoin/serad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/os/execenv"
+	"github.com/seracoin/serad/infrastructure/os/limits"
+	"github.com/seracoin/serad/infrastructure/os/signal"
+	"github.com/seracoin/serad/infrastructure/os/winservice"
+	"github.com/seracoin/serad/util/panics"
+	"github.com/seracoin/serad/util/profiling"
+	"github.com/seracoin/serad/version"
 )
 
 const (
@@ -31,17 +31,17 @@ var desiredLimits = &limits.DesiredLimits{
 }
 
 var serviceDescription = &winservice.ServiceDescription{
-	Name:        "sedradsvc",
-	DisplayName: "Sedrad Service",
-	Description: "Downloads and stays synchronized with the sedra blockDAG and " +
+	Name:        "seradsvc",
+	DisplayName: "Serad Service",
+	Description: "Downloads and stays synchronized with the sera blockDAG and " +
 		"provides DAG services to applications.",
 }
 
-type sedradApp struct {
+type seradApp struct {
 	cfg *config.Config
 }
 
-// StartApp starts the sedrad app, and blocks until it finishes running
+// StartApp starts the serad app, and blocks until it finishes running
 func StartApp() error {
 	execenv.Initialize(desiredLimits)
 
@@ -55,7 +55,7 @@ func StartApp() error {
 	defer logger.BackendLog.Close()
 	defer panics.HandlePanic(log, "MAIN", nil)
 
-	app := &sedradApp{cfg: cfg}
+	app := &seradApp{cfg: cfg}
 
 	// Call serviceMain on Windows to handle running as a service. When
 	// the return isService flag is true, exit now since we ran as a
@@ -73,7 +73,7 @@ func StartApp() error {
 	return app.main(nil)
 }
 
-func (app *sedradApp) main(startedChan chan<- struct{}) error {
+func (app *seradApp) main(startedChan chan<- struct{}) error {
 	// Get a channel that will be closed when a shutdown signal has been
 	// triggered either from an OS signal such as SIGINT (Ctrl+C) or from
 	// another subsystem such as the RPC server.
@@ -125,12 +125,12 @@ func (app *sedradApp) main(startedChan chan<- struct{}) error {
 	// Create componentManager and start it.
 	componentManager, err := NewComponentManager(app.cfg, databaseContext, interrupt)
 	if err != nil {
-		log.Errorf("Unable to start sedrad: %+v", err)
+		log.Errorf("Unable to start serad: %+v", err)
 		return err
 	}
 
 	defer func() {
-		log.Infof("Gracefully shutting down sedrad...")
+		log.Infof("Gracefully shutting down serad...")
 
 		shutdownDone := make(chan struct{})
 		go func() {
@@ -145,7 +145,7 @@ func (app *sedradApp) main(startedChan chan<- struct{}) error {
 		case <-time.After(shutdownTimeout):
 			log.Criticalf("Graceful shutdown timed out %s. Terminating...", shutdownTimeout)
 		}
-		log.Infof("sedrad shutdown complete")
+		log.Infof("serad shutdown complete")
 	}()
 
 	componentManager.Start()

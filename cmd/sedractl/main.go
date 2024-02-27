@@ -2,16 +2,16 @@ package main
 
 import (
 	"fmt"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/version"
 	"os"
 	"time"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/server/grpcserver/protowire"
 
 	"github.com/pkg/errors"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient/grpcclient"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient/grpcclient"
 )
 
 func main() {
@@ -35,13 +35,13 @@ func main() {
 	defer client.Disconnect()
 
 	if !cfg.AllowConnectionToDifferentVersions {
-		sedradMessage, err := client.Post(&protowire.SedradMessage{Payload: &protowire.SedradMessage_GetInfoRequest{GetInfoRequest: &protowire.GetInfoRequestMessage{}}})
+		seradMessage, err := client.Post(&protowire.SeradMessage{Payload: &protowire.SeradMessage_GetInfoRequest{GetInfoRequest: &protowire.GetInfoRequestMessage{}}})
 		if err != nil {
 			printErrorAndExit(fmt.Sprintf("Cannot post GetInfo message: %s", err))
 		}
 
 		localVersion := version.Version()
-		remoteVersion := sedradMessage.GetGetInfoResponse().ServerVersion
+		remoteVersion := seradMessage.GetGetInfoResponse().ServerVersion
 
 		if localVersion != remoteVersion {
 			printErrorAndExit(fmt.Sprintf("Server version mismatch, expect: %s, got: %s", localVersion, remoteVersion))
@@ -100,8 +100,8 @@ func postJSON(cfg *configFlags, client *grpcclient.GRPCClient, doneChan chan str
 }
 
 func prettifyResponse(response string) string {
-	sedradMessage := &protowire.SedradMessage{}
-	err := protojson.Unmarshal([]byte(response), sedradMessage)
+	seradMessage := &protowire.SeradMessage{}
+	err := protojson.Unmarshal([]byte(response), seradMessage)
 	if err != nil {
 		printErrorAndExit(fmt.Sprintf("error parsing the response from the RPC server: %s", err))
 	}
@@ -109,7 +109,7 @@ func prettifyResponse(response string) string {
 	marshalOptions := &protojson.MarshalOptions{}
 	marshalOptions.Indent = "    "
 	marshalOptions.EmitUnpopulated = true
-	return marshalOptions.Format(sedradMessage)
+	return marshalOptions.Format(seradMessage)
 }
 
 func printErrorAndExit(message string) {

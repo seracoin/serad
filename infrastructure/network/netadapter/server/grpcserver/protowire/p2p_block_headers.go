@@ -1,13 +1,13 @@
 package protowire
 
 import (
-	"github.com/sedracoin/sedrad/app/appmessage"
+	"github.com/seracoin/serad/app/appmessage"
 	"github.com/pkg/errors"
 )
 
-func (x *SedradMessage_BlockHeaders) toAppMessage() (appmessage.Message, error) {
+func (x *SeradMessage_BlockHeaders) toAppMessage() (appmessage.Message, error) {
 	if x == nil {
-		return nil, errors.Wrapf(errorNil, "SedradMessage_BlockHeaders is nil")
+		return nil, errors.Wrapf(errorNil, "SeradMessage_BlockHeaders is nil")
 	}
 	blockHeaders, err := x.BlockHeaders.toAppMessage()
 	if err != nil {
@@ -34,7 +34,7 @@ func (x *BlockHeadersMessage) toAppMessage() ([]*appmessage.MsgBlockHeader, erro
 	return blockHeaders, nil
 }
 
-func (x *SedradMessage_BlockHeaders) fromAppMessage(blockHeadersMessage *appmessage.BlockHeadersMessage) error {
+func (x *SeradMessage_BlockHeaders) fromAppMessage(blockHeadersMessage *appmessage.BlockHeadersMessage) error {
 	blockHeaders := make([]*BlockHeader, len(blockHeadersMessage.BlockHeaders))
 	for i, blockHeader := range blockHeadersMessage.BlockHeaders {
 		blockHeaders[i] = &BlockHeader{}

@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/infrastructure/db/database"
+	"github.com/seracoin/serad/infrastructure/db/database"
 )
 
 func TestTransactionPut(t *testing.T) {

@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgDonePruningPointUTXOSetChunks represents a sedra DonePruningPointUTXOSetChunks message
+// MsgDonePruningPointUTXOSetChunks represents a sera DonePruningPointUTXOSetChunks message
 type MsgDonePruningPointUTXOSetChunks struct {
 	baseMessage
 }

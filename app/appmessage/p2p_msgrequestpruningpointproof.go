@@ -1,6 +1,6 @@
 package appmessage
 
-// MsgRequestPruningPointProof represents a sedra RequestPruningPointProof message
+// MsgRequestPruningPointProof represents a sera RequestPruningPointProof message
 type MsgRequestPruningPointProof struct {
 	baseMessage
 }

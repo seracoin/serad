@@ -3,12 +3,12 @@ package consensushashing
 import (
 	"io"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/serialization"
+	"github.com/seracoin/serad/domain/consensus/utils/serialization"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/hashes"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/util/binaryserializer"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/hashes"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/util/binaryserializer"
 	"github.com/pkg/errors"
 )
 
@@ -129,7 +129,7 @@ func serializeTransaction(w io.Writer, tx *externalapi.DomainTransaction, encodi
 	return nil
 }
 
-// writeTransactionInput encodes ti to the sedra protocol encoding for a transaction
+// writeTransactionInput encodes ti to the sera protocol encoding for a transaction
 // input to w.
 func writeTransactionInput(w io.Writer, ti *externalapi.DomainTransactionInput, encodingFlags txEncoding) error {
 	err := writeOutpoint(w, &ti.PreviousOutpoint)

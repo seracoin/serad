@@ -4,13 +4,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	mathUtil "github.com/sedracoin/sedrad/util/math"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/id"
+	mathUtil "github.com/seracoin/serad/util/math"
+	"github.com/seracoin/serad/util/mstime"
 )
 
 // Peer holds data about a peer.

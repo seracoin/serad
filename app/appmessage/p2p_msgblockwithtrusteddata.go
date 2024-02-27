@@ -1,11 +1,11 @@
 package appmessage
 
 import (
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 	"math/big"
 )
 
-// MsgBlockWithTrustedData represents a sedra BlockWithTrustedData message
+// MsgBlockWithTrustedData represents a sera BlockWithTrustedData message
 type MsgBlockWithTrustedData struct {
 	baseMessage
 

@@ -1,7 +1,7 @@
 package integration
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/logger"
 	"os"
 	"testing"
 )

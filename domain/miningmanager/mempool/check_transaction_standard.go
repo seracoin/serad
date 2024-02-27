@@ -3,13 +3,13 @@ package mempool
 import (
 	"fmt"
 
-	"github.com/sedracoin/sedrad/util/txmass"
+	"github.com/seracoin/serad/util/txmass"
 
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
 )
 
 const (
@@ -45,7 +45,7 @@ func (mp *mempool) checkTransactionStandardInIsolation(transaction *externalapi.
 	// The transaction must be a currently supported version.
 	//
 	// This check is currently mirrored in consensus.
-	// However, in a later version of sedra the consensus-valid transaction version range might diverge from the
+	// However, in a later version of sera the consensus-valid transaction version range might diverge from the
 	// standard transaction version range, and thus the validation should happen in both levels.
 	if transaction.Version > mp.config.MaximumStandardTransactionVersion ||
 		transaction.Version < mp.config.MinimumStandardTransactionVersion {

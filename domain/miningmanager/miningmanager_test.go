@@ -1,28 +1,28 @@
 package miningmanager_test
 
 import (
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/libsedrawallet"
-	"github.com/sedracoin/sedrad/domain/consensusreference"
-	"github.com/sedracoin/sedrad/domain/miningmanager/model"
-	"github.com/sedracoin/sedrad/util"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/cmd/serawallet/libserawallet"
+	"github.com/seracoin/serad/domain/consensusreference"
+	"github.com/seracoin/serad/domain/miningmanager/model"
+	"github.com/seracoin/serad/util"
+	"github.com/seracoin/serad/version"
 	"reflect"
 	"strings"
 	"testing"
 
-	"github.com/sedracoin/sedrad/domain/miningmanager/mempool"
+	"github.com/seracoin/serad/domain/miningmanager/mempool"
 
-	"github.com/sedracoin/sedrad/domain/consensus"
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/domain/consensus/model/testapi"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/consensushashing"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/constants"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/subnetworks"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/testutils"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/transactionhelper"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/txscript"
-	"github.com/sedracoin/sedrad/domain/consensus/utils/utxo"
-	"github.com/sedracoin/sedrad/domain/miningmanager"
+	"github.com/seracoin/serad/domain/consensus"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/domain/consensus/model/testapi"
+	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
+	"github.com/seracoin/serad/domain/consensus/utils/constants"
+	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
+	"github.com/seracoin/serad/domain/consensus/utils/testutils"
+	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
+	"github.com/seracoin/serad/domain/consensus/utils/txscript"
+	"github.com/seracoin/serad/domain/consensus/utils/utxo"
+	"github.com/seracoin/serad/domain/miningmanager"
 	"github.com/pkg/errors"
 )
 
@@ -885,7 +885,7 @@ func generateNewCoinbase(addressPrefix util.Bech32Prefix, op opType) (*externala
 			ExtraData:       nil,
 		}, nil
 	}
-	_, publicKey, err := libsedrawallet.CreateKeyPair(op == opECDSA)
+	_, publicKey, err := libserawallet.CreateKeyPair(op == opECDSA)
 	if err != nil {
 		return nil, err
 	}
@@ -929,7 +929,7 @@ func createTransactionWithUTXOEntry(t *testing.T, i int, daaScore uint64) *exter
 		SignatureScript:  signatureScript,
 		Sequence:         constants.MaxTxInSequenceNum,
 		UTXOEntry: utxo.NewUTXOEntry(
-			100000000, // 1 SDR
+			100000000, // 1 SRA
 			scriptPublicKey,
 			true,
 			daaScore),

@@ -3,16 +3,16 @@ package standalone
 import (
 	"sync"
 
-	"github.com/sedracoin/sedrad/app/protocol/common"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/app/protocol/common"
+	"github.com/seracoin/serad/util/mstime"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/id"
 
-	"github.com/sedracoin/sedrad/app/appmessage"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/router"
+	"github.com/seracoin/serad/app/appmessage"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/router"
 
-	"github.com/sedracoin/sedrad/infrastructure/config"
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter"
+	"github.com/seracoin/serad/infrastructure/config"
+	"github.com/seracoin/serad/infrastructure/network/netadapter"
 
 	"github.com/pkg/errors"
 )

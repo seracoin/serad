@@ -7,8 +7,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/sedracoin/sedrad/stability-tests/common"
-	"github.com/sedracoin/sedrad/util/panics"
+	"github.com/seracoin/serad/stability-tests/common"
+	"github.com/seracoin/serad/util/panics"
 	"github.com/pkg/errors"
 )
 
@@ -24,20 +24,20 @@ func startNodes() (teardown func(), err error) {
 	)
 
 	log.Infof("Starting nodes")
-	syncerDataDir, err := common.TempDir("sedrad-datadir-syncer")
+	syncerDataDir, err := common.TempDir("serad-datadir-syncer")
 	if err != nil {
 		panic(errors.Wrapf(err, "error in Tempdir"))
 	}
 	log.Infof("SYNCER datadir: %s", syncerDataDir)
 
-	syncedDataDir, err := common.TempDir("sedrad-datadir-synced")
+	syncedDataDir, err := common.TempDir("serad-datadir-synced")
 	if err != nil {
 		panic(errors.Wrapf(err, "error in Tempdir"))
 	}
 	log.Infof("SYNCED datadir: %s", syncedDataDir)
 
-	syncerCmd, err := common.StartCmd("SEDRAD-SYNCER",
-		"sedrad",
+	syncerCmd, err := common.StartCmd("SERAD-SYNCER",
+		"serad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", syncerDataDir,
 		"--logdir", syncerDataDir,
@@ -50,8 +50,8 @@ func startNodes() (teardown func(), err error) {
 		return nil, err
 	}
 
-	syncedCmd, err := common.StartCmd("SEDRAD-SYNCED",
-		"sedrad",
+	syncedCmd, err := common.StartCmd("SERAD-SYNCED",
+		"serad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", syncedDataDir,
 		"--logdir", syncedDataDir,

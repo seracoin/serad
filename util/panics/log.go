@@ -1,7 +1,7 @@
 package panics
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/logger"
 )
 
 var utilLog = logger.RegisterSubSystem("UTIL")

@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	"github.com/sedracoin/sedrad/cmd/sedrawallet/daemon/pb"
+	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
 )
 
 func (s *server) Send(_ context.Context, request *pb.SendRequest) (*pb.SendResponse, error) {

@@ -1,7 +1,7 @@
 package model
 
 import (
-	consensusexternalapi "github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
+	consensusexternalapi "github.com/seracoin/serad/domain/consensus/model/externalapi"
 )
 
 // BlockTemplateBuilder builds block templates for miners to consume

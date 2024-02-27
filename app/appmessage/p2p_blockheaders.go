@@ -1,6 +1,6 @@
 package appmessage
 
-// BlockHeadersMessage represents a sedra BlockHeaders message
+// BlockHeadersMessage represents a sera BlockHeaders message
 type BlockHeadersMessage struct {
 	baseMessage
 	BlockHeaders []*MsgBlockHeader
@@ -11,7 +11,7 @@ func (msg *BlockHeadersMessage) Command() MessageCommand {
 	return CmdBlockHeaders
 }
 
-// NewBlockHeadersMessage returns a new sedra BlockHeaders message
+// NewBlockHeadersMessage returns a new sera BlockHeaders message
 func NewBlockHeadersMessage(blockHeaders []*MsgBlockHeader) *BlockHeadersMessage {
 	return &BlockHeadersMessage{
 		BlockHeaders: blockHeaders,

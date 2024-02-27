@@ -4,12 +4,12 @@ import (
 	"path/filepath"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/sedracoin/sedrad/stability-tests/common"
+	"github.com/seracoin/serad/stability-tests/common"
 )
 
 const (
-	defaultLogFilename    = "sedradsanity.log"
-	defaultErrLogFilename = "sedradsanity_err.log"
+	defaultLogFilename    = "seradsanity.log"
+	defaultErrLogFilename = "seradsanity_err.log"
 )
 
 var (

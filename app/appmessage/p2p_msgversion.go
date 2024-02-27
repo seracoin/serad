@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/sedracoin/sedrad/domain/consensus/model/externalapi"
-	"github.com/sedracoin/sedrad/version"
+	"github.com/seracoin/serad/domain/consensus/model/externalapi"
+	"github.com/seracoin/serad/version"
 
-	"github.com/sedracoin/sedrad/infrastructure/network/netadapter/id"
-	"github.com/sedracoin/sedrad/util/mstime"
+	"github.com/seracoin/serad/infrastructure/network/netadapter/id"
+	"github.com/seracoin/serad/util/mstime"
 )
 
 // MaxUserAgentLen is the maximum allowed length for the user agent field in a
@@ -20,9 +20,9 @@ import (
 const MaxUserAgentLen = 256
 
 // DefaultUserAgent for appmessage in the stack
-var DefaultUserAgent = fmt.Sprintf("/sedrad:%s/", version.Version())
+var DefaultUserAgent = fmt.Sprintf("/serad:%s/", version.Version())
 
-// MsgVersion implements the Message interface and represents a sedra version
+// MsgVersion implements the Message interface and represents a sera version
 // message. It is used for a peer to advertise itself as soon as an outbound
 // connection is made. The remote peer then uses this information along with
 // its own to negotiate. The remote peer must then respond with a version
@@ -78,7 +78,7 @@ func (msg *MsgVersion) Command() MessageCommand {
 	return CmdVersion
 }
 
-// NewMsgVersion returns a new sedra version message that conforms to the
+// NewMsgVersion returns a new sera version message that conforms to the
 // Message interface using the passed parameters and defaults for the remaining
 // fields.
 func NewMsgVersion(addr *NetAddress, id *id.ID, network string,

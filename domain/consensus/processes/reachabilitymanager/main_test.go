@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/sedracoin/sedrad/infrastructure/logger"
+	"github.com/seracoin/serad/infrastructure/logger"
 )
 
 const logLevel = logger.LevelWarn

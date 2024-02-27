@@ -8,7 +8,7 @@ import (
 	_ "net/http/pprof"
 	"os"
 
-	"github.com/sedracoin/sedrad/app"
+	"github.com/seracoin/serad/app"
 )
 
 func main() {

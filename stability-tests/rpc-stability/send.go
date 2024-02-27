@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/sedracoin/sedrad/infrastructure/network/rpcclient/grpcclient"
+	"github.com/seracoin/serad/infrastructure/network/rpcclient/grpcclient"
 	"github.com/pkg/errors"
 )
 
