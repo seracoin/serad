@@ -1,7 +1,7 @@
 package transactionvalidator_test
 
 import (
-	"github.com/seracoin/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/seracoin/serad/domain/consensus"
 	"github.com/seracoin/serad/domain/consensus/ruleerrors"
 	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"

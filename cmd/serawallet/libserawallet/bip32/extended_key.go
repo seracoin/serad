@@ -2,7 +2,7 @@ package bip32
 
 import (
 	"github.com/btcsuite/btcutil/base58"
-	"github.com/seracoin/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/pkg/errors"
 )
 

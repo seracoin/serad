@@ -2,7 +2,7 @@ package bip32
 
 import (
 	"encoding/binary"
-	"github.com/seracoin/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/seracoin/serad/cmd/serawallet/libserawallet/bip32/base58"
 	"github.com/pkg/errors"
 )

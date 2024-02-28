@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/seracoin/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/pkg/errors"
 
 	"github.com/seracoin/serad/cmd/serawallet/libserawallet"

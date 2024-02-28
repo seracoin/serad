@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/seracoin/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/seracoin/serad/cmd/serawallet/daemon/client"
 	"github.com/seracoin/serad/cmd/serawallet/daemon/pb"
 	"github.com/seracoin/serad/cmd/serawallet/libserawallet"

@@ -211,12 +211,12 @@ var MainnetParams = Params{
 	K:           defaultGHOSTDAGK,
 	Name:        "sera-mainnet",
 	Net:         appmessage.Mainnet,
-	RPCPort:     "22110",
-	DefaultPort: "22111",
+	RPCPort:     "7777",
+	DefaultPort: "7778",
 	DNSSeeds: []string{
-		"sera-seed-1.seracoin.com",
-		"sera-seed-2.seracoin.com",
-		"sera-seed-3.seracoin.com",
+		"sera-seed-1.seracoin.io",
+		"sera-seed-2.seracoin.io",
+		"sera-seed-3.seracoin.io",
 	},
 
 	// DAG parameters
@@ -284,7 +284,7 @@ var TestnetParams = Params{
 	RPCPort:     "22210",
 	DefaultPort: "22211",
 	DNSSeeds: []string{
-		//"seracoin.com",
+		//"seracoin.io",
 	},
 
 	// DAG parameters

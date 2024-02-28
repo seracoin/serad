@@ -5,7 +5,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/seracoin/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/seracoin/serad/cmd/serawallet/libserawallet/bip32"
 	"github.com/seracoin/serad/domain/dagconfig"
 	"github.com/seracoin/serad/util"

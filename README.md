@@ -128,7 +128,7 @@ You can run ```ifconfig``` in Linux or Mac or ```ipconfig``` in Windows on the m
 
 ### Opening Ports
 
-By forwarding port 22111 (unless configured otherwise) to the machine running serad, your node becomes a public node which other members of the network can use to sync. Even though private nodes can still mine, it is encouraged that you make your node public for the general health of the network. Like any other decentralized systems, Sera works best when there are many public nodes.
+By forwarding port 7778 (unless configured otherwise) to the machine running serad, your node becomes a public node which other members of the network can use to sync. Even though private nodes can still mine, it is encouraged that you make your node public for the general health of the network. Like any other decentralized systems, Sera works best when there are many public nodes.
 
 ### Serad Hardware Requirements
 

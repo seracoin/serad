@@ -10,7 +10,7 @@ import (
 
 	"github.com/seracoin/serad/domain/consensus/utils/utxo"
 
-	"github.com/seracoin/go-secp256k1"
+	"github.com/sedracoin/go-secp256k1"
 	"github.com/seracoin/serad/app/appmessage"
 	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 	"github.com/seracoin/serad/domain/consensus/utils/consensushashing"
