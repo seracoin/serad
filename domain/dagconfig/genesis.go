@@ -32,13 +32,21 @@ var genesisCoinbaseTx = transactionhelper.NewSubnetworkTransaction(0, []*externa
 // genesisHash is the hash of the first block in the block DAG for the main
 // network (genesis block).
 var genesisHash = externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{
+<<<<<<< HEAD
 	1,
+=======
+	0x7c, 0x38, 0x0a, 0xe6, 0x90, 0xf9, 0xea, 0xa6, 0x4f, 0x30, 0x04, 0x51, 0xd5, 0xe4, 0x66, 0x37, 0x11, 0x13, 0xc3, 0x8b, 0x96, 0xed, 0x96, 0xfe, 0x3f, 0x1e, 0x93, 0x48, 0x69, 0x35, 0x5f, 0xfa,
+>>>>>>> parent of a76a425 (Update genesis.go)
 })
 
 // genesisMerkleRoot is the hash of the first transaction in the genesis block
 // for the main network.
 var genesisMerkleRoot = externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{
+<<<<<<< HEAD
 	1,
+=======
+	0x0a, 0x65, 0x43, 0x55, 0xc1, 0xd5, 0x8b, 0xd4, 0xab, 0xd9, 0xbd, 0xcc, 0x2e, 0x52, 0xf1, 0xbd, 0x56, 0x58, 0x64, 0xe8, 0xa1, 0x6c, 0xe0, 0x37, 0x7b, 0x48, 0xec, 0xc6, 0x4d, 0xb5, 0x4b, 0x27,
+>>>>>>> parent of a76a425 (Update genesis.go)
 })
 
 // genesisBlock defines the genesis block of the block DAG which serves as the
@@ -51,8 +59,8 @@ var genesisBlock = externalapi.DomainBlock{
 		&externalapi.DomainHash{},
 		externalapi.NewDomainHashFromByteArray(muhash.EmptyMuHashHash.AsArray()),
 			0x14d2bd72185,
-        	1709222727,
-        	188288054,
+        	525264379,
+        	0x1a14e,
         	0, // Checkpoint DAA score
         	0,
 		big.NewInt(0),
