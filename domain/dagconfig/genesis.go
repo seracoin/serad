@@ -32,20 +32,20 @@ var genesisCoinbaseTx = transactionhelper.NewSubnetworkTransaction(0, []*externa
 // genesisHash is the hash of the first block in the block DAG for the main
 // network (genesis block).
 var genesisHash = externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{
-	0,
+	1,
 })
 
 // genesisMerkleRoot is the hash of the first transaction in the genesis block
 // for the main network.
 var genesisMerkleRoot = externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{
-	0,
+	1,
 })
 
 // genesisBlock defines the genesis block of the block DAG which serves as the
 // public transaction ledger for the main network.
 var genesisBlock = externalapi.DomainBlock{
 	Header: blockheader.NewImmutableBlockHeader(
-		0,
+		1,
 		[]externalapi.BlockLevelParents{},
 		genesisMerkleRoot,
 		&externalapi.DomainHash{},
