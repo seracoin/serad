@@ -5,7 +5,7 @@
 package dagconfig
 
 import (
-	"github.com/sedracoin/go-muhash"
+	"github.com/seracoin/go-muhash"
 	"github.com/seracoin/serad/domain/consensus/model/externalapi"
 	"github.com/seracoin/serad/domain/consensus/utils/blockheader"
 	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
@@ -31,7 +31,6 @@ var genesisCoinbaseTx = transactionhelper.NewSubnetworkTransaction(0, []*externa
 
 // genesisHash is the hash of the first block in the block DAG for the main
 // network (genesis block).
-
 var genesisHash = externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{
 	0x7c, 0x38, 0x0a, 0xe6, 0x90, 0xf9, 0xea, 0xa6, 0x4f, 0x30, 0x04, 0x51, 0xd5, 0xe4, 0x66, 0x37, 0x11, 0x13, 0xc3, 0x8b, 0x96, 0xed, 0x96, 0xfe, 0x3f, 0x1e, 0x93, 0x48, 0x69, 0x35, 0x5f, 0xfa,
 })
@@ -46,7 +45,7 @@ var genesisMerkleRoot = externalapi.NewDomainHashFromByteArray(&[externalapi.Dom
 // public transaction ledger for the main network.
 var genesisBlock = externalapi.DomainBlock{
 	Header: blockheader.NewImmutableBlockHeader(
-		1,
+		0,
 		[]externalapi.BlockLevelParents{},
 		genesisMerkleRoot,
 		&externalapi.DomainHash{},
