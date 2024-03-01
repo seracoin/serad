@@ -57,9 +57,8 @@ var genesisBlock = externalapi.DomainBlock{
         genesisMerkleRoot, // Merkle root of the genesis block's transactions
         &externalapi.DomainHash{}, // Hash of the previous block (none for genesis)
         externalapi.NewDomainHashFromByteArray(muhash.EmptyMuHashHash.AsArray()), // Cumulative difficulty (starts at 0)
-        2,
 		1709222727, // Timestamp - customize this to your blockchain's launch time
-        2,     // Bits (difficulty target)
+        0x1a14e,     // Bits (difficulty target)
         188288054,       // Nonce - this will need to be adjusted to ensure the hash is below the target
         0,             // Checkpoint DAA score (0 for genesis)
         0,             // Finality point (0 for genesis)
