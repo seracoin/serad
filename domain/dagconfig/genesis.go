@@ -53,7 +53,7 @@ var genesisMerkleRoot = externalapi.NewDomainHashFromByteArray(&[externalapi.Dom
 var genesisBlock = externalapi.DomainBlock{
     Header: blockheader.NewImmutableBlockHeader(
         1, // Version
-        []externalapi.BlockLevelParents{}, // Parent blocks (none for genesis block)
+        //[]externalapi.BlockLevelParents{}, // Parent blocks (none for genesis block)
         genesisMerkleRoot, // Merkle root of the genesis block's transactions
         &externalapi.DomainHash{}, // Hash of the previous block (none for genesis)
         externalapi.NewDomainHashFromByteArray(muhash.EmptyMuHashHash.AsArray()), // Cumulative difficulty (starts at 0)
