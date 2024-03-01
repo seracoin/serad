@@ -2,64 +2,72 @@
 // Use of this source code is governed by an ISC
 // license that can be found in the LICENSE file.
 
+// Ensure the correct package name and import paths are set
 package dagconfig
 
 import (
-	"github.com/sedracoin/go-muhash"
-	"github.com/seracoin/serad/domain/consensus/model/externalapi"
-	"github.com/seracoin/serad/domain/consensus/utils/blockheader"
-	"github.com/seracoin/serad/domain/consensus/utils/subnetworks"
-	"github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
-	"math/big"
+    "github.com/seracoin/go-muhash" // Corrected import path
+    "github.com/seracoin/serad/domain/consensus/model/externalapi"
+    "github.com/seracoin/serad/domain/consensus/utils/blockheader"
+    "github.com/seracoin/serad/domain/consensus/utils/subnetworks"
+    "github.com/seracoin/serad/domain/consensus/utils/transactionhelper"
+    "math/big"
 )
 
+// Define any initial transaction outputs if required
 var genesisTxOuts = []*externalapi.DomainTransactionOutput{}
 
+// Customize the genesis transaction payload as needed
 var genesisTxPayload = []byte{
-	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // Blue score
-	0x00, 0xE1, 0xF5, 0x05, 0x00, 0x00, 0x00, 0x00, // Subsidy
-	0x00, 0x00, //script version
-	0x01,                                           // Varint
-	0x00,                                           // OP-FALSE
-	0x73, 0x65, 0x64, 0x72, 0x61, 0x2D, 0x6D, 0x61, 0x69, 0x6E, 0x6E, 0x65, 0x74, // sera mainnet payload
+    // This section can be customized to include specific data relevant to your blockchain
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // Placeholder for Blue score
+    0x00, 0xE1, 0xF5, 0x05, 0x00, 0x00, 0x00, 0x00, // Placeholder for Subsidy
+    0x00, 0x00, // Script version
+    0x01,       // Varint representing the following data length
+    0x00,       // OP_FALSE (indicating no further data in this simple example)
+    // Custom payload, can be modified to suit your blockchain's requirements
+    0x73, 0x65, 0x72, 0x61, 0x2D, 0x6D, 0x61, 0x69, 0x6E, 0x6E, 0x65, 0x74, // "sera-mainnet" payload
 }
 
-// genesisCoinbaseTx is the coinbase transaction for the genesis blocks for
-// the main network.
-var genesisCoinbaseTx = transactionhelper.NewSubnetworkTransaction(0, []*externalapi.DomainTransactionInput{}, genesisTxOuts,
-	&subnetworks.SubnetworkIDCoinbase, 0, genesisTxPayload)
+// Create the coinbase transaction for the genesis block
+var genesisCoinbaseTx = transactionhelper.NewSubnetworkTransaction(
+    0, 
+    []*externalapi.DomainTransactionInput{}, 
+    genesisTxOuts,
+    &subnetworks.SubnetworkIDCoinbase, 
+    0, 
+    genesisTxPayload,
+)
 
-// genesisHash is the hash of the first block in the block DAG for the main
-// network (genesis block).
+// You will likely need to generate a new genesis hash specific to your blockchain
 var genesisHash = externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{
-	0x7c, 0x38, 0x0a, 0xe6, 0x90, 0xf9, 0xea, 0xa6, 0x4f, 0x30, 0x04, 0x51, 0xd5, 0xe4, 0x66, 0x37, 0x11, 0x13, 0xc3, 0x8b, 0x96, 0xed, 0x96, 0xfe, 0x3f, 0x1e, 0x93, 0x48, 0x69, 0x35, 0x5f, 0xfa,
+    // This hash needs to be recalculated based on your genesis block's actual content
 })
 
-// genesisMerkleRoot is the hash of the first transaction in the genesis block
-// for the main network.
+// Similarly, the Merkle root should match the transactions in your genesis block
 var genesisMerkleRoot = externalapi.NewDomainHashFromByteArray(&[externalapi.DomainHashSize]byte{
-	0x0a, 0x65, 0x43, 0x55, 0xc1, 0xd5, 0x8b, 0xd4, 0xab, 0xd9, 0xbd, 0xcc, 0x2e, 0x52, 0xf1, 0xbd, 0x56, 0x58, 0x64, 0xe8, 0xa1, 0x6c, 0xe0, 0x37, 0x7b, 0x48, 0xec, 0xc6, 0x4d, 0xb5, 0x4b, 0x27,
+    // Recalculate this based on your actual transactions
 })
 
-// genesisBlock defines the genesis block of the block DAG which serves as the
-// public transaction ledger for the main network.
+// Finally, define your genesis block with the appropriate details
 var genesisBlock = externalapi.DomainBlock{
-	Header: blockheader.NewImmutableBlockHeader(
-		0,
-		[]externalapi.BlockLevelParents{},
-		genesisMerkleRoot,
-		&externalapi.DomainHash{},
-		externalapi.NewDomainHashFromByteArray(muhash.EmptyMuHashHash.AsArray()),
-			0x14d2bd72185,
-        	525264379,
-        	0x1a14e,
-        	0, // Checkpoint DAA score
-        	0,
-		big.NewInt(0),
-		&externalapi.DomainHash{},
-	),
-	Transactions: []*externalapi.DomainTransaction{genesisCoinbaseTx},
+    Header: blockheader.NewImmutableBlockHeader(
+        0, // Version
+        []externalapi.BlockLevelParents{}, // Parent blocks (none for genesis block)
+        genesisMerkleRoot, // Merkle root of the genesis block's transactions
+        &externalapi.DomainHash{}, // Hash of the previous block (none for genesis)
+        externalapi.NewDomainHashFromByteArray(muhash.EmptyMuHashHash.AsArray()), // Cumulative difficulty (starts at 0)
+        1709222727, // Timestamp - customize this to your blockchain's launch time
+        525264379,     // Bits (difficulty target)
+        188288054,       // Nonce - this will need to be adjusted to ensure the hash is below the target
+        0,             // Checkpoint DAA score (0 for genesis)
+        0,             // Finality point (0 for genesis)
+        big.NewInt(0), // Mass
+        &externalapi.DomainHash{}, // AcceptedIDMerkleRoot (empty for genesis)
+    ),
+    Transactions: []*externalapi.DomainTransaction{genesisCoinbaseTx}, // Transactions included in this block
 }
+
 
 var devnetGenesisTxOuts = []*externalapi.DomainTransactionOutput{}
 
