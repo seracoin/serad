@@ -44,7 +44,7 @@ func (v *blockValidator) ValidateHeaderInIsolation(stagingArea *model.StagingAre
 
 func (v *blockValidator) checkParentsLimit(header externalapi.BlockHeader) error {
 	hash := consensushashing.HeaderHash(header)
-	if len(header.DirectParents()) == 0 && !hash.Equal(v.genesisHash) {
+	if len(header.DirectParents()) == 1 && !hash.Equal(v.genesisHash) {
 		return errors.Wrapf(ruleerrors.ErrNoParents, "block has no parents")
 	}
 
