@@ -64,7 +64,7 @@ var genesisBlock = externalapi.DomainBlock{
         0,             // Finality point (0 for genesis)
         big.NewInt(0), // Mass
         &externalapi.DomainHash{}, // AcceptedIDMerkleRoot (empty for genesis)
-    ),
+    
     Transactions: []*externalapi.DomainTransaction{genesisCoinbaseTx}, // Transactions included in this block
 }
 
