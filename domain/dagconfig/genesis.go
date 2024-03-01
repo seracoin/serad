@@ -51,9 +51,9 @@ var genesisMerkleRoot = externalapi.NewDomainHashFromByteArray(&[externalapi.Dom
 
 // Finally, define your genesis block with the appropriate details
 var genesisBlock = externalapi.DomainBlock{
-    //Header: blockheader.NewImmutableBlockHeader(
+    Header: blockheader.NewImmutableBlockHeader(
         1, // Version
-        //[]externalapi.BlockLevelParents{}, // Parent blocks (none for genesis block)
+        []externalapi.BlockLevelParents{}, // Parent blocks (none for genesis block)
         genesisMerkleRoot, // Merkle root of the genesis block's transactions
         &externalapi.DomainHash{}, // Hash of the previous block (none for genesis)
         externalapi.NewDomainHashFromByteArray(muhash.EmptyMuHashHash.AsArray()), // Cumulative difficulty (starts at 0)
@@ -64,7 +64,7 @@ var genesisBlock = externalapi.DomainBlock{
         0,             // Finality point (0 for genesis)
         big.NewInt(0), // Mass
         &externalapi.DomainHash{}, // AcceptedIDMerkleRoot (empty for genesis)
-    
+    ),
     Transactions: []*externalapi.DomainTransaction{genesisCoinbaseTx}, // Transactions included in this block
 }
 
