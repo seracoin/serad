@@ -51,7 +51,7 @@ var genesisMerkleRoot = externalapi.NewDomainHashFromByteArray(&[externalapi.Dom
 
 // Finally, define your genesis block with the appropriate details
 var genesisBlock = externalapi.DomainBlock{
-    Header: blockheader.NewImmutableBlockHeader(
+    //Header: blockheader.NewImmutableBlockHeader(
         1, // Version
         //[]externalapi.BlockLevelParents{}, // Parent blocks (none for genesis block)
         genesisMerkleRoot, // Merkle root of the genesis block's transactions
