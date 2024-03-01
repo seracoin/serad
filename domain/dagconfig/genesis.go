@@ -6,7 +6,7 @@
 package dagconfig
 
 import (
-    "github.com/seracoin/go-muhash" // Corrected import path
+    "github.com/sedracoin/go-muhash" // Corrected import path
     "github.com/seracoin/serad/domain/consensus/model/externalapi"
     "github.com/seracoin/serad/domain/consensus/utils/blockheader"
     "github.com/seracoin/serad/domain/consensus/utils/subnetworks"
